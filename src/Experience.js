@@ -11,6 +11,7 @@ import { Center, OrbitControls, PointerLockControls, PresentationControls, Text,
 import { useFrame, useThree} from "@react-three/fiber"
 import { useRef } from "react";
 import { Perf } from 'r3f-perf'
+import Intro from "./Intro";
 
 export function Experience(){
      
@@ -21,21 +22,18 @@ export function Experience(){
     <directionalLight position={[1, 2, 3]} intensity={1.5} />
     <ambientLight intensity={0.5} />
     
-    <mesh position-y={- 1} rotation-x={- Math.PI * 0.5} scale={30}>
-        <planeGeometry />
-        <meshStandardMaterial color="orange" />
-    </mesh>
+    <Intro/>
 
     <Float speed={5}>
             <Text
                 font="./bangers-v20-latin-regular.woff"
                 fontSize={1}
                 color="#964B00"
-                position-y={1}
+                position-y={1.6}
                 maxWidth={8}
                 textAlign="center"
             >
-                Memory of the Nile
+                Memories of the Nile
             </Text>
         </Float>
 
