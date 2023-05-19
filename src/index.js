@@ -1,6 +1,5 @@
 import './styles.css'
 import ReactDom from "react-dom/client";
-import ReactDom from "react-dom";
 import { Experience } from './Experience';
 import { Canvas } from '@react-three/fiber';
 
