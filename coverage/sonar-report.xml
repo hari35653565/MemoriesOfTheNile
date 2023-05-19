@@ -1,167 +1,13 @@
 <testExecutions version="1">
-<file path="src\__tests__\index.test.js">
-</file>
-<file path="src\__tests__\Intro.test.js">
-<testCase name="Intro_function test_load_gltf_file_successfully" duration="1">
-<failure message="Error"><![CDATA[ReferenceError: shallow is not defined
-    at Object.&lt;anonymous&gt; (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\src\__tests__\Intro.test.js:12:25)
-    at Promise.then.completed (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:391:28)
-    at new Promise (&lt;anonymous&gt;)
-    at callAsyncCircusFn (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:316:10)
-    at _callCircusTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:218:40)
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)
-    at _runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:155:3)
-    at _runTestsForDescribeBlock (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:66:9)
-    at _runTestsForDescribeBlock (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:60:9)
-    at run (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:25:3)
-    at runAndTransformResultsToJestFormat (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
-    at jestAdapter (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
-    at runTestInternal (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:389:16)
-    at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
-    at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
-</testCase>
-<testCase name="Intro_function test_group_positioning" duration="0">
-<failure message="Error"><![CDATA[ReferenceError: shallow is not defined
-    at Object.&lt;anonymous&gt; (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\src\__tests__\Intro.test.js:20:25)
-    at Promise.then.completed (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:391:28)
-    at new Promise (&lt;anonymous&gt;)
-    at callAsyncCircusFn (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:316:10)
-    at _callCircusTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:218:40)
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)
-    at _runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:155:3)
-    at _runTestsForDescribeBlock (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:66:9)
-    at _runTestsForDescribeBlock (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:60:9)
-    at run (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:25:3)
-    at runAndTransformResultsToJestFormat (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
-    at jestAdapter (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
-    at runTestInternal (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:389:16)
-    at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
-    at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
-</testCase>
-<testCase name="Intro_function test_gltf_file_not_found" duration="2" />
-<testCase name="Intro_function test_group_rotation" duration="0">
-<failure message="Error"><![CDATA[ReferenceError: shallow is not defined
-    at Object.&lt;anonymous&gt; (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\src\__tests__\Intro.test.js:37:25)
-    at Promise.then.completed (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:391:28)
-    at new Promise (&lt;anonymous&gt;)
-    at callAsyncCircusFn (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:316:10)
-    at _callCircusTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:218:40)
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)
-    at _runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:155:3)
-    at _runTestsForDescribeBlock (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:66:9)
-    at _runTestsForDescribeBlock (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:60:9)
-    at run (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:25:3)
-    at runAndTransformResultsToJestFormat (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
-    at jestAdapter (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
-    at runTestInternal (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:389:16)
-    at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
-    at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
-</testCase>
-<testCase name="Intro_function test_group_scaling" duration="1">
-<failure message="Error"><![CDATA[ReferenceError: shallow is not defined
-    at Object.&lt;anonymous&gt; (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\src\__tests__\Intro.test.js:45:25)
-    at Promise.then.completed (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:391:28)
-    at new Promise (&lt;anonymous&gt;)
-    at callAsyncCircusFn (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:316:10)
-    at _callCircusTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:218:40)
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)
-    at _runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:155:3)
-    at _runTestsForDescribeBlock (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:66:9)
-    at _runTestsForDescribeBlock (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:60:9)
-    at run (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:25:3)
-    at runAndTransformResultsToJestFormat (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
-    at jestAdapter (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
-    at runTestInternal (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:389:16)
-    at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
-    at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
-</testCase>
-<testCase name="Intro_function test_primitive_object_rendering" duration="0">
-<failure message="Error"><![CDATA[ReferenceError: shallow is not defined
-    at Object.&lt;anonymous&gt; (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\src\__tests__\Intro.test.js:53:25)
-    at Promise.then.completed (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:391:28)
-    at new Promise (&lt;anonymous&gt;)
-    at callAsyncCircusFn (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:316:10)
-    at _callCircusTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:218:40)
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)
-    at _runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:155:3)
-    at _runTestsForDescribeBlock (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:66:9)
-    at _runTestsForDescribeBlock (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:60:9)
-    at run (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:25:3)
-    at runAndTransformResultsToJestFormat (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
-    at jestAdapter (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
-    at runTestInternal (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:389:16)
-    at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
-    at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
-</testCase>
-</file>
 <file path="src\__tests__\Pyramid.test.js">
-<testCase name="Pyramid_function test_pyramid_renders_without_errors" duration="2" />
-<testCase name="Pyramid_function test_pyramid_loads_gltf_file_successfully" duration="145">
-<failure message="Error"><![CDATA[Error: thrown: Promise {}
-    at C:\Users\USUARIO\Desktop\MemoriesOfTheNile\src\__tests__\Pyramid.test.js:21:5
-    at _dispatchDescribe (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\index.js:98:26)
-    at describe (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\index.js:60:5)
-    at Object.&lt;anonymous&gt; (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\src\__tests__\Pyramid.test.js:6:1)
-    at Runtime._execModule (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runtime\build\index.js:1646:24)
-    at Runtime._loadModule (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runtime\build\index.js:1185:12)
-    at Runtime.requireModule (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runtime\build\index.js:1009:12)
-    at jestAdapter (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:79:13)
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)
-    at runTestInternal (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:389:16)
-    at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
-    at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
-</testCase>
-<testCase name="Pyramid_function test_pyramid_rotation_prop_is_applied_correctly" duration="1" />
-<testCase name="Pyramid_function test_pyramid_mesh_objects_render_correctly" duration="1">
-<failure message="Error"><![CDATA[ReferenceError: Request is not defined
-    at FileLoader.load (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\three\build\three.js:40573:16)
-    at Al.load (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\three-stdlib\index.cjs.js:1:576770)
-    at C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\@react-three\fiber\dist\index-f4b96a62.cjs.dev.js:1672:79
-    at new Promise (&lt;anonymous&gt;)
-    at C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\@react-three\fiber\dist\index-f4b96a62.cjs.dev.js:1672:43
-    at Array.map (&lt;anonymous&gt;)
-    at C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\@react-three\fiber\dist\index-f4b96a62.cjs.dev.js:1672:30
-    at query (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\suspend-react\dist\index.cjs.js:38:5)
-    at Object.suspend (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\suspend-react\dist\index.cjs.js:57:39)
-    at Object.useLoader (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\@react-three\fiber\dist\index-f4b96a62.cjs.dev.js:1688:32)
-    at je (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\@react-three\drei\index.cjs.js:1:29573)
-    at Object.&lt;anonymous&gt; (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\src\__tests__\Pyramid.test.js:29:45)
-    at Promise.then.completed (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:391:28)
-    at new Promise (&lt;anonymous&gt;)
-    at callAsyncCircusFn (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:316:10)
-    at _callCircusTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:218:40)
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)
-    at _runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:155:3)
-    at _runTestsForDescribeBlock (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:66:9)
-    at _runTestsForDescribeBlock (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:60:9)
-    at run (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:25:3)
-    at runAndTransformResultsToJestFormat (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
-    at jestAdapter (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
-    at runTestInternal (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:389:16)
-    at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
-    at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
-</testCase>
-<testCase name="Pyramid_function test_pyramid_cast_and_receive_shadow_props_are_set_correctly" duration="0">
-<failure message="Error"><![CDATA[TypeError: Cannot read properties of undefined (reading &apos;props&apos;)
-    at Object.&lt;anonymous&gt; (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\src\__tests__\Pyramid.test.js:69:41)
-    at Promise.then.completed (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:391:28)
-    at new Promise (&lt;anonymous&gt;)
-    at callAsyncCircusFn (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:316:10)
-    at _callCircusTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:218:40)
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)
-    at _runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:155:3)
-    at _runTestsForDescribeBlock (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:66:9)
-    at _runTestsForDescribeBlock (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:60:9)
-    at run (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:25:3)
-    at runAndTransformResultsToJestFormat (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
-    at jestAdapter (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
-    at runTestInternal (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:389:16)
-    at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
-    at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
-</testCase>
+<testCase name="Pyramid_function test_pyramid_renders_without_errors" duration="10" />
+<testCase name="Pyramid_function test_pyramid_rotation_prop_is_applied_correctly" duration="3" />
+</file>
+<file path="src\__tests__\index.test.js">
+<testCase name="renders without crashing" duration="178" />
 </file>
 <file path="src\__tests__\Experience.test.js">
-<testCase name="Experience_function test_renders_perf_component" duration="41">
+<testCase name="Experience_function test_renders_perf_component" duration="137">
 <failure message="Error"><![CDATA[Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it&apos;s defined in, or you might have mixed up default and named imports.
     at createFiberFromTypeAndProps (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28439:17)
     at createFiberFromElement (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28465:15)
@@ -196,7 +42,7 @@
     at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
     at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
 </testCase>
-<testCase name="Experience_function test_renders_orbit_controls" duration="8">
+<testCase name="Experience_function test_renders_orbit_controls" duration="16">
 <failure message="Error"><![CDATA[Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it&apos;s defined in, or you might have mixed up default and named imports.
     at createFiberFromTypeAndProps (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28439:17)
     at createFiberFromElement (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28465:15)
@@ -231,7 +77,7 @@
     at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
     at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
 </testCase>
-<testCase name="Experience_function test_renders_lights" duration="5">
+<testCase name="Experience_function test_renders_lights" duration="22">
 <failure message="Error"><![CDATA[Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it&apos;s defined in, or you might have mixed up default and named imports.
     at createFiberFromTypeAndProps (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28439:17)
     at createFiberFromElement (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28465:15)
@@ -266,7 +112,7 @@
     at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
     at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
 </testCase>
-<testCase name="Experience_function test_renders_intro_component" duration="5">
+<testCase name="Experience_function test_renders_intro_component" duration="10">
 <failure message="Error"><![CDATA[Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it&apos;s defined in, or you might have mixed up default and named imports.
     at createFiberFromTypeAndProps (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28439:17)
     at createFiberFromElement (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28465:15)
@@ -301,7 +147,7 @@
     at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
     at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
 </testCase>
-<testCase name="Experience_function test_renders_float_component" duration="12">
+<testCase name="Experience_function test_renders_float_component" duration="10">
 <failure message="Error"><![CDATA[Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it&apos;s defined in, or you might have mixed up default and named imports.
     at createFiberFromTypeAndProps (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28439:17)
     at createFiberFromElement (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28465:15)
@@ -336,7 +182,7 @@
     at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
     at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
 </testCase>
-<testCase name="Experience_function test_renders_text_component" duration="3">
+<testCase name="Experience_function test_renders_text_component" duration="20">
 <failure message="Error"><![CDATA[Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it&apos;s defined in, or you might have mixed up default and named imports.
     at createFiberFromTypeAndProps (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28439:17)
     at createFiberFromElement (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28465:15)
@@ -371,5 +217,8 @@
     at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
     at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
 </testCase>
+</file>
+<file path="src\__tests__\Intro.test.js">
+<testCase name="loads GLTF file successfully" duration="83" />
 </file>
 </testExecutions>

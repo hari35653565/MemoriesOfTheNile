@@ -6,7 +6,7 @@
   * Three.js: https://threejs.org/docs/
   * 
 */
-
+import React from "react";
 import { Center, OrbitControls, PointerLockControls, PresentationControls, Text, Float } from "@react-three/drei";
 import { useFrame, useThree} from "@react-three/fiber"
 import { useRef } from "react";
@@ -22,9 +22,9 @@ export function Experience(){
     <directionalLight position={[1, 2, 3]} intensity={1.5} />
     <ambientLight intensity={0.5} />
     
-    <Intro/>
+    <Intro data-testid='intro-component' />
 
-    <Float speed={5}>
+    <Float speed={5} data-testid='float-component'>
             <Text
                 font="./bangers-v20-latin-regular.woff"
                 fontSize={1}
