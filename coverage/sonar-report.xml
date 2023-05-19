@@ -18,7 +18,7 @@
     at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
     at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
 </testCase>
-<testCase name="code_snippet test_text_component" duration="0">
+<testCase name="code_snippet test_text_component" duration="1">
 <failure message="Error"><![CDATA[ReferenceError: ReactDom is not defined
     at Object.&lt;anonymous&gt; (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\src\__tests__\index.test.js:19:22)
     at Promise.then.completed (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:391:28)
@@ -36,7 +36,7 @@
     at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
     at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
 </testCase>
-<testCase name="code_snippet test_perf_component" duration="0">
+<testCase name="code_snippet test_perf_component" duration="1">
 <failure message="Error"><![CDATA[ReferenceError: ReactDom is not defined
     at Object.&lt;anonymous&gt; (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\src\__tests__\index.test.js:36:22)
     at Promise.then.completed (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:391:28)
@@ -54,7 +54,7 @@
     at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
     at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
 </testCase>
-<testCase name="code_snippet test_orbit_controls_component" duration="1">
+<testCase name="code_snippet test_orbit_controls_component" duration="0">
 <failure message="Error"><![CDATA[ReferenceError: ReactDom is not defined
     at Object.&lt;anonymous&gt; (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\src\__tests__\index.test.js:48:22)
     at Promise.then.completed (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:391:28)
@@ -90,7 +90,7 @@
     at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
     at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
 </testCase>
-<testCase name="code_snippet test_ambient_light_component" duration="0">
+<testCase name="code_snippet test_ambient_light_component" duration="1">
 <failure message="Error"><![CDATA[ReferenceError: ReactDom is not defined
     at Object.&lt;anonymous&gt; (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\src\__tests__\index.test.js:73:22)
     at Promise.then.completed (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:391:28)
@@ -128,7 +128,7 @@
     at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
     at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
 </testCase>
-<testCase name="Intro_function test_group_positioning" duration="0">
+<testCase name="Intro_function test_group_positioning" duration="1">
 <failure message="Error"><![CDATA[ReferenceError: shallow is not defined
     at Object.&lt;anonymous&gt; (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\src\__tests__\Intro.test.js:20:25)
     at Promise.then.completed (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:391:28)
@@ -146,8 +146,8 @@
     at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
     at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
 </testCase>
-<testCase name="Intro_function test_gltf_file_not_found" duration="2" />
-<testCase name="Intro_function test_group_rotation" duration="1">
+<testCase name="Intro_function test_gltf_file_not_found" duration="3" />
+<testCase name="Intro_function test_group_rotation" duration="0">
 <failure message="Error"><![CDATA[ReferenceError: shallow is not defined
     at Object.&lt;anonymous&gt; (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\src\__tests__\Intro.test.js:37:25)
     at Promise.then.completed (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:391:28)
@@ -165,7 +165,7 @@
     at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
     at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
 </testCase>
-<testCase name="Intro_function test_group_scaling" duration="0">
+<testCase name="Intro_function test_group_scaling" duration="1">
 <failure message="Error"><![CDATA[ReferenceError: shallow is not defined
     at Object.&lt;anonymous&gt; (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\src\__tests__\Intro.test.js:45:25)
     at Promise.then.completed (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:391:28)
@@ -203,8 +203,8 @@
 </testCase>
 </file>
 <file path="src\__tests__\Pyramid.test.js">
-<testCase name="Pyramid_function test_pyramid_renders_without_errors" duration="5" />
-<testCase name="Pyramid_function test_pyramid_loads_gltf_file_successfully" duration="131">
+<testCase name="Pyramid_function test_pyramid_renders_without_errors" duration="2" />
+<testCase name="Pyramid_function test_pyramid_loads_gltf_file_successfully" duration="6">
 <failure message="Error"><![CDATA[Error: thrown: Promise {}
     at C:\Users\USUARIO\Desktop\MemoriesOfTheNile\src\__tests__\Pyramid.test.js:21:5
     at _dispatchDescribe (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\index.js:98:26)
@@ -219,8 +219,8 @@
     at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
     at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
 </testCase>
-<testCase name="Pyramid_function test_pyramid_rotation_prop_is_applied_correctly" duration="1" />
-<testCase name="Pyramid_function test_pyramid_mesh_objects_render_correctly" duration="1">
+<testCase name="Pyramid_function test_pyramid_rotation_prop_is_applied_correctly" duration="2" />
+<testCase name="Pyramid_function test_pyramid_mesh_objects_render_correctly" duration="0">
 <failure message="Error"><![CDATA[ReferenceError: Request is not defined
     at FileLoader.load (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\three\build\three.js:40573:16)
     at Al.load (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\three-stdlib\index.cjs.js:1:576770)
@@ -269,7 +269,7 @@
 </testCase>
 </file>
 <file path="src\__tests__\Experience.test.js">
-<testCase name="Experience_function test_renders_perf_component" duration="40">
+<testCase name="Experience_function test_renders_perf_component" duration="44">
 <failure message="Error"><![CDATA[Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it&apos;s defined in, or you might have mixed up default and named imports.
     at createFiberFromTypeAndProps (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28439:17)
     at createFiberFromElement (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28465:15)
@@ -304,7 +304,7 @@
     at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
     at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
 </testCase>
-<testCase name="Experience_function test_renders_orbit_controls" duration="8">
+<testCase name="Experience_function test_renders_orbit_controls" duration="6">
 <failure message="Error"><![CDATA[Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it&apos;s defined in, or you might have mixed up default and named imports.
     at createFiberFromTypeAndProps (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28439:17)
     at createFiberFromElement (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28465:15)
@@ -339,7 +339,7 @@
     at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
     at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
 </testCase>
-<testCase name="Experience_function test_renders_lights" duration="12">
+<testCase name="Experience_function test_renders_lights" duration="3">
 <failure message="Error"><![CDATA[Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it&apos;s defined in, or you might have mixed up default and named imports.
     at createFiberFromTypeAndProps (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28439:17)
     at createFiberFromElement (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28465:15)
@@ -374,7 +374,7 @@
     at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
     at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
 </testCase>
-<testCase name="Experience_function test_renders_intro_component" duration="5">
+<testCase name="Experience_function test_renders_intro_component" duration="3">
 <failure message="Error"><![CDATA[Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it&apos;s defined in, or you might have mixed up default and named imports.
     at createFiberFromTypeAndProps (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28439:17)
     at createFiberFromElement (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28465:15)
@@ -409,7 +409,7 @@
     at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
     at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
 </testCase>
-<testCase name="Experience_function test_renders_float_component" duration="4">
+<testCase name="Experience_function test_renders_float_component" duration="3">
 <failure message="Error"><![CDATA[Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it&apos;s defined in, or you might have mixed up default and named imports.
     at createFiberFromTypeAndProps (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28439:17)
     at createFiberFromElement (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28465:15)
@@ -444,7 +444,7 @@
     at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
     at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
 </testCase>
-<testCase name="Experience_function test_renders_text_component" duration="4">
+<testCase name="Experience_function test_renders_text_component" duration="3">
 <failure message="Error"><![CDATA[Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it&apos;s defined in, or you might have mixed up default and named imports.
     at createFiberFromTypeAndProps (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28439:17)
     at createFiberFromElement (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28465:15)
