@@ -1,32 +1,18 @@
 <testExecutions version="1">
+<file path="src\__tests__\Intro.test.js">
+<testCase name="loads GLTF file successfully" duration="56" />
+</file>
 <file path="src\__tests__\Pyramid.test.js">
-<testCase name="Pyramid_function test_pyramid_renders_without_errors" duration="10" />
-<testCase name="Pyramid_function test_pyramid_rotation_prop_is_applied_correctly" duration="3" />
+<testCase name="Pyramid_function test_pyramid_renders_without_errors" duration="2" />
+<testCase name="Pyramid_function test_pyramid_rotation_prop_is_applied_correctly" duration="0" />
 </file>
 <file path="src\__tests__\index.test.js">
-<testCase name="renders without crashing" duration="178" />
+<testCase name="renders without crashing" duration="47" />
 </file>
 <file path="src\__tests__\Experience.test.js">
-<testCase name="Experience_function test_renders_perf_component" duration="137">
-<failure message="Error"><![CDATA[Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it&apos;s defined in, or you might have mixed up default and named imports.
-    at createFiberFromTypeAndProps (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28439:17)
-    at createFiberFromElement (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28465:15)
-    at reconcileSingleElement (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:15750:23)
-    at reconcileChildFibers (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:15808:35)
-    at reconcileChildren (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:19174:28)
-    at updateHostRoot (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:19883:5)
-    at beginWork (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:21615:14)
-    at beginWork&#x24;1 (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:27426:14)
-    at performUnitOfWork (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:26560:12)
-    at workLoopSync (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:26466:5)
-    at renderRootSync (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:26434:7)
-    at performConcurrentWorkOnRoot (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:25738:74)
-    at flushActQueue (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react\cjs\react.development.js:2667:24)
-    at act (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react\cjs\react.development.js:2582:11)
-    at C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\@testing-library\react\dist\act-compat.js:46:25
-    at renderRoot (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\@testing-library\react\dist\pure.js:161:26)
-    at render (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\@testing-library\react\dist\pure.js:247:10)
-    at Object.&lt;anonymous&gt; (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\src\__tests__\Experience.test.js:9:39)
+<testCase name="renders Experience component correctly" duration="44">
+<failure message="Error"><![CDATA[ReferenceError: queryByTestId is not defined
+    at Object.&lt;anonymous&gt; (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\src\__tests__\Experience.test.js:16:24)
     at Promise.then.completed (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:391:28)
     at new Promise (&lt;anonymous&gt;)
     at callAsyncCircusFn (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:316:10)
@@ -34,7 +20,6 @@
     at processTicksAndRejections (node:internal/process/task_queues:96:5)
     at _runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:155:3)
     at _runTestsForDescribeBlock (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:66:9)
-    at _runTestsForDescribeBlock (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:60:9)
     at run (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:25:3)
     at runAndTransformResultsToJestFormat (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
     at jestAdapter (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
@@ -42,183 +27,5 @@
     at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
     at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
 </testCase>
-<testCase name="Experience_function test_renders_orbit_controls" duration="16">
-<failure message="Error"><![CDATA[Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it&apos;s defined in, or you might have mixed up default and named imports.
-    at createFiberFromTypeAndProps (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28439:17)
-    at createFiberFromElement (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28465:15)
-    at reconcileSingleElement (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:15750:23)
-    at reconcileChildFibers (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:15808:35)
-    at reconcileChildren (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:19174:28)
-    at updateHostRoot (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:19883:5)
-    at beginWork (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:21615:14)
-    at beginWork&#x24;1 (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:27426:14)
-    at performUnitOfWork (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:26560:12)
-    at workLoopSync (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:26466:5)
-    at renderRootSync (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:26434:7)
-    at performConcurrentWorkOnRoot (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:25738:74)
-    at flushActQueue (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react\cjs\react.development.js:2667:24)
-    at act (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react\cjs\react.development.js:2582:11)
-    at C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\@testing-library\react\dist\act-compat.js:46:25
-    at renderRoot (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\@testing-library\react\dist\pure.js:161:26)
-    at render (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\@testing-library\react\dist\pure.js:247:10)
-    at Object.&lt;anonymous&gt; (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\src\__tests__\Experience.test.js:17:39)
-    at Promise.then.completed (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:391:28)
-    at new Promise (&lt;anonymous&gt;)
-    at callAsyncCircusFn (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:316:10)
-    at _callCircusTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:218:40)
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)
-    at _runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:155:3)
-    at _runTestsForDescribeBlock (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:66:9)
-    at _runTestsForDescribeBlock (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:60:9)
-    at run (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:25:3)
-    at runAndTransformResultsToJestFormat (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
-    at jestAdapter (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
-    at runTestInternal (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:389:16)
-    at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
-    at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
-</testCase>
-<testCase name="Experience_function test_renders_lights" duration="22">
-<failure message="Error"><![CDATA[Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it&apos;s defined in, or you might have mixed up default and named imports.
-    at createFiberFromTypeAndProps (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28439:17)
-    at createFiberFromElement (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28465:15)
-    at reconcileSingleElement (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:15750:23)
-    at reconcileChildFibers (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:15808:35)
-    at reconcileChildren (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:19174:28)
-    at updateHostRoot (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:19883:5)
-    at beginWork (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:21615:14)
-    at beginWork&#x24;1 (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:27426:14)
-    at performUnitOfWork (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:26560:12)
-    at workLoopSync (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:26466:5)
-    at renderRootSync (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:26434:7)
-    at performConcurrentWorkOnRoot (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:25738:74)
-    at flushActQueue (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react\cjs\react.development.js:2667:24)
-    at act (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react\cjs\react.development.js:2582:11)
-    at C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\@testing-library\react\dist\act-compat.js:46:25
-    at renderRoot (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\@testing-library\react\dist\pure.js:161:26)
-    at render (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\@testing-library\react\dist\pure.js:247:10)
-    at Object.&lt;anonymous&gt; (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\src\__tests__\Experience.test.js:25:39)
-    at Promise.then.completed (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:391:28)
-    at new Promise (&lt;anonymous&gt;)
-    at callAsyncCircusFn (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:316:10)
-    at _callCircusTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:218:40)
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)
-    at _runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:155:3)
-    at _runTestsForDescribeBlock (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:66:9)
-    at _runTestsForDescribeBlock (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:60:9)
-    at run (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:25:3)
-    at runAndTransformResultsToJestFormat (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
-    at jestAdapter (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
-    at runTestInternal (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:389:16)
-    at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
-    at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
-</testCase>
-<testCase name="Experience_function test_renders_intro_component" duration="10">
-<failure message="Error"><![CDATA[Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it&apos;s defined in, or you might have mixed up default and named imports.
-    at createFiberFromTypeAndProps (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28439:17)
-    at createFiberFromElement (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28465:15)
-    at reconcileSingleElement (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:15750:23)
-    at reconcileChildFibers (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:15808:35)
-    at reconcileChildren (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:19174:28)
-    at updateHostRoot (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:19883:5)
-    at beginWork (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:21615:14)
-    at beginWork&#x24;1 (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:27426:14)
-    at performUnitOfWork (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:26560:12)
-    at workLoopSync (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:26466:5)
-    at renderRootSync (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:26434:7)
-    at performConcurrentWorkOnRoot (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:25738:74)
-    at flushActQueue (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react\cjs\react.development.js:2667:24)
-    at act (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react\cjs\react.development.js:2582:11)
-    at C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\@testing-library\react\dist\act-compat.js:46:25
-    at renderRoot (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\@testing-library\react\dist\pure.js:161:26)
-    at render (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\@testing-library\react\dist\pure.js:247:10)
-    at Object.&lt;anonymous&gt; (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\src\__tests__\Experience.test.js:37:39)
-    at Promise.then.completed (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:391:28)
-    at new Promise (&lt;anonymous&gt;)
-    at callAsyncCircusFn (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:316:10)
-    at _callCircusTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:218:40)
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)
-    at _runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:155:3)
-    at _runTestsForDescribeBlock (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:66:9)
-    at _runTestsForDescribeBlock (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:60:9)
-    at run (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:25:3)
-    at runAndTransformResultsToJestFormat (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
-    at jestAdapter (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
-    at runTestInternal (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:389:16)
-    at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
-    at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
-</testCase>
-<testCase name="Experience_function test_renders_float_component" duration="10">
-<failure message="Error"><![CDATA[Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it&apos;s defined in, or you might have mixed up default and named imports.
-    at createFiberFromTypeAndProps (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28439:17)
-    at createFiberFromElement (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28465:15)
-    at reconcileSingleElement (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:15750:23)
-    at reconcileChildFibers (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:15808:35)
-    at reconcileChildren (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:19174:28)
-    at updateHostRoot (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:19883:5)
-    at beginWork (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:21615:14)
-    at beginWork&#x24;1 (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:27426:14)
-    at performUnitOfWork (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:26560:12)
-    at workLoopSync (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:26466:5)
-    at renderRootSync (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:26434:7)
-    at performConcurrentWorkOnRoot (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:25738:74)
-    at flushActQueue (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react\cjs\react.development.js:2667:24)
-    at act (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react\cjs\react.development.js:2582:11)
-    at C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\@testing-library\react\dist\act-compat.js:46:25
-    at renderRoot (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\@testing-library\react\dist\pure.js:161:26)
-    at render (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\@testing-library\react\dist\pure.js:247:10)
-    at Object.&lt;anonymous&gt; (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\src\__tests__\Experience.test.js:44:39)
-    at Promise.then.completed (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:391:28)
-    at new Promise (&lt;anonymous&gt;)
-    at callAsyncCircusFn (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:316:10)
-    at _callCircusTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:218:40)
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)
-    at _runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:155:3)
-    at _runTestsForDescribeBlock (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:66:9)
-    at _runTestsForDescribeBlock (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:60:9)
-    at run (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:25:3)
-    at runAndTransformResultsToJestFormat (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
-    at jestAdapter (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
-    at runTestInternal (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:389:16)
-    at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
-    at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
-</testCase>
-<testCase name="Experience_function test_renders_text_component" duration="20">
-<failure message="Error"><![CDATA[Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: undefined. You likely forgot to export your component from the file it&apos;s defined in, or you might have mixed up default and named imports.
-    at createFiberFromTypeAndProps (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28439:17)
-    at createFiberFromElement (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:28465:15)
-    at reconcileSingleElement (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:15750:23)
-    at reconcileChildFibers (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:15808:35)
-    at reconcileChildren (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:19174:28)
-    at updateHostRoot (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:19883:5)
-    at beginWork (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:21615:14)
-    at beginWork&#x24;1 (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:27426:14)
-    at performUnitOfWork (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:26560:12)
-    at workLoopSync (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:26466:5)
-    at renderRootSync (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:26434:7)
-    at performConcurrentWorkOnRoot (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react-dom\cjs\react-dom.development.js:25738:74)
-    at flushActQueue (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react\cjs\react.development.js:2667:24)
-    at act (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\react\cjs\react.development.js:2582:11)
-    at C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\@testing-library\react\dist\act-compat.js:46:25
-    at renderRoot (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\@testing-library\react\dist\pure.js:161:26)
-    at render (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\@testing-library\react\dist\pure.js:247:10)
-    at Object.&lt;anonymous&gt; (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\src\__tests__\Experience.test.js:52:39)
-    at Promise.then.completed (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:391:28)
-    at new Promise (&lt;anonymous&gt;)
-    at callAsyncCircusFn (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:316:10)
-    at _callCircusTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:218:40)
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)
-    at _runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:155:3)
-    at _runTestsForDescribeBlock (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:66:9)
-    at _runTestsForDescribeBlock (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:60:9)
-    at run (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:25:3)
-    at runAndTransformResultsToJestFormat (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
-    at jestAdapter (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
-    at runTestInternal (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:389:16)
-    at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
-    at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
-</testCase>
-</file>
-<file path="src\__tests__\Intro.test.js">
-<testCase name="loads GLTF file successfully" duration="83" />
 </file>
 </testExecutions>
