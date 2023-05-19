@@ -1,7 +1,7 @@
 module.exports = {
     testEnvironment: 'jsdom',
     transform: {
-      '^.+\\.jsx?$': 'babel-jest',
+      '^.+\\.(js|jsx)$': 'babel-jest',
     },
     coverageDirectory: 'coverage',
     coverageReporters: ['text', 'lcov'],
