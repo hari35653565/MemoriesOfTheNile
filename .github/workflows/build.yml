@@ -8,10 +8,10 @@ on:
    types: [opened, synchronize, reopened]
 jobs:
   sonarqube:
-    name: sonarCloud
+    name: sonarqube
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
         with:
           fetch-depth: 0 
       - name: Install dependencies
@@ -20,8 +20,7 @@ jobs:
         run: yarn jest --coverage
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@master
-      - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_TOKEN: sqa_1f9d01e8d06edd1b745884c97644c46155454d84
+          SONAR_HOST_URL: http://localhost:9000
+    
