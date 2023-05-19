@@ -2,5 +2,5 @@ projectKey=api-express
 serverUrl=http://localhost:9000
 serverVersion=10.0.0.68432
 dashboardUrl=http://localhost:9000/dashboard?id=api-express
-ceTaskId=AYgyEns6Ac4Y9Wws1WbP
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AYgyEns6Ac4Y9Wws1WbP
+ceTaskId=AYg15ymlM6WwkV7l31eC
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYg15ymlM6WwkV7l31eC
