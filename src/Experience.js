@@ -12,30 +12,33 @@ import { useFrame, useThree} from "@react-three/fiber"
 import { useRef } from "react";
 import { Perf } from 'r3f-perf'
 import Intro from "./Intro";
+import Lobby from "./Lobby";
 
 export function Experience(){
      
     return <>
-    <Perf position="top-left" />
+    {/* <Perf position="top-left" /> */}
     <OrbitControls makeDefault />
 
     <directionalLight position={[1, 2, 3]} intensity={1.5} />
     <ambientLight intensity={0.5} />
     
-    <Intro data-testid='intro-component' />
+    <Intro  />
 
-    <Float speed={5} data-testid='float-component'>
+    <Float speed={5} >
             <Text
                 font="./bangers-v20-latin-regular.woff"
                 fontSize={1}
                 color="#964B00"
-                position-y={1.6}
+                position-y={4}
                 maxWidth={8}
                 textAlign="center"
             >
                 Memories of the Nile
             </Text>
-        </Float>
+    </Float>
+
+    <Lobby />
 
     </>
 }
