@@ -68,7 +68,7 @@ jobs:
             #-Dsonar.verbose= # optional, default is fals
       - name: Save SonarCloud report
         run: |
-          mvn sonar:sonar -Dsonar.login=${{ secrets.SONAR_TOKEN }} -Dsonar.host.url=https://sonarcloud.io -Dsonar.report.export.path=sonar-report.json
+          sonar-scanner -Dsonar.login=${{ secrets.SONAR_TOKEN }} -Dsonar.host.url=https://sonarcloud.io -Dsonar.report.export.path=sonar-report.json
   SlackNotification:
     needs: Analysis
     runs-on: ubuntu-latest
