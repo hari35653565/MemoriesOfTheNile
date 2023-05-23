@@ -41,6 +41,8 @@ permissions:
 jobs:
   Analysis:
     runs-on: ubuntu-latest
+    outputs:
+      report: ${{ steps.sonar.outputs.report }}
 
     steps:
       - name: Analyze with SonarCloud
@@ -71,9 +73,6 @@ jobs:
     needs: Analysis
     runs-on: ubuntu-latest
     steps:
-      - name: Read SonarCloud Analysis Report
-        id: read-report
-        run: echo "::set-output name=report::$(cat sonar-report.json)"
       - name: Slack Notification
         uses: rtCamp/action-slack-notify@v2
         with:
