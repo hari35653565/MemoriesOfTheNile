@@ -12,7 +12,5 @@ export default function Intro() {
 }
 
 
-// useGLTF.preload("/static/scene.glb");
-
 
 
