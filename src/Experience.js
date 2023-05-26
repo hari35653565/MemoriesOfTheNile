@@ -34,7 +34,23 @@ export function Experience(){
             document.removeEventListener('keydown', handleKeyDown);
             };
         }, [menuVisible]);
+
+        const changeCameraPosition = (iconIndex) => {
+            // Placeholder positions for camera position based on the clicked icon
+            const positions = [
+              [5, 0, 0],   // Icon 1 position
+              [0, 10, 0],  // Icon 2 position
+              [0, 0, 5],   // Icon 3 position
+              [-5, 0, 0],  // Icon 4 position
+            ];
         
+            const position = positions[iconIndex];
+            cameraRef.current.position.set(position[0], position[1], position[2]);
+            };
+            
+            const { camera } = useThree();
+            const cameraRef = useRef(camera);
+            
     return <>
     <OrbitControls makeDefault ref={orbitControlsRef} />
 
@@ -55,6 +71,6 @@ export function Experience(){
                 Memories of the Nile
             </Text>
         </Float>
-    {menuVisible && <Menu onClose={() => setMenuVisible(false)} />}
+    {menuVisible && <Menu onClose={() => setMenuVisible(false)} changeCameraPosition={changeCameraPosition} />}
     </>
 }
