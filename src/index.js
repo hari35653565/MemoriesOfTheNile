@@ -8,7 +8,7 @@ const root = ReactDom.createRoot(document.querySelector('#root'))
 
 root.render(
     <Canvas>
-        <Experience/>
+        <Experience />
     </Canvas>
-  
+
 )
