@@ -7,24 +7,58 @@
   * 
 */
 import React from "react";
-import { Center, OrbitControls, PointerLockControls, PresentationControls, Text, Float } from "@react-three/drei";
-import { useFrame, useThree} from "@react-three/fiber"
-import { useRef } from "react";
-import { Perf } from 'r3f-perf'
+import { OrbitControls, Text, Float } from "@react-three/drei";
+import { useThree} from "@react-three/fiber"
+import { useRef, useState, useEffect } from "react";
 import Intro from "./Intro";
+import Menu from "./Menu";
 
 export function Experience(){
-     
+
+    const [menuVisible, setMenuVisible] = useState(false);
+    const orbitControlsRef = useRef();
+
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (event.code === 'Space') {
+                event.preventDefault();
+                setMenuVisible((prevMenuVisible) => !prevMenuVisible);
+                orbitControlsRef.current.enabled = !menuVisible;
+            }
+            };
+        
+            document.addEventListener('keydown', handleKeyDown);
+        
+            return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+            };
+        }, [menuVisible]);
+
+        const changeCameraPosition = (iconIndex) => {
+            // Placeholder positions for camera position based on the clicked icon
+            const positions = [
+              [5, 0, 0],   // Icon 1 position
+              [0, 10, 0],  // Icon 2 position
+              [0, 0, 5],   // Icon 3 position
+              [-5, 0, 0],  // Icon 4 position
+            ];
+        
+            const position = positions[iconIndex];
+            cameraRef.current.position.set(position[0], position[1], position[2]);
+            };
+            
+            const { camera } = useThree();
+            const cameraRef = useRef(camera);
+            
     return <>
-    <Perf position="top-left" />
-    <OrbitControls makeDefault />
+    <OrbitControls makeDefault ref={orbitControlsRef} />
 
     <directionalLight position={[1, 2, 3]} intensity={1.5} />
     <ambientLight intensity={0.5} />
     
-    <Intro data-testid='intro-component' />
+    <Intro  />
 
-    <Float speed={5} data-testid='float-component'>
+    <Float speed={5} >
             <Text
                 font="./bangers-v20-latin-regular.woff"
                 fontSize={1}
@@ -36,6 +70,6 @@ export function Experience(){
                 Memories of the Nile
             </Text>
         </Float>
-
+    {menuVisible && <Menu onClose={() => setMenuVisible(false)} changeCameraPosition={changeCameraPosition} />}
     </>
 }

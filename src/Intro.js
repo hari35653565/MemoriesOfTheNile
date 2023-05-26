@@ -6,7 +6,7 @@ export default function Intro() {
 
   return (
     <group position-y={-1.03} rotation-x={Math.PI * 0.03} scale={2}>
-      <primitive object={nodes.scene} data-testid='primitive' />
+      <primitive object={nodes.scene} />
     </group>
   );
 }
