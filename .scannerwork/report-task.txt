@@ -1,6 +1,6 @@
-projectKey=api-express
+projectKey=NicolasHuertas_MemoriesOfTheNile
 serverUrl=http://localhost:9000
 serverVersion=10.0.0.68432
-dashboardUrl=http://localhost:9000/dashboard?id=api-express
-ceTaskId=AYgyEns6Ac4Y9Wws1WbP
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AYgyEns6Ac4Y9Wws1WbP
+dashboardUrl=http://localhost:9000/dashboard?id=NicolasHuertas_MemoriesOfTheNile
+ceTaskId=AYg2H-O_wXbyPMuMNaYM
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYg2H-O_wXbyPMuMNaYM
