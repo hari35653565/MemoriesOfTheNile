@@ -7,10 +7,9 @@
   * 
 */
 import React from "react";
-import { Center, OrbitControls, PointerLockControls, PresentationControls, Text, Float } from "@react-three/drei";
-import { useFrame, useThree} from "@react-three/fiber"
+import { OrbitControls, Text, Float } from "@react-three/drei";
+import { useThree} from "@react-three/fiber"
 import { useRef, useState, useEffect } from "react";
-import { Perf } from 'r3f-perf'
 import Intro from "./Intro";
 import Menu from "./Menu";
 

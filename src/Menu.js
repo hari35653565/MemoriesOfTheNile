@@ -20,43 +20,6 @@ const Menu = ({ onClose, changeCameraPosition }) => {
             document.removeEventListener('keydown', handleKeyDown);
             };
         }, [onClose]);
-/*
-    const menuStyle = {
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        background: 'rgba(0, 0, 0, 0.5)',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        zIndex: 9999,
-    };
-
-    const menuItemStyle = {
-        // Styling for each menu item
-        color: '#FFF',
-        fontSize: '18px',
-        padding: '10px',
-        cursor: 'pointer',
-    };
-*/
-    const handleIconClick = (iconIndex) => {
-        // Placeholder positions for camera position based on the clicked icon
-        const positions = [
-          [5, 0, 0],   // Icon 1 position
-          [0, 10, 0],  // Icon 2 position
-          [0, 0, 5],   // Icon 3 position
-          [-5, 0, 0],  // Icon 4 position
-        ];
-    
-        // Call the changeCameraPosition function from Experience component
-        changeCameraPosition(iconIndex);
-    
-        // Close the menu
-        onClose();
-      };
 
     return (
         <group ref={menuRef}>
@@ -86,32 +49,6 @@ const Menu = ({ onClose, changeCameraPosition }) => {
                     </div>
                     </div>
                 }
-
-          {
-             /*
-            <div className="menu-container">
-                <div className="menu-items" onClick={onClose}>
-                Cerrar Menu
-                </div>
-                <div className="menu-items" onClick={onClose}>
-                Menu Item 2
-                </div>
-                <div className="menu-items" onClick={() => handleIconClick(0)}>
-                Icon 1
-                </div>
-                <div className="menu-items" onClick={() => handleIconClick(1)}>
-                Icon 2
-                </div>
-                <div className="menu-items" onClick={() => handleIconClick(2)}>
-                Icon 3
-                </div>
-                <div className="menu-items" onClick={() => handleIconClick(3)}>
-                Icon 4
-                </div>
-                <Mapa changeCameraPosition={changeCameraPosition} />
-            </div>
-            */
-          }
             
             </Html>
         </mesh>
