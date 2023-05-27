@@ -7,24 +7,18 @@
  * 
 */
 import React from "react";
-<<<<<<< HEAD
-import { OrbitControls, Html, Text, Float } from "@react-three/drei";
-import { useThree } from "@react-three/fiber"
-=======
 import { OrbitControls, Text, Float } from "@react-three/drei";
 import { useThree, useFrame } from "@react-three/fiber"
->>>>>>> development
 import { useRef, useState, useEffect } from "react";
 import { TrackballControls } from "three/examples/jsm/controls/TrackballControls";
 import Intro from "./Intro";
 import Menu from "./Menu";
 import Skybox from "./Skybox";
+import Guia from "./Guia";
 import Lobby from "./Lobby";
-<<<<<<< HEAD
 import Architecture from "./Architecture";
 import Templo2 from "./Templo2";
-=======
->>>>>>> development
+
 
 export function Experience() {
 
@@ -98,7 +92,7 @@ export function Experience() {
         <Lobby />
         <Architecture />
         <Templo2 />
-
+        <Guia/>
 
         <Float speed={5} >
             <Text
