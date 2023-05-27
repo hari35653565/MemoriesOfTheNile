@@ -7,13 +7,15 @@
  * 
 */
 import React from "react";
-import { OrbitControls, Text, Float } from "@react-three/drei";
+import { OrbitControls, Html, Text, Float } from "@react-three/drei";
 import { useThree } from "@react-three/fiber"
 import { useRef, useState, useEffect } from "react";
 import Intro from "./Intro";
 import Menu from "./Menu";
 import Skybox from "./Skybox";
-import Lobby from "./lobby";
+import Lobby from "./Lobby";
+import Architecture from "./Architecture";
+import Templo2 from "./Templo2";
 
 export function Experience() {
 
@@ -60,7 +62,9 @@ export function Experience() {
 
         <Skybox />
         <Intro />
-        <Lobby/>
+        <Lobby />
+        <Architecture />
+        <Templo2 />
 
 
         <Float speed={5} >
@@ -75,6 +79,23 @@ export function Experience() {
                 Memories of the Nile
             </Text>
         </Float>
+
+
+        <Float speed={3} >
+            <Text
+                font="./bangers-v20-latin-regular.woff"
+                fontSize={0.6}
+                color="white"
+                position-x={-18}
+                position-z={-2}
+                position-y={4}
+                maxWidth={8}
+                textAlign="center"
+            >
+                Una puerta de acceso a los dioses
+            </Text>
+        </Float>
+
         {menuVisible && <Menu onClose={() => setMenuVisible(false)} changeCameraPosition={changeCameraPosition} />}
     </>
 }
