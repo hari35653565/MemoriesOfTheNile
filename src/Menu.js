@@ -1,87 +1,79 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Html } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
+import Guia from './Guia';
 
-const Menu = ({ onClose, changeCameraPosition }) => {
-    const menuRef = useRef(null);
-    const { viewport } = useThree();
-  
-    useEffect(() => {
-      const handleKeyDown = (event) => {
-        if (event.code === "Space") {
-          event.preventDefault();
-          onClose();
-        }
-      };
-  
-      document.addEventListener("keydown", handleKeyDown);
-  
-      return () => {
-        document.removeEventListener("keydown", handleKeyDown);
-      };
-    }, [onClose]);
-    
-    const handleIconClick = (iconIndex) => {
-      // Placeholder positions for camera position based on the clicked icon
-      const positions = [
-        [5, 0, 0], // Icon 1 position
-        [0, 10, 0], // Icon 2 position
-        [0, 0, 5], // Icon 3 position
-        [-5, 0, 0], // Icon 4 position
-      ];
-  
-      // Call the changeCameraPosition function from Experience component
-      changeCameraPosition(iconIndex);
-  
-      // Close the menu
-      onClose();
+const Menu = () => {
+  const menuRef = useRef(null);
+  const [isPopupVisible, setPopupVisible] = useState(false);
+  const [isMusicActive, setMusicActive] = useState(false);
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.code === 'Space') {
+        setPopupVisible((prevVisible) => !prevVisible); // Invert the visibility state
+      }
     };
-  
-    return (
-      <group ref={menuRef}>
-        <mesh>
-          <planeBufferGeometry args={[2, 2]} />
-          <meshBasicMaterial color="transparent" />
-          <Html position={[0, 0, 0]} center >
-            <div className="menu"style={{ width: "350px", height: "340px", backgroundColor: "pink"}}  >
-              <h1 style={{ textAlign: "center", fontFamily: "Arial", fontSize: "24px"}}>Menú</h1>
-              <div className="menu-container">
-                <div className="mapa-container">
-                  <div
-                    className="background-image"
-                    style={{
-                      backgroundImage: `url(${process.env.PUBLIC_URL}/static/assets/mapa.jpg)`,
-                      width: "250px",
-                      height: "240px",
-                    }}
-                  >
-                    <div className="icon-row">
-                      {/** 
-                        <div className="icon" onClick={() => changeCameraPosition(0)}>Icon 1</div>
-                        <div className="icon" onClick={() => changeCameraPosition(1)}>Icon 2</div>
-                      */}
-                    </div>
-                    <div className="icon-row">
-                      {/*
-                        <div className="icon" onClick={() => changeCameraPosition(2)}>Icon 3</div>
-                        <div className="icon" onClick={() => changeCameraPosition(3)}>Icon 4</div>
-                      */}
-                    </div>
-                  </div>
-                </div>
-                <div className="menu-items">
-                  {/*
-                    <div onClick={onClose}>Menu Item 1</div>
-                    <div onClick={onClose}>Menu Item 2</div>
-                  */}
-                </div>
-              </div>
-            </div>
-          </Html>
-        </mesh>
-      </group>
-    );
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
+  const handleToggleMusic = () => {
+    setMusicActive(!isMusicActive);
   };
-  
-  export default Menu;
-  
+
+  const handleClose = () => {
+    setPopupVisible(false);
+  };
+
+  const { viewport } = useThree();
+
+  if (!isPopupVisible) {
+    return null;
+  }
+
+  return (
+    <mesh>
+    <Html
+      position={[viewport.width / 2, viewport.height / 2]}
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontFamily: 'Arial',
+        textAlign: 'center',
+        position: 'fixed',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        zIndex: 999,
+        backgroundColor: 'orange',
+        width: '350px', // Increase the width to make it bigger
+          }}
+    >
+        <div style={{ margin:'0.5cm'}}>
+        <h2>Menú</h2>
+      <button onClick={handleToggleMusic}>
+        {isMusicActive ? 'Desactivar música' : 'Activar música'}
+      </button>
+      <button onClick={handleClose}>Cerrar</button> {/* Added a close button */}
+           <img
+        src="/static/assets/mapa.jpg"
+        alt="Menu Image"
+        style={{ marginTop: '20px', width: '100%' }}
+      />
+
+        </div>
+        
+    </Html>
+     
+    </mesh>
+  );
+};
+
+export default Menu;

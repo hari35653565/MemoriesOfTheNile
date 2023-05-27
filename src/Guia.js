@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Html } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
 
-const Guia = ({ onClose, changeCameraPosition }) => {
+const Guia = () => {
   const menuRef = useRef(null);
   const { viewport } = useThree();
   const [showModal, setShowModal] = useState(false);

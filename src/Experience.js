@@ -61,6 +61,7 @@ export function Experience() {
         <Skybox />
         <Intro />
         <Guia/>
+        <Menu/>
 
         <Float speed={5} >
             <Text
@@ -74,6 +75,6 @@ export function Experience() {
                 Memories of the Nile
             </Text>
         </Float>
-        {menuVisible && <Menu onClose={() => setMenuVisible(false)} changeCameraPosition={changeCameraPosition} />}
+        
     </>
 }
