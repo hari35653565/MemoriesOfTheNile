@@ -14,8 +14,11 @@
   "license": "ISC",
   "dependencies": {
     "@juggle/resize-observer": "^3.4.0",
+    "@react-three/cannon": "6.5.2",
     "@react-three/drei": "^9.57.3",
     "@react-three/fiber": "^8.13.0",
+    "@react-three/rapier": "^1.0.0",
+    "leva": "0.9.34",
     "r3f-perf": "^7.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
