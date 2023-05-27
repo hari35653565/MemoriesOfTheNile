@@ -47,11 +47,11 @@ export function Experience() {
 
     const changeCameraPosition = (iconIndex) => {
         // Placeholder positions for camera position based on the clicked icon
-        const positions = [
-            [5, 0, 0],   // Icon 1 position
-            [0, 10, 0],  // Icon 2 position
-            [0, 0, 5],   // Icon 3 position
-            [-5, 0, 0],  // Icon 4 position
+    const positions = [
+            [5, 0, 0],   // Historia
+            [-18, 0.2, -9],  // Arquitectura
+            [-40, 0, -9],   // Naturaleza
+            [-5, 0, 0],  // Cultura
             [9, -0.5, 0.03] //Lobby
         ];
 
