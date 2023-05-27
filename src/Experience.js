@@ -1,20 +1,22 @@
- /**
-  * Hooks Reactjs: https://legacy.reactjs.org/docs/hooks-intro.html
-  * React Three Fiber: https://docs.pmnd.rs/react-three-fiber/getting-started/introduction
-  * Hooks de R3F: https://docs.pmnd.rs/react-three-fiber/api/hooks
-  * React three drei: https://github.com/pmndrs/drei
-  * Three.js: https://threejs.org/docs/
-  * 
+/**
+ * Hooks Reactjs: https://legacy.reactjs.org/docs/hooks-intro.html
+ * React Three Fiber: https://docs.pmnd.rs/react-three-fiber/getting-started/introduction
+ * Hooks de R3F: https://docs.pmnd.rs/react-three-fiber/api/hooks
+ * React three drei: https://github.com/pmndrs/drei
+ * Three.js: https://threejs.org/docs/
+ * 
 */
 import React from "react";
-import { OrbitControls, Text, Float, PerspectiveCamera} from "@react-three/drei";
-import { useThree, extend, useFrame} from "@react-three/fiber"
+import { OrbitControls, Text, Float } from "@react-three/drei";
+import { useThree } from "@react-three/fiber"
 import { useRef, useState, useEffect } from "react";
 import {  } from "@react-three/drei";
 import Intro from "./Intro";
 import Menu from "./Menu";
+import Skybox from "./Skybox";
+import Lobby from "./lobby";
 
-export function Experience(){
+export function Experience() {
 
     const [menuVisible, setMenuVisible] = useState(false);
     const orbitControlsRef = useRef();
@@ -26,56 +28,54 @@ export function Experience(){
                 setMenuVisible((prevMenuVisible) => !prevMenuVisible);
                 //orbitControlsRef.current.enabled = !menuVisible;
             }
-            };
-        
-            document.addEventListener('keydown', handleKeyDown);
-        
-            return () => {
-            document.removeEventListener('keydown', handleKeyDown);
-            };
-        }, [menuVisible]);
+        };
 
-        const changeCameraPosition = (iconIndex) => {
-            // Placeholder positions for camera position based on the clicked icon
-            const positions = [
-              [5, 0, 0],   // Icon 1 position
-              [0, 10, 0],  // Icon 2 position
-              [0, 0, 5],   // Icon 3 position
-              [-5, 0, 0],  // Icon 4 position
-            ];
-        
+        document.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [menuVisible]);
+
+    const changeCameraPosition = (iconIndex) => {
+        // Placeholder positions for camera position based on the clicked icon
+        const positions = [
+            [5, 0, 0],   // Icon 1 position
+            [0, 10, 0],  // Icon 2 position
+            [0, 0, 5],   // Icon 3 position
+            [-5, 0, 0],  // Icon 4 position
+        ];
+
         const position = positions[iconIndex];
         cameraRef.current.position.set(position[0], position[1], position[2]);
-        };
-            
-        const { camera, gl } = useThree();
-        const cameraRef = useRef(camera);
-            
+    };
+
+    const { camera } = useThree();
+    const cameraRef = useRef(camera);
+
     return <>
-    <OrbitControls
-        ref={orbitControlsRef}
-        args={[camera, gl.domElement]}
-        enableRotate // Enable rotation
-        enableZoom={false} // Disable zooming
-      />
+        <OrbitControls makeDefault ref={orbitControlsRef} />
 
-    <directionalLight position={[1, 2, 3]} intensity={1.5} />
-    <ambientLight intensity={0.5} />
-    
-    <Intro />
+        <directionalLight position={[1, 2, 3]} intensity={1.5} />
+        <ambientLight intensity={0.5} />
 
-    <Float speed={5} >
+        <Skybox />
+        <Intro />
+        <Lobby/>
+
+
+        <Float speed={5} >
             <Text
                 font="./bangers-v20-latin-regular.woff"
                 fontSize={1}
                 color="#964B00"
-                position-y={1.6}
+                position-y={4}
                 maxWidth={8}
                 textAlign="center"
             >
                 Memories of the Nile
             </Text>
         </Float>
-    {menuVisible && <Menu onClose={() => setMenuVisible(false)} changeCameraPosition={changeCameraPosition} />}
+        {menuVisible && <Menu onClose={() => setMenuVisible(false)} changeCameraPosition={changeCameraPosition} />}
     </>
 }
