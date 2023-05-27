@@ -18,6 +18,7 @@ import Guia from "./Guia";
 import Lobby from "./Lobby";
 import Architecture from "./Architecture";
 import Templo2 from "./Templo2";
+import Ramses from "./Ramses"
 
 
 export function Experience() {
@@ -91,7 +92,9 @@ export function Experience() {
         <Intro />
         <Lobby />
         <Architecture />
+        <Ramses />
         <Templo2 />
+        {/* <Esfinge /> */}
         <Guia/>
 
         <Float speed={5} >
