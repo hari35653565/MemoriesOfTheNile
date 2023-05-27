@@ -1,31 +1,4 @@
 <testExecutions version="1">
-<file path="src\__tests__\Intro.test.js">
-<testCase name="loads GLTF file successfully" duration="56" />
-</file>
-<file path="src\__tests__\Pyramid.test.js">
-<testCase name="Pyramid_function test_pyramid_renders_without_errors" duration="2" />
-<testCase name="Pyramid_function test_pyramid_rotation_prop_is_applied_correctly" duration="0" />
-</file>
-<file path="src\__tests__\index.test.js">
-<testCase name="renders without crashing" duration="47" />
-</file>
-<file path="src\__tests__\Experience.test.js">
-<testCase name="renders Experience component correctly" duration="44">
-<failure message="Error"><![CDATA[ReferenceError: queryByTestId is not defined
-    at Object.&lt;anonymous&gt; (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\src\__tests__\Experience.test.js:16:24)
-    at Promise.then.completed (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:391:28)
-    at new Promise (&lt;anonymous&gt;)
-    at callAsyncCircusFn (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\utils.js:316:10)
-    at _callCircusTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:218:40)
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)
-    at _runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:155:3)
-    at _runTestsForDescribeBlock (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:66:9)
-    at run (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\run.js:25:3)
-    at runAndTransformResultsToJestFormat (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapterInit.js:170:21)
-    at jestAdapter (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-circus\build\legacy-code-todo-rewrite\jestAdapter.js:82:19)
-    at runTestInternal (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:389:16)
-    at runTest (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\runTest.js:475:34)
-    at Object.worker (C:\Users\USUARIO\Desktop\MemoriesOfTheNile\node_modules\jest-runner\build\testWorker.js:133:12)]]></failure>
-</testCase>
+<file path="src/__tests__/index.test.js">
 </file>
 </testExecutions>
