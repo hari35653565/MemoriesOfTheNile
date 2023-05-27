@@ -13,6 +13,7 @@ import { useRef, useState, useEffect } from "react";
 import Intro from "./Intro";
 import Menu from "./Menu";
 import Skybox from "./Skybox";
+import Lobby from "./lobby";
 
 export function Experience() {
 
@@ -59,6 +60,7 @@ export function Experience() {
 
         <Skybox />
         <Intro />
+        <Lobby/>
 
 
         <Float speed={5} >

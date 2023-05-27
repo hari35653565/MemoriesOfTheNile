@@ -14,7 +14,6 @@ export default function Lobby()
     const event=()=>{
       if(flag==true){
         cameraRef.current.position.set(9.5,-0.7,0.5);    
-      
         flag= false;
       }
     }
