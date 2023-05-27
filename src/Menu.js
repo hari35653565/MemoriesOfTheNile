@@ -48,26 +48,33 @@ const Menu = ({ onClose, changeCameraPosition }) => {
       <button onClick={onClose}>Cerrar</button> {/* Added a close button */}
 {
 
-                        <div className="background-image" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/static/assets/mapa.jpg)` }} >
-                            <div className="icon-row">
-                                <div className="icon" onClick={() => changeCameraPosition(0)}>
-                                    <img className="icon-image" src={`${process.env.PUBLIC_URL}/static/assets/icon.png`} />
-                                </div>
-                                <div className="icon" onClick={() => changeCameraPosition(1)}>
-                                    <img className="icon-image" src={`${process.env.PUBLIC_URL}/static/assets/icon.png`} />
-                                </div>
-                            </div>
-                            <div className="icon-row">
-                            <div className="icon" onClick={() => changeCameraPosition(2)}>
-                                    <img className="icon-image" src={`${process.env.PUBLIC_URL}/static/assets/icon.png`} />
-                                </div>
-                                <div className="icon" onClick={() => changeCameraPosition(3)}>
-                                    <img className="icon-image" src={`${process.env.PUBLIC_URL}/static/assets/icon.png`} />
-                                </div>
-                            </div>
-                            </div>
-        }
+<div className="background-image" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/static/assets/mapa.jpg)` }}>
+    <div className="icon-row">
+        <div className="icon" onClick={() => changeCameraPosition(0)}>
+            <img className="icon-image" src={`${process.env.PUBLIC_URL}/static/assets/icon.png`} />
+        </div>
+        <div className="icon" onClick={() => changeCameraPosition(1)}>
+            <img className="icon-image" src={`${process.env.PUBLIC_URL}/static/assets/icon.png`} />
+        </div>
+    </div>
+    <div className="icon-row">
+        <div className="icon" onClick={() => changeCameraPosition(2)}>
+            <img className="icon-image" src={`${process.env.PUBLIC_URL}/static/assets/icon.png`} />
+        </div>
+        <div className="icon" onClick={() => changeCameraPosition(3)}>
+            <img className="icon-image" src={`${process.env.PUBLIC_URL}/static/assets/icon.png`} />
+        </div>
+    </div>
+    <div className="icon-row">
+        <div className="icon" onClick={() => changeCameraPosition(4)}>
+            <img className="icon-image" src={`${process.env.PUBLIC_URL}/static/assets/icon.png`} />
+        </div>
+    </div>
+</div>
 
+        }
+    
+        <button onClick={() => changeCameraPosition(4)}>Volver al Lobby</button>
     </div>
                 
             
