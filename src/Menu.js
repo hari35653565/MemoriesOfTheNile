@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Html } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
-import Row from "react-bootstrap/Row";
+import Guia from './Guia';
 
 const Menu = ({ onClose, changeCameraPosition }) => {
     const menuRef = useRef(null);
@@ -69,32 +69,6 @@ const Menu = ({ onClose, changeCameraPosition }) => {
         }
 
     </div>
-{/*
-                    <div className="menu">
-                    <div className="menu-container">
-                        <div className="mapa-container">
-                        <div className="background-image" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/static/assets/mapa.jpg)` }} >
-                            <div className="icon-row">
-                                <div className="icon" onClick={() => changeCameraPosition(0)}>
-                                    Icon 1
-                                </div>
-                                <div className="icon" onClick={() => changeCameraPosition(1)}>
-                                    <img className="icon-image" src={`${process.env.PUBLIC_URL}/static/assets/icon.png`} />
-                                </div>
-                            </div>
-                            <div className="icon-row">
-                            <div className="icon" onClick={() => changeCameraPosition(2)}>
-                                    <img className="icon-image" src={`${process.env.PUBLIC_URL}/static/assets/icon.png`} />
-                                </div>
-                                <div className="icon" onClick={() => changeCameraPosition(3)}>
-                                    Icon 4
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-        */}
                 
             
             </Html>
@@ -103,4 +77,4 @@ const Menu = ({ onClose, changeCameraPosition }) => {
     );
     };
 
-    export default Menu;
+export default Menu;
