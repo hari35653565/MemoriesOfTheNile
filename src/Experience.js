@@ -13,6 +13,7 @@ import { useRef, useState, useEffect } from "react";
 import Intro from "./Intro";
 import Menu from "./Menu";
 import Skybox from "./Skybox";
+import Lobby from "./lobby";
 
 export function Experience() {
 
@@ -59,6 +60,7 @@ export function Experience() {
 
         <Skybox />
         <Intro />
+        <Lobby/>
 
 
         <Float speed={5} >
@@ -66,7 +68,7 @@ export function Experience() {
                 font="./bangers-v20-latin-regular.woff"
                 fontSize={1}
                 color="#964B00"
-                position-y={1.6}
+                position-y={4}
                 maxWidth={8}
                 textAlign="center"
             >
