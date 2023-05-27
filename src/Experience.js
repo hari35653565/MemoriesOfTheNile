@@ -13,6 +13,7 @@ import { useRef, useState, useEffect } from "react";
 import Intro from "./Intro";
 import Menu from "./Menu";
 import Skybox from "./Skybox";
+import Guia from "./Guia";
 
 export function Experience() {
 
@@ -59,7 +60,7 @@ export function Experience() {
 
         <Skybox />
         <Intro />
-
+        <Guia/>
 
         <Float speed={5} >
             <Text
