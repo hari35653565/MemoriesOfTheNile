@@ -3,42 +3,29 @@ import { Html } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
 import Guia from './Guia';
 
-const Menu = () => {
-  const menuRef = useRef(null);
-  const [isPopupVisible, setPopupVisible] = useState(false);
-  const [isMusicActive, setMusicActive] = useState(false);
+const Menu = ({ onClose, changeCameraPosition }) => {
+    const menuRef = useRef(null);
+    const { viewport } = useThree();
 
-  useEffect(() => {
-    const handleKeyDown = (event) => {
-      if (event.code === 'Space') {
-        setPopupVisible((prevVisible) => !prevVisible); // Invert the visibility state
-      }
-    };
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (event.code === 'Space') {
+                event.preventDefault();
+                onClose();
+            }
+            };
+        
+            document.addEventListener('keydown', handleKeyDown);
+        
+            return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+            };
+        }, [onClose]);
 
-    window.addEventListener('keydown', handleKeyDown);
-
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, []);
-
-  const handleToggleMusic = () => {
-    setMusicActive(!isMusicActive);
-  };
-
-  const handleClose = () => {
-    setPopupVisible(false);
-  };
-
-  const { viewport } = useThree();
-
-  if (!isPopupVisible) {
-    return null;
-  }
-
-  return (
-    <mesh>
-    <Html
+    return (
+        <group ref={menuRef}>
+        <mesh>
+        <Html
       position={[viewport.width / 2, viewport.height / 2]}
       style={{
         display: 'flex',
@@ -58,22 +45,36 @@ const Menu = () => {
     >
         <div style={{ margin:'0.5cm'}}>
         <h2>Menú</h2>
-      <button onClick={handleToggleMusic}>
-        {isMusicActive ? 'Desactivar música' : 'Activar música'}
-      </button>
-      <button onClick={handleClose}>Cerrar</button> {/* Added a close button */}
-           <img
-        src="/static/assets/mapa.jpg"
-        alt="Menu Image"
-        style={{ marginTop: '20px', width: '100%' }}
-      />
+      <button onClick={onClose}>Cerrar</button> {/* Added a close button */}
+{
 
-        </div>
-        
-    </Html>
-     
-    </mesh>
-  );
-};
+                        <div className="background-image" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/static/assets/mapa.jpg)` }} >
+                            <div className="icon-row">
+                                <div className="icon" onClick={() => changeCameraPosition(0)}>
+                                    <img className="icon-image" src={`${process.env.PUBLIC_URL}/static/assets/icon.png`} />
+                                </div>
+                                <div className="icon" onClick={() => changeCameraPosition(1)}>
+                                    <img className="icon-image" src={`${process.env.PUBLIC_URL}/static/assets/icon.png`} />
+                                </div>
+                            </div>
+                            <div className="icon-row">
+                            <div className="icon" onClick={() => changeCameraPosition(2)}>
+                                    <img className="icon-image" src={`${process.env.PUBLIC_URL}/static/assets/icon.png`} />
+                                </div>
+                                <div className="icon" onClick={() => changeCameraPosition(3)}>
+                                    <img className="icon-image" src={`${process.env.PUBLIC_URL}/static/assets/icon.png`} />
+                                </div>
+                            </div>
+                            </div>
+        }
+
+    </div>
+                
+            
+            </Html>
+        </mesh>
+        </group>
+    );
+    };
 
 export default Menu;
