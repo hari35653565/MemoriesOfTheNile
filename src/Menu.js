@@ -46,7 +46,7 @@ const Menu = ({ onClose, changeCameraPosition }) => {
         <div style={{ margin:'0.5cm'}}>
         <h2>Menú</h2>
       <button onClick={onClose}>Cerrar</button> {/* Added a close button */}
-{
+{//Mapa Interactivo
 
 <div className="background-image" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/static/assets/mapa.jpg)` }}>
     <div className="icon-row">
