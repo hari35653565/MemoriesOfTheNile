@@ -7,27 +7,39 @@
  * 
 */
 import React from "react";
+<<<<<<< HEAD
 import { OrbitControls, Html, Text, Float } from "@react-three/drei";
 import { useThree } from "@react-three/fiber"
+=======
+import { OrbitControls, Text, Float } from "@react-three/drei";
+import { useThree, useFrame } from "@react-three/fiber"
+>>>>>>> development
 import { useRef, useState, useEffect } from "react";
+import { TrackballControls } from "three/examples/jsm/controls/TrackballControls";
 import Intro from "./Intro";
 import Menu from "./Menu";
 import Skybox from "./Skybox";
 import Lobby from "./Lobby";
+<<<<<<< HEAD
 import Architecture from "./Architecture";
 import Templo2 from "./Templo2";
+=======
+>>>>>>> development
 
 export function Experience() {
 
     const [menuVisible, setMenuVisible] = useState(false);
-    const orbitControlsRef = useRef();
+    const controlsRef = useRef();
+    const { camera, gl } = useThree();
+    const cameraRef = useRef(camera);
+    const previousMouse = useRef([0, 0]);
 
     useEffect(() => {
         const handleKeyDown = (event) => {
             if (event.code === 'Space') {
                 event.preventDefault();
                 setMenuVisible((prevMenuVisible) => !prevMenuVisible);
-                orbitControlsRef.current.enabled = !menuVisible;
+                //orbitControlsRef.current.enabled = !menuVisible;
             }
         };
 
@@ -51,11 +63,32 @@ export function Experience() {
         cameraRef.current.position.set(position[0], position[1], position[2]);
     };
 
-    const { camera } = useThree();
-    const cameraRef = useRef(camera);
+    const handleMouseMove = (event) => {
+        const { clientX, clientY } = event;
+        const [prevX, prevY] = previousMouse.current;
+        const movementX = clientX - prevX;
+        const movementY = clientY - prevY;
+    
+        if (movementX !== 0 || movementY !== 0) {
+          controlsRef.current.rotateSpeed = 1;
+          controlsRef.current.update();
+          controlsRef.current.rotateSpeed = 0.5;
+        }
+    
+        previousMouse.current = [clientX, clientY];
+      };
+    
+      useFrame(() => {
+        controlsRef.current.update();
+      });
 
     return <>
-        <OrbitControls makeDefault ref={orbitControlsRef} />
+        <OrbitControls
+            ref={controlsRef}
+            args={[camera, gl.domElement]}
+            enableRotate // Enable rotation
+            enableZoom={false} // Disable zooming
+        />
 
         <directionalLight position={[1, 2, 3]} intensity={1.5} />
         <ambientLight intensity={0.5} />

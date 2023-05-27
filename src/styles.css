@@ -46,6 +46,18 @@ canvas {
     flex-direction: column;
 }
 
+.mapa-container {
+flex: 1;
+height: 100%;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+background-size: 600px 600px;;
+background-repeat: no-repeat;
+background-position: center;
+}
+
 .background-image {
     flex: 1;
     display: flex;
@@ -68,9 +80,18 @@ canvas {
     font-size: 24px;
 }
 
+<<<<<<< HEAD
 /* Adjust background image dimensions as needed */
 .background-image {
     background-size: cover;
+=======
+.icon-image {
+align-items: center;
+justify-content: center;
+max-width: 100%;
+max-height: 100%;
+opacity:0
+>>>>>>> development
 }
 
 
