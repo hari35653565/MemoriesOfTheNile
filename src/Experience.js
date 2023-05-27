@@ -7,9 +7,10 @@
   * 
 */
 import React from "react";
-import { OrbitControls, Text, Float } from "@react-three/drei";
-import { useThree} from "@react-three/fiber"
+import { OrbitControls, Text, Float, PerspectiveCamera} from "@react-three/drei";
+import { useThree, extend, useFrame} from "@react-three/fiber"
 import { useRef, useState, useEffect } from "react";
+import {  } from "@react-three/drei";
 import Intro from "./Intro";
 import Menu from "./Menu";
 
@@ -23,7 +24,7 @@ export function Experience(){
             if (event.code === 'Space') {
                 event.preventDefault();
                 setMenuVisible((prevMenuVisible) => !prevMenuVisible);
-                orbitControlsRef.current.enabled = !menuVisible;
+                //orbitControlsRef.current.enabled = !menuVisible;
             }
             };
         
@@ -43,20 +44,25 @@ export function Experience(){
               [-5, 0, 0],  // Icon 4 position
             ];
         
-            const position = positions[iconIndex];
-            cameraRef.current.position.set(position[0], position[1], position[2]);
-            };
+        const position = positions[iconIndex];
+        cameraRef.current.position.set(position[0], position[1], position[2]);
+        };
             
-            const { camera } = useThree();
-            const cameraRef = useRef(camera);
+        const { camera, gl } = useThree();
+        const cameraRef = useRef(camera);
             
     return <>
-    <OrbitControls makeDefault ref={orbitControlsRef} />
+    <OrbitControls
+        ref={orbitControlsRef}
+        args={[camera, gl.domElement]}
+        enableRotate // Enable rotation
+        enableZoom={false} // Disable zooming
+      />
 
     <directionalLight position={[1, 2, 3]} intensity={1.5} />
     <ambientLight intensity={0.5} />
     
-    <Intro  />
+    <Intro />
 
     <Float speed={5} >
             <Text

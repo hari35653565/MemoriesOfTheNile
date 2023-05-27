@@ -1,6 +1,6 @@
 import 'resize-observer-polyfill/dist/ResizeObserver.global';
 
-import { render, getByTestId } from '@testing-library/react';
+import { render, queryByTestId } from '@testing-library/react';
 import React from 'react';
 import { Experience } from '../Experience';
 import { Canvas } from '@react-three/fiber';
