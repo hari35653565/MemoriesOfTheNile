@@ -51,12 +51,13 @@ export function Experience() {
             [0, 10, 0],  // Icon 2 position
             [0, 0, 5],   // Icon 3 position
             [-5, 0, 0],  // Icon 4 position
+            [9, -0.5, 0.03] //Lobby
         ];
 
         const position = positions[iconIndex];
         cameraRef.current.position.set(position[0], position[1], position[2]);
     };
-
+/*
     const handleMouseMove = (event) => {
         const { clientX, clientY } = event;
         const [prevX, prevY] = previousMouse.current;
@@ -74,14 +75,14 @@ export function Experience() {
     
       useFrame(() => {
         controlsRef.current.update();
-      });
+      });*/
 
     return <>
         <OrbitControls
             ref={controlsRef}
             args={[camera, gl.domElement]}
             enableRotate // Enable rotation
-            enableZoom={false} // Disable zooming
+            
         />
 
         <directionalLight position={[1, 2, 3]} intensity={1.5} />

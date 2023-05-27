@@ -35,12 +35,12 @@ const Guia = () => {
       <mesh>
         {/* Button geometry and material */}
        {/* <meshBasicMaterial color="blue" />*/}
-        <Html position={[0, 2, 0]} center>
+        <Html position={[8, -0.5, 0.03]} center>
           <button onClick={openModal}>Ver Guía</button>
         </Html>
       </mesh>
       {showModal && (
-        <Html position={[0, 0, 0]} center>
+        <Html position={[8, -0.5, 0.03]} center>
           <div className="modal">
             <div className="modal-content" style={{ background: 'orange', width: '600px'}}>
               <button className="close" style={{ justifyContent: 'flex-end'}} onClick={closeModal}>&times; </button>
