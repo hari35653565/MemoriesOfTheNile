@@ -1,5 +1,6 @@
 import React from 'react';
 import { Html } from '@react-three/drei';
+import { Wrapping } from 'three';
 
 const PopupWindow = ({ isOpen, onClose, title, text }) => {
   if (!isOpen) return null;
