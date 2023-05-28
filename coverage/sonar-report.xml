@@ -1,4 +1,5 @@
 <testExecutions version="1">
-<file path="src/__tests__/index.test.js">
+<file path="src\__tests__\Guia.test.js">
+<testCase name="Guia_function test_Guia_renders_without_errors" duration="1" />
 </file>
 </testExecutions>
