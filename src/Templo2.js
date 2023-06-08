@@ -17,7 +17,7 @@ export default function Templo2() {
 
     /* Evento al hacer click derecho palacio e ir a este */
     const event = (e) => {
-        cameraRef.current.position.set(-40, -2, -9);
+        cameraRef.current.position.set(-40, 0, -9);
         setPalacioText(true);
 
         setTimeout(() => {
@@ -46,7 +46,7 @@ export default function Templo2() {
             <group name={"Palacio2"} onContextMenu={event}>
                 <primitive
                     object={nodes.scene}
-                    position={[-40, -2, -12]}
+                    position={[-40, -1.5, -12]}
                     scale={0.8}
 
                 />

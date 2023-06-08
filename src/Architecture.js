@@ -16,14 +16,14 @@ export default function Architecture() {
     const obj2 = "Enorme obelisco, que simboliza un rayo de sol petrificado, sorprende al visitante. Su altura de 25 m casi obliga a mirar hacia arriba";
 
 
-    /* Evento al hacer click derecho Lúxor y direcciona hacia su interior */
+    /* Evento al hacer click derecho: Lúxor y direcciona hacia su interior */
     const event = (e) => {
-        cameraRef.current.position.set(-18, 0.2, -9);
+        cameraRef.current.position.set(-18, -0.5, -1);
         setLuxorText(true);
 
         setTimeout(() => {
             setLuxorText(false);
-        }, 1000);
+        }, 1500);
     };
 
     /*Evento al hacer click sobre el obelisco*/
@@ -47,7 +47,8 @@ export default function Architecture() {
             <group name={"Egyptian temple"} onContextMenu={event}>
                 <primitive
                     object={nodes.scene}
-                    position={[-20, -2, 2]}
+                    position={[-10, -2, -2]}
+                    rotation-y={Math.PI / 2}
                     scale={0.1}
 
                 />
