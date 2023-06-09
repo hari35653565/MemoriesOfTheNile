@@ -7,9 +7,10 @@
  * 
 */
 import React from "react";
-import { OrbitControls, Text, Float } from "@react-three/drei";
+import { OrbitControls, Text, Float, useHelper  } from "@react-three/drei";
 import { useThree, useFrame } from "@react-three/fiber"
 import { useRef, useState, useEffect } from "react";
+import { SpotLightHelper } from 'three';
 import { TrackballControls } from "three/examples/jsm/controls/TrackballControls";
 import Intro from "./Intro";
 import Menu from "./Menu";
@@ -26,6 +27,9 @@ export function Experience() {
     const cameraRef = useRef(camera);
     const previousMouse = useRef([0, 0]);
 
+    const spotLightRef = useRef()
+    useHelper( spotLightRef, SpotLightHelper, 1, 'red')
+   
     useEffect(() => {
         const handleKeyDown = (event) => {
             if (event.code === 'Space') {
@@ -81,11 +85,12 @@ export function Experience() {
             enableRotate // Enable rotation
             enableZoom={false} // Disable zooming
         />
-
-        <directionalLight position={[1, 2, 3]} intensity={1.5} />
+       <spotLight castShadow ref={ spotLightRef} position={[0, 20, 15]} intensity={2} />
+   
         <ambientLight intensity={0.5} />
 
-        <Skybox />
+        <Skybox castShadow = {true}
+            receiveShadow={true} />
         <Intro />
         <Guia/>
         <Lobby/>
