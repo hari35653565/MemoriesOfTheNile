@@ -18,6 +18,7 @@ import Guia from "./Guia";
 import Lobby from "./Lobby";
 import Architecture from "./Architecture";
 import Templo2 from "./Templo2";
+import Croc from "./Croc";
 
 
 export function Experience() {
@@ -90,6 +91,7 @@ export function Experience() {
 
         <Skybox />
         <Intro />
+        <Croc />
         <Lobby />
         <Architecture />
         <Templo2 />
