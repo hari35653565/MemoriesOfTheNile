@@ -19,6 +19,10 @@ import Guia from "./Guia";
 import Lobby from "./Lobby";
 import Architecture from "./Architecture";
 import Templo2 from "./Templo2";
+import Croc from "./Animales/Croc";
+import Gato from "./Animales/Gato";
+import Ibis from "./Animales/Ibis";
+import Scarab from "./Animales/Scarab";
 import Ramses from "./Ramses";
 
 export function Experience() {
@@ -97,7 +101,6 @@ export function Experience() {
 
 
     const changeCameraPosition = (iconIndex) => {
-        // Placeholder positions for camera position based on the clicked icon
         const positions = [
             [5, 0, 0],   // Historia
             [-18, 0.2, -9],  // Arquitectura
@@ -147,6 +150,13 @@ export function Experience() {
         <Lobby />
         <Architecture />
         <Templo2 />
+        
+        {/*Animales*/}
+        <Croc />
+        <Gato />
+        <Ibis />
+        <Scarab />
+
         <Ramses/>
         <Guia/>
 
