@@ -4,24 +4,24 @@ import { useThree } from '@react-three/fiber';
 import { useRef } from 'react';
 import PopupWindow from './PopupWindow';
 
-export default function Templo2() {
+export default function Ramses() {
 
     // Modelo del templo Lúxor
-    const nodes = useGLTF('./static/1Palacio-egipcio.glb');
+    const nodes = useGLTF('./static/statue_of_ramesses_iii.glb');
     const { camera } = useThree();
     const cameraRef = useRef(camera);
-    const [palacioText, setPalacioText] = useState(false);
-    const [palacioInfo, setPalacioInfo] = useState(false);
-    const jeroglíficos = "PALACIO FARAON";
+    const [ramsesText, setRamsesText] = useState(false);
+    const [ramsesInfo, setRamsesInfo] = useState(false);
+    const  faraon = "RAMSÉS";
     const obj2 = ""
 
-    /* Evento al hacer click derecho palacio e ir a este */
+    /* Evento al hacer click derecho a Estatua e ir a esta */
     const event = (e) => {
-        cameraRef.current.position.set(-40, 0, -9);
-        setPalacioText(true);
+        cameraRef.current.position.set(-55, 0.2, -22);
+        setRamsesText(true);
 
         setTimeout(() => {
-            setPalacioText(false);
+            setRamsesText(false);
         }, 1000);
     };
 
@@ -29,13 +29,13 @@ export default function Templo2() {
 
     const eventStatue = (e) => {
         e.stopPropagation = true;
-        setPalacioInfo(true);
+        setRamsesInfo(true);
 
     }
 
     /* Evento para cerrar el informativo */
     const closePopup1 = () => {
-        setPalacioInfo(false);
+        setRamsesInfo(false);
     };
 
 
@@ -43,18 +43,19 @@ export default function Templo2() {
         <group>
 
             {/* Estructura del templo y sus coordenadas */}
-            <group name={"Palacio2"} onContextMenu={event}>
+            <group name={"Ramses"} onContextMenu={event}>
                 <primitive
                     object={nodes.scene}
-                    position={[-40, -1.5, -12]}
+                    position={[-60, 0.4, 18]}
+                    rotation={[0, Math.PI / 2, 0]}
                     scale={0.8}
 
                 />
 
-                {/* Texto indica Palacio*/}
-                {palacioText && (
+                {/* Texto indica Estatua Ramses*/}
+                {ramsesText && (
                     <Text position={[-20, -2, 0.5]} rotation={[0, Math.PI / 2, 0]} fontSize={0.3} color="white">
-                       Estás Palacio de Faraón
+                       Este es Ramsés
                     </Text>
                 )}
             </group>

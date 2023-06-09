@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Float, useGLTF, Text } from '@react-three/drei';
+import {useGLTF, Text } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
 import { useRef } from 'react';
 import PopupWindow from './PopupWindow';
@@ -16,17 +16,17 @@ export default function Lobby() {
   const popupText = "Faraón de la dinastía IV. Construyó la segunda pirámide más grande de Egipto (Altura 143,5m). También se le adjudica la Gran Esfinge, el templo funerario, entre otras grandes obras.";
 
 
-  /* Evento al hacer click derecho sobre la estructura del mapa: posiciona la cámara dentro del lobby */
+  /* Evento al hacer click derecho sobre la estructura lobby: posiciona la cámara dentro del lobby */
   const event = (e) => {
-    cameraRef.current.position.set(9.5, -0.7, 0.5);
+    cameraRef.current.position.set(8, -0.7, 1);
     setShowText(true);
 
     setTimeout(() => {
       setShowText(false);
-    }, 1000);
+    }, 1500);
   };
 
-  /*Evento al hacer click sobre la estructura: Despliega informarción */
+  /*Evento al hacer click sobre la estatua de kefrén: Despliega informarción */
 
   const eventStatue = (e) => {
     e.stopPropagation = true;
@@ -34,7 +34,7 @@ export default function Lobby() {
 
   }
 
-  /* Evento para cerrar la ventana emergente */
+  /* Evento para cerrar la ventana emergente  */
   const closePopup1 = () => {
     setShowPopup1(false);
   };
@@ -46,24 +46,29 @@ export default function Lobby() {
       <group name={"Lobby structure"} onContextMenu={event}>
         <primitive
           object={nodes.nodes.Plane001}
-          position={[8, -1, 0.03]}
+          position={[8, -1.2, -0.5]}
           scale={0.5}
 
         />
         {/* Texto al ingresar al Lobby */}
         {showText && (
-          <Text position={[8, -0.44, 0.5]} rotation={[0, Math.PI / 2, 0]} fontSize={0.3} color="white">
+          <group>
+        <mesh position={[8, 0.05, -0.6]}>
+            <planeBufferGeometry args={[2.5, 0.45]} />
+            <meshBasicMaterial color="black" transparent opacity={0.8} />
+          </mesh>
+            <Text position={[8, 0, -0.5]}  fontSize={0.3} color="white" font="./bangers-v20-latin-regular.woff"> 
             Estas en el lobby
-          </Text>
+            </Text>
+          </group>
         )}
       </group>
-      {/* Estructura para el mapa */}
+      {/* Estructura para la guía */}
       <group name={'map structure'}>
         <primitive
           object={map.scene}
-          position-y={-0.7}
-          scale={0.4}
-          position-x={8}
+          scale={0.3}
+          position={[6.5,-0.98,-0.26]}
 
         />
       </group>
@@ -78,7 +83,7 @@ export default function Lobby() {
 
 
         />
-        {/* Ventana emergente  */}
+        {/* Ventana emergente de información */}
         <PopupWindow
           isOpen={showPopup1}
           onClose={closePopup1}
