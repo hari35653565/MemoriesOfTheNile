@@ -4,7 +4,7 @@
  * Hooks de R3F: https://docs.pmnd.rs/react-three-fiber/api/hooks
  * React three drei: https://github.com/pmndrs/drei
  * Three.js: https://threejs.org/docs/
- * 
+ *
  *
 */
 import React from "react";
@@ -19,6 +19,7 @@ import Guia from "./Guia";
 import Lobby from "./Lobby";
 import Architecture from "./Architecture";
 import Templo2 from "./Templo2";
+import Ramses from "./Ramses";
 
 export function Experience() {
 
@@ -36,7 +37,7 @@ export function Experience() {
             //     event.preventDefault();
             //     setMenuVisible((prevMenuVisible) => !prevMenuVisible);
             //     //orbitControlsRef.current.enabled = !menuVisible;
-            // }     
+            // }
 
             switch(event.code){
                 case 'Space':
@@ -60,10 +61,10 @@ export function Experience() {
                         case '-40,1,5'://posicion templo2
                             cameraRef.current.position.set(-18, 0, 5); //posicion arquitectura
                             break
-                                
+
 
                     }
-                    
+
                     break;
 
                 case 'ArrowLeft':
@@ -76,9 +77,9 @@ export function Experience() {
                             cameraRef.current.position.set(-40, 1, 5); //posicion templo2
                             break
                         case '8,0,5'://posicion lobby
-                            cameraRef.current.position.set(0, 0, 5); //posicion piramide y esfinge    
+                            cameraRef.current.position.set(0, 0, 5); //posicion piramide y esfinge
                             break
-                            
+
                     }
                 break;
 
@@ -93,7 +94,7 @@ export function Experience() {
         };
     }, [menuVisible]);
 
-    
+
 
     const changeCameraPosition = (iconIndex) => {
         // Placeholder positions for camera position based on the clicked icon
@@ -114,16 +115,16 @@ export function Experience() {
         const [prevX, prevY] = previousMouse.current;
         const movementX = clientX - prevX;
         const movementY = clientY - prevY;
-    
+
         if (movementX !== 0 || movementY !== 0) {
           controlsRef.current.rotateSpeed = 1;
           controlsRef.current.update();
           controlsRef.current.rotateSpeed = 0.5;
         }
-    
+
         previousMouse.current = [clientX, clientY];
       };
-    
+
       useFrame(() => {
         controlsRef.current.update();
       });*/
@@ -133,7 +134,7 @@ export function Experience() {
             ref={controlsRef}
             args={[camera, gl.domElement]}
             enableRotate // Enable rotation
-            
+
         /> */}
 
         <PointerLockControls/>
@@ -144,8 +145,9 @@ export function Experience() {
         <Skybox />
         <Intro />
         <Lobby />
-        <Architecture /> 
+        <Architecture />
         <Templo2 />
+        <Ramses/>
         <Guia/>
 
         <Float speed={5} >
