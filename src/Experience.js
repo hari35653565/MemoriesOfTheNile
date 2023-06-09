@@ -4,10 +4,11 @@
  * Hooks de R3F: https://docs.pmnd.rs/react-three-fiber/api/hooks
  * React three drei: https://github.com/pmndrs/drei
  * Three.js: https://threejs.org/docs/
- * 
+ *
+ *
 */
 import React from "react";
-import { OrbitControls, Text, Float } from "@react-three/drei";
+import { OrbitControls, Text, Float, PointerLockControls, useHelper } from "@react-three/drei";
 import { useThree, useFrame } from "@react-three/fiber"
 import { useRef, useState, useEffect } from "react";
 import { TrackballControls } from "three/examples/jsm/controls/TrackballControls";
@@ -18,8 +19,11 @@ import Guia from "./Guia";
 import Lobby from "./Lobby";
 import Architecture from "./Architecture";
 import Templo2 from "./Templo2";
-import Croc from "./Croc";
-
+import Croc from "./Animales/Croc";
+import Gato from "./Animales/Gato";
+import Ibis from "./Animales/Ibis";
+import Scarab from "./Animales/Scarab";
+import Ramses from "./Ramses";
 
 export function Experience() {
 
@@ -29,14 +33,63 @@ export function Experience() {
     const cameraRef = useRef(camera);
     const previousMouse = useRef([0, 0]);
 
+    console.log(cameraRef.current.position);
+
     useEffect(() => {
         const handleKeyDown = (event) => {
-            if (event.code === 'Space') {
-                event.preventDefault();
+            // if (event.code === 'Space') {
+            //     event.preventDefault();
+            //     setMenuVisible((prevMenuVisible) => !prevMenuVisible);
+            //     //orbitControlsRef.current.enabled = !menuVisible;
+            // }
+
+            switch(event.code){
+                case 'Space':
+                    event.preventDefault();
                 setMenuVisible((prevMenuVisible) => !prevMenuVisible);
                 //orbitControlsRef.current.enabled = !menuVisible;
+                break;
+
+                case 'ArrowRight':
+                    var currentPosition = cameraRef.current.position.toArray().join(',');
+                    switch (currentPosition){
+                        case '0,0,5': //posicion piramide y esfinge
+                            cameraRef.current.position.set(8, 0, 5); //posicion lobby
+                            break
+                        case '8,0,5'://posicion lobby
+                            //algun objeto a la derecha del lobby
+                            break
+                        case '-18,0,5'://posicion arquitectura
+                            cameraRef.current.position.set(0, 0, 5); //posicion piramide y esfinge
+                            break
+                        case '-40,1,5'://posicion templo2
+                            cameraRef.current.position.set(-18, 0, 5); //posicion arquitectura
+                            break
+
+
+                    }
+
+                    break;
+
+                case 'ArrowLeft':
+                    var currentPosition = cameraRef.current.position.toArray().join(',');
+                    switch (currentPosition){
+                        case '0,0,5': //posicion piramide y esfinge
+                            cameraRef.current.position.set(-18, 0, 5); //posicion arquitectura
+                            break
+                        case '-18,0,5'://posicion arquitectura
+                            cameraRef.current.position.set(-40, 1, 5); //posicion templo2
+                            break
+                        case '8,0,5'://posicion lobby
+                            cameraRef.current.position.set(0, 0, 5); //posicion piramide y esfinge
+                            break
+
+                    }
+                break;
+
             }
         };
+
 
         document.addEventListener('keydown', handleKeyDown);
 
@@ -45,8 +98,9 @@ export function Experience() {
         };
     }, [menuVisible]);
 
+
+
     const changeCameraPosition = (iconIndex) => {
-        // Placeholder positions for camera position based on the clicked icon
         const positions = [
             [5, 0, 0],   // Historia
             [-18, 0.2, -9],  // Arquitectura
@@ -64,37 +118,46 @@ export function Experience() {
         const [prevX, prevY] = previousMouse.current;
         const movementX = clientX - prevX;
         const movementY = clientY - prevY;
-    
+
         if (movementX !== 0 || movementY !== 0) {
           controlsRef.current.rotateSpeed = 1;
           controlsRef.current.update();
           controlsRef.current.rotateSpeed = 0.5;
         }
-    
+
         previousMouse.current = [clientX, clientY];
       };
-    
+
       useFrame(() => {
         controlsRef.current.update();
       });*/
 
     return <>
-        <OrbitControls
+        {/* <OrbitControls
             ref={controlsRef}
             args={[camera, gl.domElement]}
             enableRotate // Enable rotation
-            
-        />
+
+        /> */}
+
+        <PointerLockControls/>
 
         <directionalLight position={[1, 2, 3]} intensity={1.5} />
         <ambientLight intensity={0.5} />
 
         <Skybox />
         <Intro />
-        <Croc />
         <Lobby />
         <Architecture />
         <Templo2 />
+        
+        {/*Animales*/}
+        <Croc />
+        <Gato />
+        <Ibis />
+        <Scarab />
+
+        <Ramses/>
         <Guia/>
 
         <Float speed={5} >
