@@ -17,6 +17,8 @@ import Menu from "./Menu";
 import Skybox from "./Skybox";
 import Guia from "./Guia";
 import Lobby from "./Lobby";
+import Tree from "./Tree"
+import Palm from "./Palm" 
 
 
 export function Experience() {
@@ -94,7 +96,9 @@ export function Experience() {
         <Intro />
         <Guia/>
         <Lobby/>
-
+       
+        <Palm scale={ 0.050} position={[-0.7, -1.2, 2.3]}/>
+        <Palm scale={ 0.050} position={[0.4, -1.2, 2.3]}/>
         <Float speed={5} >
             <Text
                 font="./bangers-v20-latin-regular.woff"
