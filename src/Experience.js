@@ -97,7 +97,7 @@ export function Experience() {
                         case '-40,1,5'://posicion templo2
                             cameraRef.current.position.set(-40, 1, 12); //posicion Ramses
                             cameraRef.current.rotation.y = Math.PI / 2;
-                            break                            
+                            break
 
                     }
                     break;
@@ -177,7 +177,7 @@ export function Experience() {
         <Architecture />
         <Ramses />
         <Templo2 />
-        
+
         {/*Animales*/}
         <Croc />
         <Gato />
