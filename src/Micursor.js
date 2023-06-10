@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Puntero() {
+function Micursor() {
   return (
     <main className="app">
       <section className='hero'>
@@ -10,4 +10,4 @@ function Puntero() {
   );
 }
 
-export default Puntero;
+export default Micursor;
