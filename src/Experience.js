@@ -73,7 +73,7 @@ export function Experience() {
                         case '-40,1,5'://posicion templo2
                             cameraRef.current.position.set(-18, 0, 5); //posicion arquitectura
                             break
-                        case '-40,1,12'://posicion ramses
+                        case '-40,1,14'://posicion ramses
                             cameraRef.current.position.set(-40, 1, 5); //posicion templo2
                             cameraRef.current.rotation.y = Math.PI*2;
 
@@ -94,7 +94,7 @@ export function Experience() {
                             cameraRef.current.position.set(0, 0, 5); //posicion piramide y esfinge
                             break
                         case '-40,1,5'://posicion templo2
-                            cameraRef.current.position.set(-40, 1, 12); //posicion Ramses
+                            cameraRef.current.position.set(-40, 1, 14); //posicion Ramses
                             cameraRef.current.rotation.y = Math.PI / 2;
                             break                            
 
