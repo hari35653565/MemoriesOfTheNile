@@ -71,11 +71,11 @@ export function Experience() {
                         case '-18, 0, 5': //posicon arquitectura
                             cameraRef.current.position.set(0, 0, 5); //posicion piramide y esfinge
                             break
-                        case '-10, -0.5, -3': //Posicion interior arquitectura
+                        case '-18, -0.5, -1': //Posicion interior arquitectura
                             cameraRef.current.position.set(-18, 0, 5); //posicion arquitectura
                             break
                         case '-40, 1, 5': //posicion templo2
-                            cameraRef.current.position.set(-10, -0.5, -3);  //Posicion interior arquitectura
+                            cameraRef.current.position.set(-18, -0.5, -1);  //Posicion interior arquitectura
                             break
                         case '-40, -1, -6'://posicion interior ramses
                             cameraRef.current.position.set(-40, 1, 5); //posicion templo2
@@ -101,9 +101,9 @@ export function Experience() {
                             cameraRef.current.position.set(-18, 0, 5); //posicion arquitectura
                             break
                         case '-18, 0, 5': //posicion arquitectura
-                            cameraRef.current.position.set(-10, -1, -3);  //Posicion interior arquitectura
+                            cameraRef.current.position.set(-18, -1, -1);  //Posicion interior arquitectura
                             break
-                        case '-10, -1, -3'://posicion interior arquitectura
+                        case '-18, -1, -1'://posicion interior arquitectura
                             cameraRef.current.position.set(-40, 1, 5); //posicion templo2
                             break
                         case '-40, 1, 5'://posicion templo2
@@ -141,9 +141,9 @@ export function Experience() {
     const changeCameraPosition = (iconIndex) => {
         const positions = [
             [0, 0, 5],   // Historia
-            [-10, -0.5, -3],  // Arquitectura
+            [-18, -0.5, -1],  // Arquitectura
             [-40, -1, -6],   // Naturaleza
-            [-10, -0.5, -3],  // Cultura
+            [-18, -0.5, -1],  // Cultura
             [9, -0.5, 0.03] //Lobby
         ];
 
@@ -201,7 +201,7 @@ export function Experience() {
 
         <Ramses/>
         <Guia showButton={showButton}/>
-        <mesh position={[-10, -0.5, -2]} scale={0.05} >
+        <mesh position={[-18, -0.5, -3]} scale={0.05} >
             <planeGeometry attach="geometry"  />
             <meshStandardMaterial attach="material" map={texturaSoc} side={THREE.DoubleSide}/>
         </mesh>
