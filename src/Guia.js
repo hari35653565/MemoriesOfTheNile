@@ -3,9 +3,10 @@ import { Html} from '@react-three/drei';
 import { useThree,useFrame } from '@react-three/fiber';
 import { MeshBasicMaterial, TextureLoader } from 'three';
 
-function Guia () {
+function Guia ({showButton}) {
   const menuRef = useRef(null);
   const { viewport } = useThree();
+  const { camera} = useThree();
   const [showModal, setShowModal] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
   const images = [
@@ -30,7 +31,6 @@ function Guia () {
 
   const openModal = (e) => {
     e.stopPropagation()
-    console.log("ver la guiaaaaa")
     setShowModal(true);
   };
 
@@ -51,16 +51,19 @@ function Guia () {
   //   }
   // });
 
+
+
+
   return (
     <>
     <group ref={menuRef}>
       <mesh>
         {/* Button geometry and material */}
        {/* <meshBasicMaterial color="blue" />
-       onClick={openModal}*/}
-        <Html position={[8, -0.5, 0.03]} center>
-          {/* <button >Ver Guía</button> */}
-        </Html>
+       */}
+        {showButton&&(<Html position={[2, 1, 0.03]} center>
+          <button onClick={openModal}>Ver Guía</button>
+        </Html>)}
       </mesh>
       {showModal && (
         <Html position={[8, -0.5, 0.03]} center>

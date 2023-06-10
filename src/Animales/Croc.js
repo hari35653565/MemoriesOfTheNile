@@ -29,9 +29,9 @@ export default function Croc() {
             <group name={"Cocodrilo"} onContextMenu={event}>
                 <primitive
                     object={nodes.scene}
-                    position={[-42, -1.5, -5]}
+                    position={[-42, -1.3, -5]}
                     rotation={[0, 6*Math.PI /8, 0]}
-                    scale={0.3}
+                    scale={0.25}
 
                 />
 

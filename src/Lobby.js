@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useGLTF, Text } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
+import { MeshBasicMaterial, TextureLoader } from 'three';
 import PopupWindow from './PopupWindow';
 
 
@@ -8,6 +9,7 @@ export default function Lobby() {
   const nodes = useGLTF('./static/lobby_temple.glb');  //modelo del lobby
   const map = useGLTF('./static/map_structure.glb');   //modelo para mapa
   const statueKefren = useGLTF('./static/khafre.glb'); //modelo estatuda de Kefrén
+  const exit= useGLTF('./static/hand.glb');// modelo para salir del lobby
   const { camera } = useThree();
   // const cameraRef = useRef(camera);
   const [showText, setShowText] = useState(false);
@@ -29,7 +31,6 @@ export default function Lobby() {
   /* Evento al hacer click derecho sobre la estructura lobby: posiciona la cámara dentro del lobby */
   const eventEntrar = (e) => {
     e.stopPropagation()
-    console.log("templo");
     if(flagEnter===false){
       camera.position.set(8, -0.7, 1);
       //camera.rotation.y=Math.PI/2
@@ -41,7 +42,12 @@ export default function Lobby() {
     }
   };
 
-  // const eventSalir = ()=>{}
+  const eventSalir = ()=>{
+    if(flagEnter===true){
+      camera.position.set(8, 0, 5);
+      setFlagEnter(false)
+    }
+  }
 
 
 
@@ -49,10 +55,8 @@ export default function Lobby() {
 
   const eventStatue = (e) => {
     e.stopPropagation()
-    console.log("statua")
     // se usa la bandera para que no se active la funcionalidad de la estatua desde afuera del templo, en  la entrada, ya que es un espacio "libre"
     if(flagEnter===true){ 
-      console.log("oprimiste sobre la estatua")
       setShowPopup1(true);
     }
   }
@@ -60,9 +64,13 @@ export default function Lobby() {
   /* Evento para cerrar la ventana emergente  */
   const closeStatuePopup= (e) => {
     e.stopPropagation()
-    console.log("abriste la ventana")
     setShowPopup1(false);
   };
+
+  /* elementos para cargar imagen exit */
+  const textureLoader = new TextureLoader();
+  const textureExit = textureLoader.load('/static/assets/salirLobby.png');
+  const materialExit = new MeshBasicMaterial({ map: textureExit, transparent: true });
 
   return (
     <>
@@ -78,11 +86,11 @@ export default function Lobby() {
         {/* Texto al ingresar al Lobby */}
         {showText && (
           <group>
-            <mesh position={[8, 0.05, -0.6]}>
-              <planeBufferGeometry args={[2.5, 0.45]} />
+            <mesh position={[8, -0.5, -0.6]}>
+              <planeGeometry args={[1.8, 0.4]} />
               <meshBasicMaterial color="black" transparent opacity={0.8} />
             </mesh>
-            <Text position={[8, 0, -0.5]} fontSize={0.3} color="white" font="./bangers-v20-latin-regular.woff">
+            <Text position={[8, -0.5, -0.5]} fontSize={0.2} color="white" font="./bangers-v20-latin-regular.woff">
               Estas en el lobby
             </Text>
           </group>
@@ -98,8 +106,9 @@ export default function Lobby() {
 
 
 
-      {/* Estructura para la estatua de kefrén */}
+      
       <group>
+        {/* Estructura para la estatua de kefrén */}
         <primitive
           preventDefault={true}
           object={statueKefren.scene}
@@ -107,23 +116,34 @@ export default function Lobby() {
           position={[7.7, 1, -3]}
           scale={0.13}
         />
+        
       </group>
 
       {/* Ventana emergente de información estatua kefrén*/}
       {showPopup1 && (
         <group onClick={closeStatuePopup}>
           <mesh position={[8, -0.6, -0.6]}>
-            <planeBufferGeometry args={[2.2, 0.5]} />
+            <planeGeometry args={[2.2, 0.5]} />
             <meshBasicMaterial color="black" transparent opacity={0.8} />
           </mesh>
-          <Text position={[8, -0.6, -0.5]} fontSize={0.06} color="white" font="Arial">
+          <Text position={[8, -0.6, -0.5]} fontSize={0.06} color="white" >
             {' KEFRÉN:\n\n Faraón de la dinastía IV. Construyó la segunda pirámide más grande\n de Egipto(Altura 143,5m). También se le adjudica la Gran Esfinge,\n el templo funerario, entre otras grandes obras.'}
           </Text>
         </group>
       )}
 
+      {/* Estructura para el exit */}
+      <group onClick={eventSalir}>
+        <mesh
+          material={materialExit}
+          position={[9.5, -0.78, -1]}
+          rotation-y={5.5*Math.PI/3}
+          scale={0.5}
+          transparent={true}>
+          <planeGeometry args={[1, 1.6]} />
+        </mesh>
 
-
+      </group>
 
     </>
 
