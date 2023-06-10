@@ -141,9 +141,9 @@ export function Experience() {
     const changeCameraPosition = (iconIndex) => {
         const positions = [
             [0, 0, 5],   // Historia
-            [-18, -0.5, -1],  // Arquitectura
+            [-18, -0.5, -7],  // Arquitectura
             [-40, -1, -6],   // Naturaleza
-            [-18, -0.5, -1],  // Cultura
+            [-18, -0.5, -7],  // Cultura
             [9, -0.5, 0.03] //Lobby
         ];
 
