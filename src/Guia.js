@@ -9,6 +9,7 @@ function Guia ({showButton}) {
   const { camera} = useThree();
   const [showModal, setShowModal] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
+  const [myPosition, setMyPosition]= useState([0,0,0])
   const images = [
     '/static/assets/GuiaMapa.png',
     '/static/assets/GuiaMenu.png',
@@ -51,6 +52,20 @@ function Guia ({showButton}) {
   //   }
   // });
 
+  useFrame(()=>{
+    var currentPosition = camera.position.toArray().join(',');
+    if(currentPosition==='8,0,5'){
+      setMyPosition([15, 3, 0.03])
+    }else if(currentPosition==='0,0,5'){
+      setMyPosition([7,3,0.03])
+    }else if(currentPosition==='-18,0,5'){
+      setMyPosition([-11,3,0.03])
+    }else if(currentPosition==='-40,1,5'){
+      setMyPosition([-33,4,0.03])
+    }
+
+  })
+
 
 
 
@@ -61,7 +76,7 @@ function Guia ({showButton}) {
         {/* Button geometry and material */}
        {/* <meshBasicMaterial color="blue" />
        */}
-        {showButton&&(<Html position={[2, 1, 0.03]} center>
+        {showButton&&(<Html position={myPosition} center>
           <button onClick={openModal}>Ver Guía</button>
         </Html>)}
       </mesh>
