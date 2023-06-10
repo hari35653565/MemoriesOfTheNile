@@ -47,7 +47,7 @@ export default function Ibis() {
                     object={nodes.scene}
                     position={[-38, -1, -8]}
                     rotation={[0, Math.PI/2 , 0]}
-                    scale={0.5}
+                    scale={0.8}
 
                 />
 

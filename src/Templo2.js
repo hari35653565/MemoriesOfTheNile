@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Float, Html, useGLTF, Text } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
 import { useRef } from 'react';
@@ -12,17 +12,24 @@ export default function Templo2() {
     const cameraRef = useRef(camera);
     const [palacioText, setPalacioText] = useState(false);
     const [palacioInfo, setPalacioInfo] = useState(false);
+    const [showSalir, setShowSalir] = useState(false);
+    const [flagEnter, setFlagEnter] = useState(false);
     const jeroglíficos = "PALACIO FARAON";
     const obj2 = ""
 
     /* Evento al hacer click derecho palacio e ir a este */
     const event = (e) => {
+        if(flagEnter===false){
         cameraRef.current.position.set(-40, 0, -9);
+        cameraRef.current.rotation.y=Math.PI
         setPalacioText(true);
 
         setTimeout(() => {
             setPalacioText(false);
         }, 1000);
+        setFlagEnter(true)
+        setShowSalir(true)
+    }
     };
 
     /*Evento al hacer click sobre el jeroglíficos*/
@@ -37,13 +44,84 @@ export default function Templo2() {
     const closePopup1 = () => {
         setPalacioInfo(false);
     };
+    /* Evento del teclado, flechas derecha e izquierda*/
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            var currentPosition = cameraRef.current.position.toArray().join(',');
+            switch (event.code) {
+                case 'ArrowRight':          
+                    switch (currentPosition) {
+                        case '-40,0,-9': //posicion dentro del templo2
+                            cameraRef.current.position.set(-41, -0.8, -8); //posicion gato
+                            cameraRef.current.rotation.y = Math.PI / 2;
+                            break
+                        case '-41,-0.8,-8': //posicion gato
+                            cameraRef.current.position.set(-40.5, -0.8, -5); //posicion cocodrilo
 
+                            break
+                        case '-40.5,-0.8,-5': //posicion cocodrilo
+                            cameraRef.current.position.set(-39.5, -0.8, -5); //posicion escarabajo
+                            cameraRef.current.rotation.y = 3 * Math.PI / 2;
+                            break
+                        case '-39.5,-0.8,-5': //posicion escarabajo
+                            cameraRef.current.position.set(-40, 0, -9); //posicion inicial
+                            cameraRef.current.rotation.y = Math.PI;
+                            break    
+
+
+                    }
+
+                    break;
+                case 'ArrowLeft':
+                    switch (currentPosition) {
+                        case '-40,0,-9': //posicion dentro del templo2
+                            cameraRef.current.position.set(-39.5, -0.8, -5); //posicion escarabajo
+                            cameraRef.current.rotation.y = 3*Math.PI / 2;
+                            break
+                        case '-41,-0.8,-8': //mirando el gato
+                            cameraRef.current.position.set(-40, 0, -9); //posicion inicial
+                            cameraRef.current.rotation.y = Math.PI;
+                            break
+                        case '-40.5,-0.8,-5': //posicion cocodrilo
+                            cameraRef.current.position.set(-41, -0.8, -8); //posicion gato
+                            cameraRef.current.rotation.y = (Math.PI / 2);
+                            break
+                        case '-39.5,-0.8,-5': //posicion escarabajo
+                            cameraRef.current.position.set(-40.5, -0.8, -5); //posicion cocodrilo
+                            cameraRef.current.rotation.y = Math.PI / 2;
+                            break
+        
+
+                    }
+                    break;
+
+            }
+        };
+
+
+        document.addEventListener('keydown', handleKeyDown);
+
+        return () => {
+            document.removeEventListener('keydown', handleKeyDown);
+        };
+    }, []);
+
+    /* evento salir del templo2 */
+    const salirTemplo=()=>{
+        if(flagEnter===true){
+            cameraRef.current.position.set(-40, 1, 5);
+            cameraRef.current.rotation.y = Math.PI;
+            setFlagEnter(false)
+            setShowSalir(false)
+        }
+
+    }
 
     return (
         <group>
 
             {/* Estructura del templo y sus coordenadas */}
-            <group name={"Palacio2"} onContextMenu={event}>
+            <group name={"Palacio2"} onClick={event}>
                 <primitive
                     object={nodes.scene}
                     position={[-40, -1.5, -12]}
@@ -58,6 +136,15 @@ export default function Templo2() {
                     </Text>
                 )}
             </group>
+
+            {/* objeto salir del templo */}
+            {showSalir && (
+                <group onClick={salirTemplo}>
+                    <Text position={[-40, -0.1, -8]} fontSize={0.06} color="black" rotation-y={Math.PI}>
+                        {'Salir'}
+                    </Text>
+                </group>
+            )}
 
         </group>
     );

@@ -1,17 +1,16 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import { Html } from '@react-three/drei';
-import { Wrapping } from 'three';
 
-const PopupWindow = ({ isOpen, onClose, title, text }) => {
+const PopupWindow = ({ isOpen, onClose, title, text, position }) => {
   if (!isOpen) return null;
 
   return (
-    <Html>
+    <Html position={position}>
       <div className="popup-overlay">
-        <div className="popup-content">
+        <div className="popup-content" >
           {/* Content of the popup window */}
-          <h2>{title}</h2>
-          <p>{text}</p>
+          <h2 className="mitexto">{title}</h2>
+          <p className="mitexto">{text}</p>
           <button onClick={onClose}>Close</button>
         </div>
       </div>
