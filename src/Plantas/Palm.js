@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export default function Palm(props) {
-  const { nodes, materials } = useGLTF("./static/palM.glb");
+  const { nodes, materials } = useGLTF("./static/palm.glb");
   return (
     <group {...props} dispose={null}>
       <mesh
