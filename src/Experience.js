@@ -65,16 +65,22 @@ export function Experience() {
                             cameraRef.current.position.set(8, 0, 5); //posicion lobby
                             break
                         case '8,0,5'://posicion lobby
-                            //algun objeto a la derecha del lobby
+                            cameraRef.current.position.set(9, -0.5, 0.03); //posicion interior lobby
                             break
-                        case '-18,0,5'://posicion arquitectura
+                        case '-18, 0, 5': //posicon arquitectura
                             cameraRef.current.position.set(0, 0, 5); //posicion piramide y esfinge
                             break
-                        case '-40,1,5'://posicion templo2
+                        case '10, -0.5, -3': //Posicion interior arquitectura
                             cameraRef.current.position.set(-18, 0, 5); //posicion arquitectura
                             break
-                        case '-40,1,12'://posicion ramses
+                        case '-40, 1, 5': //posicion templo2
+                            cameraRef.current.position.set(10, -0.5, -3);  //Posicion interior arquitectura
+                            break
+                        case '-40, -1, -6'://posicion interior ramses
                             cameraRef.current.position.set(-40, 1, 5); //posicion templo2
+                            cameraRef.current.rotation.y = Math.PI*2;
+                        case '-40,1,12'://posicion ramses
+                            cameraRef.current.position.set(-40, -1, -6); //posicion interior templo2
                             cameraRef.current.rotation.y = Math.PI*2;
 
                     }
@@ -84,16 +90,25 @@ export function Experience() {
                 case 'ArrowLeft':
                     var currentPosition = cameraRef.current.position.toArray().join(',');
                     switch (currentPosition) {
-                        case '0,0,5': //posicion piramide y esfinge
-                            cameraRef.current.position.set(-18, 0, 5); //posicion arquitectura
-                            break
-                        case '-18,0,5'://posicion arquitectura
-                            cameraRef.current.position.set(-40, 1, 5); //posicion templo2
+                        case '9, -0.5, 0.03': //posicion interior lobby
+                            cameraRef.current.position.set(8, 0, 5); //posicion lobby
                             break
                         case '8,0,5'://posicion lobby
                             cameraRef.current.position.set(0, 0, 5); //posicion piramide y esfinge
                             break
-                        case '-40,1,5'://posicion templo2
+                        case '0,0,5': //posicion piramide y esfinge
+                            cameraRef.current.position.set(-18, 0, 5); //posicion arquitectura
+                            break
+                        case '-18, 0, 5': //posicion arquitectura
+                            cameraRef.current.position.set(10, -1, -3);  //Posicion interior arquitectura
+                            break
+                        case '10, -1, -3'://posicion interior arquitectura
+                            cameraRef.current.position.set(-40, 1, 5); //posicion templo2
+                            break
+                        case '-40, 1, 5'://posicion templo2
+                            cameraRef.current.position.set(-40, -1, -6); //posicion interior templo2
+                            cameraRef.current.rotation.y = Math.PI*2;
+                        case '-40, -1, -6'://posicion interior templo2
                             cameraRef.current.position.set(-40, 1, 12); //posicion Ramses
                             cameraRef.current.rotation.y = Math.PI / 2;
                             break                            
@@ -124,10 +139,10 @@ export function Experience() {
 
     const changeCameraPosition = (iconIndex) => {
         const positions = [
-            [5, 0, 0],   // Historia
-            [-18, 0.2, -9],  // Arquitectura
-            [-40, 0, -9],   // Naturaleza
-            [-5, 0, 0],  // Cultura
+            [0, 0, 5],   // Historia
+            [10, -0.5, -3],  // Arquitectura
+            [-40, -1, -6],   // Naturaleza
+            [10, -0.5, -3],  // Cultura
             [9, -0.5, 0.03] //Lobby
         ];
 
