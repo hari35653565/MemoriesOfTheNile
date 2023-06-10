@@ -24,6 +24,9 @@ import Gato from "./Animales/Gato";
 import Ibis from "./Animales/Ibis";
 import Scarab from "./Animales/Scarab";
 import Ramses from "./Ramses";
+import { PlaneGeometry } from "three";
+import * as THREE from 'three'
+import { useLoader } from "@react-three/fiber";
 
 export function Experience() {
 
@@ -32,6 +35,12 @@ export function Experience() {
     const { camera, gl } = useThree();
     const cameraRef = useRef(camera);
     const previousMouse = useRef([0, 0]);
+
+    const texturaSoc = useLoader(THREE.TextureLoader, `${process.env.PUBLIC_URL}/static/assets/sociedad.jpg`);
+    texturaSoc.wrapS = THREE.RepeatWrapping
+    texturaSoc.wrapT = THREE.RepeatWrapping
+    texturaSoc.repeat.x = -1
+    texturaSoc.offset.x = 1
 
     console.log(cameraRef.current.position);
 
@@ -159,6 +168,10 @@ export function Experience() {
 
         <Ramses/>
         <Guia/>
+        <mesh position={[-10, -0.5, -2]} scale={0.05} >
+            <planeGeometry attach="geometry"  />
+            <meshStandardMaterial attach="material" map={texturaSoc} side={THREE.DoubleSide}/>
+        </mesh>
 
         <Float speed={5} >
             <Text
