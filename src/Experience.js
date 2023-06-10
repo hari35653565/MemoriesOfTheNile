@@ -28,7 +28,6 @@ export function Experience() {
     const cameraRef = useRef(camera);
     const previousMouse = useRef([0, 0]);
 
-    console.log(cameraRef.current.position);
 
     useEffect(() => {
         const handleKeyDown = (event) => {
@@ -38,16 +37,16 @@ export function Experience() {
             //     //orbitControlsRef.current.enabled = !menuVisible;
             // }     
 
-            switch(event.code){
+            switch (event.code) {
                 case 'Space':
                     event.preventDefault();
-                setMenuVisible((prevMenuVisible) => !prevMenuVisible);
-                //orbitControlsRef.current.enabled = !menuVisible;
-                break;
+                    setMenuVisible((prevMenuVisible) => !prevMenuVisible);
+                    //orbitControlsRef.current.enabled = !menuVisible;
+                    break;
 
                 case 'ArrowRight':
                     var currentPosition = cameraRef.current.position.toArray().join(',');
-                    switch (currentPosition){
+                    switch (currentPosition) {
                         case '0,0,5': //posicion piramide y esfinge
                             cameraRef.current.position.set(8, 0, 5); //posicion lobby
                             break
@@ -60,15 +59,15 @@ export function Experience() {
                         case '-40,1,5'://posicion templo2
                             cameraRef.current.position.set(-18, 0, 5); //posicion arquitectura
                             break
-                                
+
 
                     }
-                    
+
                     break;
 
                 case 'ArrowLeft':
                     var currentPosition = cameraRef.current.position.toArray().join(',');
-                    switch (currentPosition){
+                    switch (currentPosition) {
                         case '0,0,5': //posicion piramide y esfinge
                             cameraRef.current.position.set(-18, 0, 5); //posicion arquitectura
                             break
@@ -78,9 +77,9 @@ export function Experience() {
                         case '8,0,5'://posicion lobby
                             cameraRef.current.position.set(0, 0, 5); //posicion piramide y esfinge    
                             break
-                            
+
                     }
-                break;
+                    break;
 
             }
         };
@@ -93,7 +92,7 @@ export function Experience() {
         };
     }, [menuVisible]);
 
-    
+
 
     const changeCameraPosition = (iconIndex) => {
         // Placeholder positions for camera position based on the clicked icon
@@ -108,35 +107,38 @@ export function Experience() {
         const position = positions[iconIndex];
         cameraRef.current.position.set(position[0], position[1], position[2]);
     };
-/*
-    const handleMouseMove = (event) => {
-        const { clientX, clientY } = event;
-        const [prevX, prevY] = previousMouse.current;
-        const movementX = clientX - prevX;
-        const movementY = clientY - prevY;
-    
-        if (movementX !== 0 || movementY !== 0) {
-          controlsRef.current.rotateSpeed = 1;
-          controlsRef.current.update();
-          controlsRef.current.rotateSpeed = 0.5;
-        }
-    
-        previousMouse.current = [clientX, clientY];
-      };
-    
-      useFrame(() => {
-        controlsRef.current.update();
-      });*/
+    /*
+        const handleMouseMove = (event) => {
+            const { clientX, clientY } = event;
+            const [prevX, prevY] = previousMouse.current;
+            const movementX = clientX - prevX;
+            const movementY = clientY - prevY;
+        
+            if (movementX !== 0 || movementY !== 0) {
+              controlsRef.current.rotateSpeed = 1;
+              controlsRef.current.update();
+              controlsRef.current.rotateSpeed = 0.5;
+            }
+        
+            previousMouse.current = [clientX, clientY];
+          };
+        
+          useFrame(() => {
+            controlsRef.current.update();
+          });*/
 
     return <>
         {/* <OrbitControls
             ref={controlsRef}
             args={[camera, gl.domElement]}
-            enableRotate // Enable rotation
+            enableRotate
             
         /> */}
 
-        <PointerLockControls/>
+        <PointerLockControls
+            makeDefault
+        />
+
 
         <directionalLight position={[1, 2, 3]} intensity={1.5} />
         <ambientLight intensity={0.5} />
@@ -144,9 +146,9 @@ export function Experience() {
         <Skybox />
         <Intro />
         <Lobby />
-        <Architecture /> 
+        <Architecture />
         <Templo2 />
-        <Guia/>
+        <Guia />
 
         <Float speed={5} >
             <Text
