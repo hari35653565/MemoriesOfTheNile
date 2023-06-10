@@ -142,14 +142,14 @@ export function Experience() {
       });*/
 
     return <>
-        {/* <OrbitControls
+        <OrbitControls
             ref={controlsRef}
             args={[camera, gl.domElement]}
             enableRotate // Enable rotation
 
-        /> */}
+        />
 
-        <PointerLockControls/>
+        {/* <PointerLockControls/> */}
 
         <directionalLight position={[1, 2, 3]} intensity={1.5} />
         <ambientLight intensity={0.5} />
@@ -159,7 +159,7 @@ export function Experience() {
         <Lobby />
         <Architecture />
         <Templo2 />
-        
+
         {/*Animales*/}
         <Croc />
         <Gato />
