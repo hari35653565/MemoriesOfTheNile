@@ -126,9 +126,9 @@ export function Experience() {
     const changeCameraPosition = (iconIndex) => {
         const positions = [
             [0, 0, 5],   // Historia
-            [10, -0.5, -3],  // Arquitectura
+            [-18, -0.5, -7],  // Arquitectura
             [-40, -1, -6],   // Naturaleza
-            [10, -0.5, -3],  // Cultura
+            [-18, -0.5, -7],  // Cultura
             [9, -0.5, 0.03] //Lobby
         ];
 
@@ -186,7 +186,7 @@ export function Experience() {
 
         <Ramses/>
         <Guia showButton={showButton}/>
-        <mesh position={[-10, -0.5, -2]} scale={0.05} >
+        <mesh position={[-18, -0.5, -8]} scale={1} >
             <planeGeometry attach="geometry"  />
             <meshStandardMaterial attach="material" map={texturaSoc} side={THREE.DoubleSide}/>
         </mesh>
