@@ -201,7 +201,7 @@ export function Experience() {
 
         <Ramses/>
         <Guia showButton={showButton}/>
-        <mesh position={[-18, -0.5, -3]} scale={0.05} >
+        <mesh position={[-18, -0.5, -8]} scale={1} >
             <planeGeometry attach="geometry"  />
             <meshStandardMaterial attach="material" map={texturaSoc} side={THREE.DoubleSide}/>
         </mesh>
