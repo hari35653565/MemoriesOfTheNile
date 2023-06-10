@@ -11,6 +11,9 @@ export default function Ibis() {
     const { camera } = useThree();
     const cameraRef = useRef(camera);
     const [ibisText, setIbisText] = useState(false);
+    const [showPopup, setShowPopup] = useState(false);
+    const popupTitle = 'Ibis Sagrado'
+    const popupText = 'El ibis sagrado (Threskiornis aethiopicus) es una especie de ave pelecaniforme de la familia Threskiornithidae2​3​ propia de puntos de África y Oriente Medio. Es un ave especialmente conocida por su papel en la religión del Antiguo Egipto en la que era la personificación del dios Thot.'
 
     /* Evento al hacer click derecho al modelo y acceder a su informacion */
     const event = (e) => {
@@ -19,6 +22,19 @@ export default function Ibis() {
         setTimeout(() => {
             setIbisText(false);
         }, 1000);
+    };
+
+    /*Evento al hacer click sobre el ibis: Despliega informarción */
+
+    const eventPopup = (e) => {
+    e.stopPropagation = true;
+    setShowPopup(true);
+
+    }
+
+    /* Evento para cerrar la ventana emergente  */
+    const closePopup = () => {
+        setShowPopup(false);
     };
 
 
@@ -38,9 +54,15 @@ export default function Ibis() {
                 {/* Texto indica Ibis*/}
                 {ibisText && (
                     <Text position={[-38, 0, -8]} rotation={[0, Math.PI / 2, 0]} fontSize={0.3} color="white">
-                       Este es un Ibis Blanco
+                        Este es un Ibis Sagrado
                     </Text>
                 )}
+                <PopupWindow
+                isOpen={showPopup}
+                onClose={closePopup}
+                title={popupTitle}
+                text={popupText}
+                />
             </group>
 
         </group>

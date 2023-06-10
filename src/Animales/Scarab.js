@@ -11,6 +11,9 @@ export default function Scarab() {
     const { camera } = useThree();
     const cameraRef = useRef(camera);
     const [scarabText, setScarabText] = useState(false);
+    const [showPopup, setShowPopup] = useState(false);
+    const popupTitle = 'Escarabajo Joya'
+    const popupText = 'El escarabajo era sagrado en el antiguo Egipto porque se relaciona con el dios Khepri (pronunciado más o menos como Jepri), quien se creó a sí mismo y volvía a nacer cada mañana de la misma manera que renace el Sol, en un ciclo ininterrumpido; de hecho, este dios hacía que el Sol amaneciera. '
 
     /* Evento al hacer click derecho al modelo y acceder a su informacion */
     const event = (e) => {
@@ -20,6 +23,18 @@ export default function Scarab() {
         }, 1000);
     };
 
+    /*Evento al hacer click sobre el escarabajo: Despliega informarción */
+
+    const eventPopup = (e) => {
+        e.stopPropagation = true;
+        setShowPopup(true);
+
+    }
+
+    /* Evento para cerrar la ventana emergente  */
+    const closePopup = () => {
+        setShowPopup(false);
+    };
 
     return (
         <group>
@@ -37,9 +52,15 @@ export default function Scarab() {
                 {/* Texto indica Escarabajo*/}
                 {scarabText && (
                     <Text position={[-38, 0, -5]} rotation={[0, 2*Math.PI, 0]} fontSize={0.3} color="white">
-                       Este es un Escarabajo Joya
+                        Este es un Escarabajo Joya
                     </Text>
                 )}
+                <PopupWindow
+                isOpen={showPopup}
+                onClose={closePopup}
+                title={popupTitle}
+                text={popupText}
+                />
             </group>
 
         </group>
