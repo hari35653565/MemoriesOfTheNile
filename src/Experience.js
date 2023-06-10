@@ -31,6 +31,7 @@ import { useLoader } from "@react-three/fiber";
 export function Experience() {
 
     const [menuVisible, setMenuVisible] = useState(false);
+    const [showButton, setShowButton] = useState(true);
     const controlsRef = useRef();
     const { camera, gl } = useThree();
     const cameraRef = useRef(camera);
@@ -42,8 +43,6 @@ export function Experience() {
     texturaSoc.repeat.x = -1
     texturaSoc.offset.x = 1
 
-    console.log(cameraRef.current.position);
-
     useEffect(() => {
         const handleKeyDown = (event) => {
             // if (event.code === 'Space') {
@@ -52,16 +51,16 @@ export function Experience() {
             //     //orbitControlsRef.current.enabled = !menuVisible;
             // }
 
-            switch(event.code){
+            switch (event.code) {
                 case 'Space':
                     event.preventDefault();
-                setMenuVisible((prevMenuVisible) => !prevMenuVisible);
-                //orbitControlsRef.current.enabled = !menuVisible;
-                break;
+                    setMenuVisible((prevMenuVisible) => !prevMenuVisible);
+                    //orbitControlsRef.current.enabled = !menuVisible;
+                    break;
 
                 case 'ArrowRight':
                     var currentPosition = cameraRef.current.position.toArray().join(',');
-                    switch (currentPosition){
+                    switch (currentPosition) {
                         case '0,0,5': //posicion piramide y esfinge
                             cameraRef.current.position.set(8, 0, 5); //posicion lobby
                             break
@@ -74,7 +73,9 @@ export function Experience() {
                         case '-40,1,5'://posicion templo2
                             cameraRef.current.position.set(-18, 0, 5); //posicion arquitectura
                             break
-
+                        case '-40,1,12'://posicion ramses
+                            cameraRef.current.position.set(-40, 1, 5); //posicion templo2
+                            cameraRef.current.rotation.y = Math.PI*2;
 
                     }
 
@@ -82,7 +83,7 @@ export function Experience() {
 
                 case 'ArrowLeft':
                     var currentPosition = cameraRef.current.position.toArray().join(',');
-                    switch (currentPosition){
+                    switch (currentPosition) {
                         case '0,0,5': //posicion piramide y esfinge
                             cameraRef.current.position.set(-18, 0, 5); //posicion arquitectura
                             break
@@ -92,9 +93,13 @@ export function Experience() {
                         case '8,0,5'://posicion lobby
                             cameraRef.current.position.set(0, 0, 5); //posicion piramide y esfinge
                             break
+                        case '-40,1,5'://posicion templo2
+                            cameraRef.current.position.set(-40, 1, 12); //posicion Ramses
+                            cameraRef.current.rotation.y = Math.PI / 2;
+                            break                            
 
                     }
-                break;
+                    break;
 
             }
         };
@@ -107,6 +112,14 @@ export function Experience() {
         };
     }, [menuVisible]);
 
+    useFrame(()=>{
+        var currentPosition = camera.position.toArray().join(',');
+        if (currentPosition === '8,-0.7,1') {
+          setShowButton(false)
+        }else{
+            setShowButton(true)
+        }
+    })
 
 
     const changeCameraPosition = (iconIndex) => {
@@ -149,7 +162,10 @@ export function Experience() {
 
         /> */}
 
-        <PointerLockControls/>
+        <PointerLockControls
+            makeDefault
+        />
+
 
         <directionalLight position={[1, 2, 3]} intensity={1.5} />
         <ambientLight intensity={0.5} />
@@ -167,7 +183,7 @@ export function Experience() {
         <Scarab />
 
         <Ramses/>
-        <Guia/>
+        <Guia showButton={showButton}/>
         <mesh position={[-10, -0.5, -2]} scale={0.05} >
             <planeGeometry attach="geometry"  />
             <meshStandardMaterial attach="material" map={texturaSoc} side={THREE.DoubleSide}/>
@@ -178,7 +194,7 @@ export function Experience() {
                 font="./bangers-v20-latin-regular.woff"
                 fontSize={1}
                 color="#964B00"
-                position-y={4}
+                position-y={2}
                 maxWidth={8}
                 textAlign="center"
             >
@@ -191,10 +207,10 @@ export function Experience() {
             <Text
                 font="./bangers-v20-latin-regular.woff"
                 fontSize={0.6}
-                color="white"
+                color="black"
                 position-x={-18}
                 position-z={-2}
-                position-y={4}
+                position-y={3}
                 maxWidth={8}
                 textAlign="center"
             >
