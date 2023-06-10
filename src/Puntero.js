@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Cursor() {
+function Puntero() {
   return (
     <main className="app">
       <section className='hero'>
@@ -10,4 +10,4 @@ function Cursor() {
   );
 }
 
-export default Cursor;
+export default Puntero;

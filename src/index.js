@@ -2,7 +2,7 @@ import './styles.css'
 import ReactDom from "react-dom";
 import { Experience } from './Experience';
 import { Canvas } from '@react-three/fiber';
-import Cursor from './Cursor.js';
+import Puntero from './Puntero';
 import { StrictMode, Suspense } from 'react';
 import { Loader } from '@react-three/drei';
 
@@ -18,7 +18,7 @@ root.render(
                    <Experience />
                 </Suspense>
             </Canvas>
-            <Cursor />
+            <Puntero />
             <Loader/>
         </StrictMode>
 
