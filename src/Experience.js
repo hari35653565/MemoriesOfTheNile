@@ -4,7 +4,7 @@
  * Hooks de R3F: https://docs.pmnd.rs/react-three-fiber/api/hooks
  * React three drei: https://github.com/pmndrs/drei
  * Three.js: https://threejs.org/docs/
- * 
+ *
  *
 */
 import React from "react";
@@ -19,6 +19,14 @@ import Guia from "./Guia";
 import Lobby from "./Lobby";
 import Architecture from "./Architecture";
 import Templo2 from "./Templo2";
+import Croc from "./Animales/Croc";
+import Gato from "./Animales/Gato";
+import Ibis from "./Animales/Ibis";
+import Scarab from "./Animales/Scarab";
+import Ramses from "./Ramses";
+import { PlaneGeometry } from "three";
+import * as THREE from 'three'
+import { useLoader } from "@react-three/fiber";
 
 export function Experience() {
 
@@ -28,6 +36,13 @@ export function Experience() {
     const cameraRef = useRef(camera);
     const previousMouse = useRef([0, 0]);
 
+    const texturaSoc = useLoader(THREE.TextureLoader, `${process.env.PUBLIC_URL}/static/assets/sociedad.jpg`);
+    texturaSoc.wrapS = THREE.RepeatWrapping
+    texturaSoc.wrapT = THREE.RepeatWrapping
+    texturaSoc.repeat.x = -1
+    texturaSoc.offset.x = 1
+
+    console.log(cameraRef.current.position);
 
     useEffect(() => {
         const handleKeyDown = (event) => {
@@ -35,7 +50,7 @@ export function Experience() {
             //     event.preventDefault();
             //     setMenuVisible((prevMenuVisible) => !prevMenuVisible);
             //     //orbitControlsRef.current.enabled = !menuVisible;
-            // }     
+            // }
 
             switch (event.code) {
                 case 'Space':
@@ -75,7 +90,7 @@ export function Experience() {
                             cameraRef.current.position.set(-40, 1, 5); //posicion templo2
                             break
                         case '8,0,5'://posicion lobby
-                            cameraRef.current.position.set(0, 0, 5); //posicion piramide y esfinge    
+                            cameraRef.current.position.set(0, 0, 5); //posicion piramide y esfinge
                             break
 
                     }
@@ -95,7 +110,6 @@ export function Experience() {
 
 
     const changeCameraPosition = (iconIndex) => {
-        // Placeholder positions for camera position based on the clicked icon
         const positions = [
             [5, 0, 0],   // Historia
             [-18, 0.2, -9],  // Arquitectura
@@ -107,32 +121,32 @@ export function Experience() {
         const position = positions[iconIndex];
         cameraRef.current.position.set(position[0], position[1], position[2]);
     };
-    /*
-        const handleMouseMove = (event) => {
-            const { clientX, clientY } = event;
-            const [prevX, prevY] = previousMouse.current;
-            const movementX = clientX - prevX;
-            const movementY = clientY - prevY;
-        
-            if (movementX !== 0 || movementY !== 0) {
-              controlsRef.current.rotateSpeed = 1;
-              controlsRef.current.update();
-              controlsRef.current.rotateSpeed = 0.5;
-            }
-        
-            previousMouse.current = [clientX, clientY];
-          };
-        
-          useFrame(() => {
-            controlsRef.current.update();
-          });*/
+/*
+    const handleMouseMove = (event) => {
+        const { clientX, clientY } = event;
+        const [prevX, prevY] = previousMouse.current;
+        const movementX = clientX - prevX;
+        const movementY = clientY - prevY;
+
+        if (movementX !== 0 || movementY !== 0) {
+          controlsRef.current.rotateSpeed = 1;
+          controlsRef.current.update();
+          controlsRef.current.rotateSpeed = 0.5;
+        }
+
+        previousMouse.current = [clientX, clientY];
+      };
+
+      useFrame(() => {
+        controlsRef.current.update();
+      });*/
 
     return <>
         {/* <OrbitControls
             ref={controlsRef}
             args={[camera, gl.domElement]}
-            enableRotate
-            
+            enableRotate // Enable rotation
+
         /> */}
 
         <PointerLockControls
@@ -148,7 +162,19 @@ export function Experience() {
         <Lobby />
         <Architecture />
         <Templo2 />
-        <Guia />
+        
+        {/*Animales*/}
+        <Croc />
+        <Gato />
+        <Ibis />
+        <Scarab />
+
+        <Ramses/>
+        <Guia/>
+        <mesh position={[-10, -0.5, -2]} scale={0.05} >
+            <planeGeometry attach="geometry"  />
+            <meshStandardMaterial attach="material" map={texturaSoc} side={THREE.DoubleSide}/>
+        </mesh>
 
         <Float speed={5} >
             <Text
