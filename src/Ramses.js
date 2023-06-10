@@ -4,7 +4,7 @@ import { useThree } from '@react-three/fiber';
 import { useRef } from 'react';
 import PopupWindow from './PopupWindow';
 
-export default function Ramnses() {
+export default function Ramses() {
 
     // Modelo del templo Lúxor
     const nodes = useGLTF('./static/statue_of_ramesses_iii.glb');
@@ -17,7 +17,7 @@ export default function Ramnses() {
 
     /* Evento al hacer click derecho a Estatua e ir a esta */
     const event = (e) => {
-        cameraRef.current.position.set(-55, 0.2, 5);
+        cameraRef.current.position.set(-55, 0.2, -22);
         setRamsesText(true);
 
         setTimeout(() => {
@@ -62,4 +62,5 @@ export default function Ramnses() {
 
         </group>
     );
+
 }

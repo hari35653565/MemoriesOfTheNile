@@ -1,4 +1,28 @@
 <testExecutions version="1">
-<file path="src/__tests__/index.test.js">
+<file path="src\__tests__\index.test.js">
+</file>
+<file path="src\__tests__\Guia.test.js">
+<testCase name="Guia_function test_Guia_renders_without_errors" duration="2" />
+</file>
+<file path="src\__tests__\Menu.test.js">
+<testCase name="Menu_function test_Menu_renders_without_errors" duration="3" />
+</file>
+<file path="src\__tests__\Experience.test.js">
+</file>
+<file path="src\__tests__\Templo2.test.js">
+<testCase name="Templo2_function test_templo2_renders_without_errors" duration="2" />
+<testCase name="Templo2_function test_Templo2_rotation_prop_is_applied_correctly" duration="1" />
+</file>
+<file path="src\__tests__\Architecture.test.js">
+<testCase name="Architecture_function test_templo2_renders_without_errors" duration="2" />
+<testCase name="Architecture_function test_Architecture_rotation_prop_is_applied_correctly" duration="2" />
+</file>
+<file path="src\__tests__\Lobby.test.js">
+<testCase name="Lobby_function test_lobby_renders_without_errors" duration="2" />
+<testCase name="Lobby_function test_Lobby_rotation_prop_is_applied_correctly" duration="2" />
+</file>
+<file path="src\__tests__\Intro.test.js">
+<testCase name="Intro_function test_Intro_renders_without_errors" duration="2" />
+<testCase name="Intro_function test_Intro_rotation_prop_is_applied_correctly" duration="0" />
 </file>
 </testExecutions>
