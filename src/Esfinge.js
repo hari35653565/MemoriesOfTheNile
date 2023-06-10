@@ -3,8 +3,9 @@ import { Float, Html, useGLTF, Text } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
 import { useRef } from 'react';
 import PopupWindow from './PopupWindow';
+import Esfinge from 'Esfinge.js'
 
-export default function Ramses() {
+export default function Esfinge() {
 
     // Modelo del templo Lúxor
     const nodes = useGLTF('./static/statue_of_ramesses_iii.glb');
@@ -62,5 +63,4 @@ export default function Ramses() {
 
         </group>
     );
-
 }

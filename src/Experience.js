@@ -19,6 +19,7 @@ import Guia from "./Guia";
 import Lobby from "./Lobby";
 import Architecture from "./Architecture";
 import Templo2 from "./Templo2";
+
 import Croc from "./Animales/Croc";
 import Gato from "./Animales/Gato";
 import Ibis from "./Animales/Ibis";
@@ -189,6 +190,7 @@ export function Experience() {
         <Intro />
         <Lobby />
         <Architecture />
+        <Ramses />
         <Templo2 />
         
         {/*Animales*/}
