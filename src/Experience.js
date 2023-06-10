@@ -19,6 +19,7 @@ import Guia from "./Guia";
 import Lobby from "./Lobby";
 import Architecture from "./Architecture";
 import Templo2 from "./Templo2";
+
 import Croc from "./Animales/Croc";
 import Gato from "./Animales/Gato";
 import Ibis from "./Animales/Ibis";
@@ -65,15 +66,15 @@ export function Experience() {
                             cameraRef.current.position.set(8, 0, 5); //posicion lobby
                             break
                         case '8,0,5'://posicion lobby
-                            //algun objeto a la derecha del lobby
+                            //rio nilo
                             break
-                        case '-18,0,5'://posicion arquitectura
+                        case '-18,0,5': //posicon arquitectura
                             cameraRef.current.position.set(0, 0, 5); //posicion piramide y esfinge
                             break
-                        case '-40,1,5'://posicion templo2
+                        case '-40,1,5': //Posicion templo2
                             cameraRef.current.position.set(-18, 0, 5); //posicion arquitectura
                             break
-                        case '-40,1,14'://posicion ramses
+                        case '-40,1,12'://posicion ramses
                             cameraRef.current.position.set(-40, 1, 5); //posicion templo2
                             cameraRef.current.rotation.y = Math.PI*2;
 
@@ -84,17 +85,17 @@ export function Experience() {
                 case 'ArrowLeft':
                     var currentPosition = cameraRef.current.position.toArray().join(',');
                     switch (currentPosition) {
-                        case '0,0,5': //posicion piramide y esfinge
-                            cameraRef.current.position.set(-18, 0, 5); //posicion arquitectura
-                            break
-                        case '-18,0,5'://posicion arquitectura
-                            cameraRef.current.position.set(-40, 1, 5); //posicion templo2
-                            break
                         case '8,0,5'://posicion lobby
                             cameraRef.current.position.set(0, 0, 5); //posicion piramide y esfinge
                             break
+                        case '0,0,5': //posicion piramide y esfinge
+                            cameraRef.current.position.set(-18, 0, 5); //posicion arquitectura
+                            break
+                        case '-18,0,5': //posicion arquitectura
+                            cameraRef.current.position.set(-40, 1, 5);  //Posicion templo2
+                            break
                         case '-40,1,5'://posicion templo2
-                            cameraRef.current.position.set(-40, 1, 14); //posicion Ramses
+                            cameraRef.current.position.set(-40, 1, 12); //posicion Ramses
                             cameraRef.current.rotation.y = Math.PI / 2;
                             break                            
 
@@ -124,10 +125,10 @@ export function Experience() {
 
     const changeCameraPosition = (iconIndex) => {
         const positions = [
-            [5, 0, 0],   // Historia
-            [-18, 0.2, -9],  // Arquitectura
-            [-40, 0, -9],   // Naturaleza
-            [-5, 0, 0],  // Cultura
+            [0, 0, 5],   // Historia
+            [10, -0.5, -3],  // Arquitectura
+            [-40, -1, -6],   // Naturaleza
+            [10, -0.5, -3],  // Cultura
             [9, -0.5, 0.03] //Lobby
         ];
 
@@ -174,6 +175,7 @@ export function Experience() {
         <Intro />
         <Lobby />
         <Architecture />
+        <Ramses />
         <Templo2 />
         
         {/*Animales*/}
