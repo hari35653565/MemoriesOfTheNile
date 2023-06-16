@@ -14,7 +14,7 @@ function Guia ({showButton}) {
     '/static/assets/GuiaMapa.png',
     '/static/assets/GuiaMenu.png',
     '/static/assets/GuiaObjetos.png',
-
+    '/static/assets/GuiaCursor.jpg',
   ];
 
   const textureLoader = new TextureLoader();
