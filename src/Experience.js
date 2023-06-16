@@ -19,6 +19,7 @@ import Guia from "./Guia";
 import Lobby from "./Lobby";
 import Architecture from "./Architecture";
 import Templo2 from "./Templo2";
+
 import Croc from "./Animales/Croc";
 import Gato from "./Animales/Gato";
 import Ibis from "./Animales/Ibis";
@@ -45,11 +46,6 @@ export function Experience() {
 
     useEffect(() => {
         const handleKeyDown = (event) => {
-            // if (event.code === 'Space') {
-            //     event.preventDefault();
-            //     setMenuVisible((prevMenuVisible) => !prevMenuVisible);
-            //     //orbitControlsRef.current.enabled = !menuVisible;
-            // }
 
             switch (event.code) {
                 case 'Space':
@@ -65,22 +61,16 @@ export function Experience() {
                             cameraRef.current.position.set(8, 0, 5); //posicion lobby
                             break
                         case '8,0,5'://posicion lobby
-                            cameraRef.current.position.set(9, -0.5, 0.03); //posicion interior lobby
+                            //rio nilo
                             break
-                        case '-18, 0, 5': //posicon arquitectura
+                        case '-18,0,5': //posicon arquitectura
                             cameraRef.current.position.set(0, 0, 5); //posicion piramide y esfinge
                             break
-                        case '10, -0.5, -3': //Posicion interior arquitectura
+                        case '-40,1,5': //Posicion templo2
                             cameraRef.current.position.set(-18, 0, 5); //posicion arquitectura
                             break
-                        case '-40, 1, 5': //posicion templo2
-                            cameraRef.current.position.set(10, -0.5, -3);  //Posicion interior arquitectura
-                            break
-                        case '-40, -1, -6'://posicion interior ramses
-                            cameraRef.current.position.set(-40, 1, 5); //posicion templo2
-                            cameraRef.current.rotation.y = Math.PI*2;
                         case '-40,1,12'://posicion ramses
-                            cameraRef.current.position.set(-40, -1, -6); //posicion interior templo2
+                            cameraRef.current.position.set(-40, 1, 5); //posicion templo2
                             cameraRef.current.rotation.y = Math.PI*2;
 
                     }
@@ -90,28 +80,19 @@ export function Experience() {
                 case 'ArrowLeft':
                     var currentPosition = cameraRef.current.position.toArray().join(',');
                     switch (currentPosition) {
-                        case '9, -0.5, 0.03': //posicion interior lobby
-                            cameraRef.current.position.set(8, 0, 5); //posicion lobby
-                            break
                         case '8,0,5'://posicion lobby
                             cameraRef.current.position.set(0, 0, 5); //posicion piramide y esfinge
                             break
                         case '0,0,5': //posicion piramide y esfinge
                             cameraRef.current.position.set(-18, 0, 5); //posicion arquitectura
                             break
-                        case '-18, 0, 5': //posicion arquitectura
-                            cameraRef.current.position.set(10, -1, -3);  //Posicion interior arquitectura
+                        case '-18,0,5': //posicion arquitectura
+                            cameraRef.current.position.set(-40, 1, 5);  //Posicion templo2
                             break
-                        case '10, -1, -3'://posicion interior arquitectura
-                            cameraRef.current.position.set(-40, 1, 5); //posicion templo2
-                            break
-                        case '-40, 1, 5'://posicion templo2
-                            cameraRef.current.position.set(-40, -1, -6); //posicion interior templo2
-                            cameraRef.current.rotation.y = Math.PI*2;
-                        case '-40, -1, -6'://posicion interior templo2
+                        case '-40,1,5'://posicion templo2
                             cameraRef.current.position.set(-40, 1, 12); //posicion Ramses
                             cameraRef.current.rotation.y = Math.PI / 2;
-                            break                            
+                            break
 
                     }
                     break;
@@ -119,11 +100,15 @@ export function Experience() {
             }
         };
 
+        const handleKeyDownWrapper = (event) => {
+            handleKeyDown(event);
+          };
 
-        document.addEventListener('keydown', handleKeyDown);
+
+        document.addEventListener('keydown', handleKeyDownWrapper);
 
         return () => {
-            document.removeEventListener('keydown', handleKeyDown);
+            document.removeEventListener('keydown', handleKeyDownWrapper);
         };
     }, [menuVisible]);
 
@@ -140,42 +125,17 @@ export function Experience() {
     const changeCameraPosition = (iconIndex) => {
         const positions = [
             [0, 0, 5],   // Historia
-            [10, -0.5, -3],  // Arquitectura
+            [-18, -0.5, -7],  // Arquitectura
             [-40, -1, -6],   // Naturaleza
-            [10, -0.5, -3],  // Cultura
+            [-18, -0.5, -7],  // Cultura
             [9, -0.5, 0.03] //Lobby
         ];
 
         const position = positions[iconIndex];
         cameraRef.current.position.set(position[0], position[1], position[2]);
     };
-/*
-    const handleMouseMove = (event) => {
-        const { clientX, clientY } = event;
-        const [prevX, prevY] = previousMouse.current;
-        const movementX = clientX - prevX;
-        const movementY = clientY - prevY;
-
-        if (movementX !== 0 || movementY !== 0) {
-          controlsRef.current.rotateSpeed = 1;
-          controlsRef.current.update();
-          controlsRef.current.rotateSpeed = 0.5;
-        }
-
-        previousMouse.current = [clientX, clientY];
-      };
-
-      useFrame(() => {
-        controlsRef.current.update();
-      });*/
 
     return <>
-        {/* <OrbitControls
-            ref={controlsRef}
-            args={[camera, gl.domElement]}
-            enableRotate // Enable rotation
-
-        /> */}
 
         <PointerLockControls
             makeDefault
@@ -189,8 +149,9 @@ export function Experience() {
         <Intro />
         <Lobby />
         <Architecture />
+        <Ramses />
         <Templo2 />
-        
+
         {/*Animales*/}
         <Croc />
         <Gato />
@@ -199,7 +160,7 @@ export function Experience() {
 
         <Ramses/>
         <Guia showButton={showButton}/>
-        <mesh position={[-10, -0.5, -2]} scale={0.05} >
+        <mesh position={[-18, -0.5, -8]} scale={1} >
             <planeGeometry attach="geometry"  />
             <meshStandardMaterial attach="material" map={texturaSoc} side={THREE.DoubleSide}/>
         </mesh>

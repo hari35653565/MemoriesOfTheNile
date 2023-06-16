@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for Architecture.js</title>
+    <title>Code coverage report for src/Animales/Gato.js</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="prettify.css" />
-    <link rel="stylesheet" href="base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(sort-arrow-sprite.png);
+            background-image: url(../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="index.html">All files</a> Architecture.js</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/Animales</a> Gato.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/18</span>
+                <span class='fraction'>0/17</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/18</span>
+                <span class='fraction'>0/17</span>
             </div>
         
             
@@ -129,7 +129,9 @@
 <a name='L64'></a><a href='#L64'>64</a>
 <a name='L65'></a><a href='#L65'>65</a>
 <a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -147,31 +149,33 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -199,85 +203,87 @@
 import { Float, Html, useGLTF, Text } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
 import { useRef } from 'react';
-import PopupWindow from './PopupWindow';
+import PopupWindow from '../PopupWindow';
 &nbsp;
-export default function <span class="fstat-no" title="function not covered" >Architecture(</span>) {
+export default function <span class="fstat-no" title="function not covered" >Gato(</span>) {
 &nbsp;
-    // Modelo del templo Lúxor
-    const nodes = <span class="cstat-no" title="statement not covered" >useGLTF('./static/1Luxor-temple.glb');</span>
+    // Modelo de Gato
+    const nodes = <span class="cstat-no" title="statement not covered" >useGLTF('./static/animales/somali_cat_animated_ver_1.2.glb');</span>
     const { camera } = <span class="cstat-no" title="statement not covered" >useThree();</span>
     const cameraRef = <span class="cstat-no" title="statement not covered" >useRef(camera);</span>
-    const [luxorText, setLuxorText] = <span class="cstat-no" title="statement not covered" >useState(false);</span>
-    const [luxorInfo, setLuxorInfo] = <span class="cstat-no" title="statement not covered" >useState(false);</span>
-    const nameObj2 = <span class="cstat-no" title="statement not covered" >"PILONOS";</span>
-    const obj2 = <span class="cstat-no" title="statement not covered" >"Enorme obelisco, que simboliza un rayo de sol petrificado, sorprende al visitante. Su altura de 25 m casi obliga a mirar hacia arriba";</span>
+    const [catText, setCatText] = <span class="cstat-no" title="statement not covered" >useState(false);</span>
+    const [showPopup, setShowPopup] = <span class="cstat-no" title="statement not covered" >useState(false);</span>
+    const popupTitle = <span class="cstat-no" title="statement not covered" >'Gato Abisinio'</span>
+    const popupText = <span class="cstat-no" title="statement not covered" >'El gato es uno de los animales cuyos atributos se veneraban en el Antiguo Egipto. Se lo asociaba sobre todo con la protección, ya que al ser perteneciente de la familia de los felinos, se lo asemejaría directamente con el león, el cual para los egipcios, sería el dios del sol, Ra. Inicialmente se creía que era una encarnación del dios Ra como matador de la serpiente Apofis, pero alcanzó su máximo de influencia cuando se lo consideró la encarnación de la diosa Bastet, la cual es una Diosa que representaba el amor, la fecundidad, la belleza, la armonía y la protección. Además, los gatos fueron asociados con el nombre de esta diosa Bastet. Por más de 3.000 años los gatos estuvieron representados en las prácticas sociales y religiosas del antiguo Egipto. '</span>
 &nbsp;
-&nbsp;
-    /* Evento al hacer click derecho: Lúxor y direcciona hacia su interior */
+    /* Evento al hacer click derecho al modelo y acceder a su informacion */
     const event = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        cameraRef.current.position.set(-18, -0.5, -1);</span>
-<span class="cstat-no" title="statement not covered" >        setLuxorText(true);</span>
+<span class="cstat-no" title="statement not covered" >        setCatText(true);</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >        setTimeout(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >            setLuxorText(false);</span>
-        }, 1500);
+<span class="cstat-no" title="statement not covered" >            setCatText(false);</span>
+        }, 1000);
     };
 &nbsp;
-    /*Evento al hacer click sobre el obelisco*/
+    /*Evento al hacer click sobre el gato: Despliega informarción */
 &nbsp;
-    const eventStatue = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>) =&gt; {</span>
+    const eventPopup = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(e</span>) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >        e.stopPropagation = true;</span>
-<span class="cstat-no" title="statement not covered" >        setLuxorInfo(true);</span>
+<span class="cstat-no" title="statement not covered" >        setShowPopup(true);</span>
 &nbsp;
     }
 &nbsp;
-    /* Evento para cerrar el informativo */
-    const closePopup1 = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        setLuxorInfo(false);</span>
+    /* Evento para cerrar la ventana emergente  */
+    const closePopup = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        setShowPopup(false);</span>
     };
-&nbsp;
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    return (</span>
         &lt;group&gt;
 &nbsp;
-            {/* Estructura del templo y sus coordenadas */}
-            &lt;group name={"Egyptian temple"} onContextMenu={event}&gt;
+            {/* Estructura del modelo y sus coordenadas */}
+            &lt;group name={"Gato"} onContextMenu={event}&gt;
                 &lt;primitive
                     object={nodes.scene}
-                    position={[-10, -2, -2]}
-                    rotation-y={Math.PI / 2}
+                    position={[-42, -1, -8]}
+                    rotation={[0, 3*Math.PI/2 , 0]}
                     scale={0.1}
 &nbsp;
                 /&gt;
 &nbsp;
-                {/* Texto indica Lúxor*/}
-                {luxorText &amp;&amp; (
-                    &lt;Text position={[-20, -2, 0.5]} rotation={[0, Math.PI / 2, 0]} fontSize={0.3} color="white"&gt;
-                        Estás en Lúxor
+                {/* Texto indica Gato*/}
+                {catText &amp;&amp; (
+                    &lt;Text position={[-42, 0, -8]} rotation={[0, 3*Math.PI / 2, 0]} fontSize={0.3} color="white"&gt;
+                        Este es un Gato Abisinio
                     &lt;/Text&gt;
                 )}
+                &lt;PopupWindow
+                isOpen={showPopup}
+                onClose={closePopup}
+                title={popupTitle}
+                text={popupText}
+                /&gt;
             &lt;/group&gt;
 &nbsp;
         &lt;/group&gt;
     );
-}
-&nbsp;</pre></td></tr></table></pre>
+}</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-06-15T16:49:58.549Z
+                at 2023-06-15T17:50:34.234Z
             </div>
-        <script src="prettify.js"></script>
+        <script src="../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="sorter.js"></script>
-        <script src="block-navigation.js"></script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
     </body>
 </html>
     
