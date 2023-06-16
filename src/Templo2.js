@@ -26,7 +26,7 @@ export default function Templo2() {
 
         setTimeout(() => {
             setPalacioText(false);
-        }, 1000);
+        }, 1500);
         setFlagEnter(true)
         setShowSalir(true)
     }
@@ -131,8 +131,8 @@ export default function Templo2() {
 
                 {/* Texto indica Palacio*/}
                 {palacioText && (
-                    <Text position={[-20, -2, 0.5]} rotation={[0, Math.PI / 2, 0]} fontSize={0.3} color="white">
-                       Estás Palacio de Faraón
+                    <Text position={[-40, 1, -6]} fontSize={0.4} rotation-y={Math.PI} color="black" font="./bangers-v20-latin-regular.woff">
+                        Palacio de Faraón
                     </Text>
                 )}
             </group>

@@ -8,7 +8,7 @@ export default function Pyramid(props)
       <group {...props} dispose={null}>
         <group rotation={[-Math.PI / 2, 0, 0]}>
           <mesh
-            castShadow
+            castShadow 
             receiveShadow
             geometry={nodes["mat-0"].geometry}
             material={materials["mat-0"]}
