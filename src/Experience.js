@@ -55,6 +55,11 @@ export function Experience() {
 
     useEffect(() => {
         const handleKeyDown = (event) => {
+            // if (event.code === 'Space') {
+            //     event.preventDefault();
+            //     setMenuVisible((prevMenuVisible) => !prevMenuVisible);
+            //     //orbitControlsRef.current.enabled = !menuVisible;
+            // }
 
             switch (event.code) {
                 case 'Space':
@@ -109,15 +114,11 @@ export function Experience() {
             }
         };
 
-        const handleKeyDownWrapper = (event) => {
-            handleKeyDown(event);
-          };
 
-
-        document.addEventListener('keydown', handleKeyDownWrapper);
+        document.addEventListener('keydown', handleKeyDown);
 
         return () => {
-            document.removeEventListener('keydown', handleKeyDownWrapper);
+            document.removeEventListener('keydown', handleKeyDown);
         };
     }, [menuVisible]);
 
@@ -143,8 +144,33 @@ export function Experience() {
         const position = positions[iconIndex];
         cameraRef.current.position.set(position[0], position[1], position[2]);
     };
+/*
+    const handleMouseMove = (event) => {
+        const { clientX, clientY } = event;
+        const [prevX, prevY] = previousMouse.current;
+        const movementX = clientX - prevX;
+        const movementY = clientY - prevY;
+
+        if (movementX !== 0 || movementY !== 0) {
+          controlsRef.current.rotateSpeed = 1;
+          controlsRef.current.update();
+          controlsRef.current.rotateSpeed = 0.5;
+        }
+
+        previousMouse.current = [clientX, clientY];
+      };
+
+      useFrame(() => {
+        controlsRef.current.update();
+      });*/
 
     return <>
+        {/* <OrbitControls
+            ref={controlsRef}
+            args={[camera, gl.domElement]}
+            enableRotate // Enable rotation
+
+        /> */}
 
         <PointerLockControls
             makeDefault
