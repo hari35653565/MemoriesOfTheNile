@@ -20,7 +20,7 @@ root.render(
                 </Suspense>
             </Canvas>
             <Micursor/>
-            <Loader/>
+            {/* <Loader/> */}
         </StrictMode>
 
 
