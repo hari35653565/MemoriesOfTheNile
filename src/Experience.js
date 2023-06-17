@@ -8,17 +8,23 @@
  *
 */
 import React from "react";
+
 import { OrbitControls, Text, Float, PointerLockControls, useHelper } from "@react-three/drei";
 import { useThree, useFrame } from "@react-three/fiber"
 import { useRef, useState, useEffect } from "react";
+import { SpotLightHelper } from 'three';
 import { TrackballControls } from "three/examples/jsm/controls/TrackballControls";
 import Intro from "./Intro";
 import Menu from "./Menu";
 import Skybox from "./Skybox";
 import Guia from "./Guia";
 import Lobby from "./Lobby";
+
 import Architecture from "./Architecture";
 import Templo2 from "./Templo2";
+import Tree from "./Plantas/Tree"
+import Palm from "./Plantas/Palm" 
+import Bush from "./Plantas/Bush";
 
 import Croc from "./Animales/Croc";
 import Gato from "./Animales/Gato";
@@ -38,6 +44,9 @@ export function Experience() {
     const cameraRef = useRef(camera);
     const previousMouse = useRef([0, 0]);
 
+
+    const spotLightRef = useRef()
+    useHelper( spotLightRef, SpotLightHelper, 1, 'red')
     const texturaSoc = useLoader(THREE.TextureLoader, `${process.env.PUBLIC_URL}/static/assets/sociedad.jpg`);
     texturaSoc.wrapS = THREE.RepeatWrapping
     texturaSoc.wrapT = THREE.RepeatWrapping
@@ -46,11 +55,6 @@ export function Experience() {
 
     useEffect(() => {
         const handleKeyDown = (event) => {
-            // if (event.code === 'Space') {
-            //     event.preventDefault();
-            //     setMenuVisible((prevMenuVisible) => !prevMenuVisible);
-            //     //orbitControlsRef.current.enabled = !menuVisible;
-            // }
 
             switch (event.code) {
                 case 'Space':
@@ -105,11 +109,15 @@ export function Experience() {
             }
         };
 
+        const handleKeyDownWrapper = (event) => {
+            handleKeyDown(event);
+          };
 
-        document.addEventListener('keydown', handleKeyDown);
+
+        document.addEventListener('keydown', handleKeyDownWrapper);
 
         return () => {
-            document.removeEventListener('keydown', handleKeyDown);
+            document.removeEventListener('keydown', handleKeyDownWrapper);
         };
     }, [menuVisible]);
 
@@ -135,44 +143,29 @@ export function Experience() {
         const position = positions[iconIndex];
         cameraRef.current.position.set(position[0], position[1], position[2]);
     };
-/*
-    const handleMouseMove = (event) => {
-        const { clientX, clientY } = event;
-        const [prevX, prevY] = previousMouse.current;
-        const movementX = clientX - prevX;
-        const movementY = clientY - prevY;
-
-        if (movementX !== 0 || movementY !== 0) {
-          controlsRef.current.rotateSpeed = 1;
-          controlsRef.current.update();
-          controlsRef.current.rotateSpeed = 0.5;
-        }
-
-        previousMouse.current = [clientX, clientY];
-      };
-
-      useFrame(() => {
-        controlsRef.current.update();
-      });*/
 
     return <>
-        {/* <OrbitControls
-            ref={controlsRef}
-            args={[camera, gl.domElement]}
-            enableRotate // Enable rotation
-
-        /> */}
 
         <PointerLockControls
             makeDefault
         />
+       <spotLight castShadow ref={ spotLightRef} position={[0, 20, 15]} intensity={2} />
+   
 
 
         <directionalLight position={[1, 2, 3]} intensity={1.5} />
         <ambientLight intensity={0.5} />
 
-        <Skybox />
+        <Skybox castShadow = {true}
+            receiveShadow={true} />
         <Intro />
+        <Guia/>
+        <Lobby/>
+       
+        <Palm scale={ 0.14} position={[-37.9, -1.3, -5.8]}/>
+        <Palm scale={ 0.14} position={[-37.9, -1.3, -7.8]}/>
+        <Tree scale={ 0.6} position={[-42, -1.3, -6.5]}/> 
+       
         <Lobby />
         <Architecture />
         <Ramses />
