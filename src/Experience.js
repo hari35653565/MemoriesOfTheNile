@@ -30,6 +30,9 @@ import Bastet from "./Religion/Bastet";
 import Ra from "./Religion/Ra";
 import Anubis from "./Religion/Anubis";
 import Osiris from "./Religion/Osiris";
+import UMC from "./Religion/UMC";
+import Horus from "./Religion/Horus";
+import Isis from "./Religion/Isis";
 
 import Croc from "./Animales/Croc";
 import Gato from "./Animales/Gato";
@@ -39,6 +42,8 @@ import Ramses from "./Ramses";
 import { PlaneGeometry } from "three";
 import * as THREE from 'three'
 import { useLoader } from "@react-three/fiber";
+import VideoDioses from "./VideoDioses";
+import VideoEgipto from "./VideoEgipto";
 
 
 export function Experience() {
@@ -134,9 +139,9 @@ export function Experience() {
     const changeCameraPosition = (iconIndex) => {
         const positions = [
             [0, 0, 5],   // Historia
-            [-18, -0.5, -7],  // Arquitectura
-            [-40, -1, -6],   // Naturaleza
-            [-18, -0.5, -7],  // Cultura
+            [-18, 0, 5],  // Arquitectura
+            [-40, 1, 5],   // Naturaleza
+            [-18, 0, 5],  // Cultura
             [8, 0, 5] //Lobby
         ];
 
@@ -180,6 +185,13 @@ export function Experience() {
         <Ramses />
         <Templo2 />
 
+        <mesh position={ [ -15.6, -0.38, -1.2] } >
+        <VideoDioses />
+        </mesh>
+        <mesh position={ [ -20.23, -0.38, -1.2] } >
+        <VideoEgipto />
+        </mesh>
+
         {/*Animales*/}
         <Croc />
         <Gato />
@@ -192,6 +204,9 @@ export function Experience() {
         <Ra />
         <Anubis />
         <Osiris />
+        <Horus />
+        <Isis />
+        <UMC />
 
         <Ramses/>
         <Guia showButton={showButton}/>
