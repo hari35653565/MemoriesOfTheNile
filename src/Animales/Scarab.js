@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Float, Html, useGLTF, Text } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
 import { useRef } from 'react';
+import * as THREE from 'three';
 import PopupWindow from '../PopupWindow';
 
 export default function Scarab() {
@@ -12,8 +13,8 @@ export default function Scarab() {
     const cameraRef = useRef(camera);
     const [scarabText, setScarabText] = useState(false);
     const [showPopup, setShowPopup] = useState(false);
-    const popupTitle = 'Escarabajo Joya'
-    const popupText = 'El escarabajo era sagrado en el antiguo Egipto porque se relaciona con el dios Khepri (pronunciado más o menos como Jepri), quien se creó a sí mismo y volvía a nacer cada mañana de la misma manera que renace el Sol, en un ciclo ininterrumpido; de hecho, este dios hacía que el Sol amaneciera. '
+    const popupTitle = 'Escarabajo Joya:'
+    const popupText = 'El escarabajo era sagrado en el antiguo Egipto \nporque se relaciona con el dios Khepri (pronunciado más o menos como Jepri), \nquien se creó a sí mismo y volvía a nacer cada mañana de la misma manera que renace el Sol, \nen un ciclo ininterrumpido; de hecho, este dios hacía que el Sol amaneciera. '
 
     /* Evento al hacer click derecho al modelo y acceder a su informacion */
     const event = (e) => {
@@ -26,13 +27,14 @@ export default function Scarab() {
     /*Evento al hacer click sobre el escarabajo: Despliega informarción */
 
     const eventPopup = (e) => {
-        e.stopPropagation = true;
+        e.stopPropagation()
         setShowPopup(true);
 
-    }
+    };
 
     /* Evento para cerrar la ventana emergente  */
-    const closePopup = () => {
+    const closePopup = (e) => {
+        e.stopPropagation()
         setShowPopup(false);
     };
 
@@ -40,7 +42,7 @@ export default function Scarab() {
         <group>
 
             {/* Estructura del modelo y sus coordenadas */}
-            <group name={"Escarabajo"} onContextMenu={event}>
+            <group name={"Escarabajo"} onClick={eventPopup}>
                 <primitive
                     object={nodes.scene}
                     position={[-38, -1.4, -5]}
@@ -50,17 +52,17 @@ export default function Scarab() {
                 />
 
                 {/* Texto indica Escarabajo*/}
-                {scarabText && (
-                    <Text position={[-38, 0, -5]} rotation={[0, 2*Math.PI, 0]} fontSize={0.3} color="white">
-                        Este es un Escarabajo Joya
+                {showPopup && (
+                    <group onClick={closePopup}>
+                    <mesh position={[-38., -0.5, -5]} rotation={[0, -1*Math.PI/2, 0]}>
+                        <planeGeometry args={[2.4, 0.5]} />
+                        <meshBasicMaterial color="black" transparent opacity={0.8}  side={THREE.DoubleSide}/>
+                    </mesh>
+                    <Text position={[-38.01, -0.5, -5]} fontSize={0.05} color="white" rotation={[0, -1*Math.PI/2, 0]}>
+                        { `${popupTitle}\n${popupText}`}
                     </Text>
+                    </group>
                 )}
-                <PopupWindow
-                isOpen={showPopup}
-                onClose={closePopup}
-                title={popupTitle}
-                text={popupText}
-                />
             </group>
 
         </group>

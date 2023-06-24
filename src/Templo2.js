@@ -56,6 +56,9 @@ export default function Templo2() {
                             cameraRef.current.rotation.y = 3 * Math.PI / 2;
                             break
                         case '-39.5,-0.8,-5': //posicion escarabajo
+                            cameraRef.current.position.set(-39, -0.8, -7); //posicion ibis
+                            break
+                       case '-39,-0.8,-7':     
                             cameraRef.current.position.set(-40, 0, -9); //vista afuera
                             cameraRef.current.rotation.y = Math.PI;
                             break
@@ -85,6 +88,10 @@ export default function Templo2() {
                             break
 
                         case '-40,0,-9': //posicion dentro del templo2
+                            cameraRef.current.position.set(-39, -0.8, -7); //posicion ibis
+                            cameraRef.current.rotation.y = 3*Math.PI / 2;
+                            break
+                        case '-39,-0.8,-7': //posicion ibis
                             cameraRef.current.position.set(-39.5, -0.8, -5); //posicion escarabajo
                             cameraRef.current.rotation.y = 3*Math.PI / 2;
                             break
