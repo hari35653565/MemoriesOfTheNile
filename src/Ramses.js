@@ -22,7 +22,7 @@ export default function Ramses() {
 
 
     const textureLoader = new TextureLoader();
-    const textureVerVideoIcon = textureLoader.load('static/assets/iconovervideo.png');
+    const textureVerVideoIcon = textureLoader.load('static/assets/reproductordevideo.png');
     const materialVideoGuiaIcon = new MeshBasicMaterial({ map: textureVerVideoIcon, transparent: true });
 
 
