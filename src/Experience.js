@@ -8,7 +8,6 @@
  *
 */
 import React from "react";
-
 import { OrbitControls, Text, Float, PointerLockControls, useHelper } from "@react-three/drei";
 import { useThree, useFrame } from "@react-three/fiber"
 import { useRef, useState, useEffect } from "react";
@@ -40,6 +39,7 @@ import Ramses from "./Ramses";
 import { PlaneGeometry } from "three";
 import * as THREE from 'three'
 import { useLoader } from "@react-three/fiber";
+
 
 export function Experience() {
 
@@ -76,7 +76,7 @@ export function Experience() {
                             cameraRef.current.position.set(8, 0, 5); //posicion lobby
                             break
                         case '8,0,5'://posicion lobby
-                            //rio nilo
+                            cameraRef.current.position.set(15, 0, 5); //ramses
                             break
                         case '-18,0,5': //posicon arquitectura
                             cameraRef.current.position.set(0, 0, 5); //posicion piramide y esfinge
@@ -84,10 +84,6 @@ export function Experience() {
                         case '-40,1,5': //Posicion templo2
                             cameraRef.current.position.set(-18, 0, 5); //posicion arquitectura
                             break
-                        case '-40,1,12'://posicion ramses
-                            cameraRef.current.position.set(-40, 1, 5); //posicion templo2
-                            cameraRef.current.rotation.y = Math.PI*2;
-
                     }
 
                     break;
@@ -104,11 +100,9 @@ export function Experience() {
                         case '-18,0,5': //posicion arquitectura
                             cameraRef.current.position.set(-40, 1, 5);  //Posicion templo2
                             break
-                        case '-40,1,5'://posicion templo2
-                            cameraRef.current.position.set(-40, 1, 12); //posicion Ramses
-                            cameraRef.current.rotation.y = Math.PI / 2;
+                        case '15,0,5': //posicion ramses
+                            cameraRef.current.position.set(8, 0, 5);// posicion lobby
                             break
-
                     }
                     break;
 
@@ -159,7 +153,9 @@ export function Experience() {
 {/*
         <OrbitControls makeDefault />*/
 }
-
+{/*
+       <spotLight castShadow  position={[0, 20, 15]} intensity={2} />*/}
+   
         <directionalLight position={[1, 2, 3]} intensity={1.5} />
         <ambientLight intensity={0.5} />
 

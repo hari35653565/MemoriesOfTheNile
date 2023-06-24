@@ -122,12 +122,12 @@ export default function Lobby() {
       {/* Ventana emergente de información estatua kefrén*/}
       {showPopup1 && (
         <group onClick={closeStatuePopup}>
-          <mesh position={[8, -0.6, -0.6]}>
-            <planeGeometry args={[2.2, 0.5]} />
+          <mesh position={[8, -0.6, 0.34]}>
+            <planeGeometry args={[2, 0.5]} />
             <meshBasicMaterial color="black" transparent opacity={0.8} />
           </mesh>
-          <Text position={[8, -0.6, -0.5]} fontSize={0.06} color="white" >
-            {' KEFRÉN:\n\n Faraón de la dinastía IV. Construyó la segunda pirámide más grande\n de Egipto(Altura 143,5m). También se le adjudica la Gran Esfinge,\n el templo funerario, entre otras grandes obras.'}
+          <Text position={[8, -0.6, 0.35]} fontSize={0.06} color="white" >
+            {' KEFRÉN:\n\n Faraón de la dinastía IV. Construyó la segunda pirámide más grande\n de Egipto (Altura 143,5m). También se le adjudica la Gran Esfinge,\n el templo funerario, entre otras grandes obras.'}
           </Text>
         </group>
       )}

@@ -76,9 +76,9 @@ export default function Ramses() {
 
                 <primitive
                     object={nodes.scene}
-                    position={[-60, 0.4, 14]}
-                    rotation={[0, Math.PI / 2, 0]}
-                    scale={0.8}
+                    position={[15, -0.5, -3]}
+                    // rotation={[0, Math.PI / 2, 0]}
+                    scale={0.3}
                 //onClick={handleClick}
 
                 />
