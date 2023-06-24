@@ -2,8 +2,7 @@ import React, { useEffect, useRef, useState, forwardRef, useImperativeHandle } f
 import { Html, Image} from '@react-three/drei';
 import { useThree,useFrame } from '@react-three/fiber';
 import { MeshBasicMaterial, TextureLoader } from 'three';
-import { ImageLoader } from 'three';
-import * as THREE from 'three'
+
 
 
 function Guia ({showButton}) {
@@ -28,8 +27,6 @@ function Guia ({showButton}) {
     '/static/assets/GuiaCursor.jpg',
   ];
 
-  
-
   const textureLoader = new TextureLoader();
   const textureGuia = textureLoader.load('/static/assets/GuiaPergamino.png');
   const materialGuia = new MeshBasicMaterial({ map: textureGuia, transparent: true });
@@ -42,6 +39,9 @@ function Guia ({showButton}) {
 
   const texturePrev = textureLoader.load('/static/assets/previousIcon.png');
   const materialPrev = new MeshBasicMaterial({ map: texturePrev, transparent: true });
+
+  const textureGuiaIcon = textureLoader.load('static/assets/guiaIcon.png');
+  const materialGuiaIcon = new MeshBasicMaterial({map: textureGuiaIcon, transparent: true });
 
   const showNextImage = (e) => {
     e.stopPropagation();
@@ -62,9 +62,12 @@ function Guia ({showButton}) {
     setShowModal(false);
   };
 
+  /*
+  *Cambiar posiciones de los componentes de la guía:
+  *Se asignan todas las nuevas posiciones y se almacenan en 'newComponentPositions'
+  *Se verifica si ha habido algún cambio en las posiciones, si hay cambios, se actualiza el estado 'componentPositions'
+  */
 
-
-    //cambiar posiciones de los componentes de la guia
   useFrame(() => {
     const currentPosition = camera.position.toArray().join(',');
     const newComponentPositions = { ...componentPositions };
@@ -107,11 +110,11 @@ function Guia ({showButton}) {
       newComponentPositions.next = [-40, 0.525, 4];
     } else if (currentPosition ==='15,0,5'){
       //cuando esta frente a Ramses
-      newComponentPositions.buttonGuia = [24, 4, -1];
-      newComponentPositions.close = [15, 0.525, 4];
-      newComponentPositions.guia = [16, 1, 12];
-      newComponentPositions.prev = [16, 0.525, 4];
-      newComponentPositions.next = [16, 0.525, 4];
+      newComponentPositions.buttonGuia = [22, 3, 0.03];
+      newComponentPositions.close = [14.81, -0.45, 4];
+      newComponentPositions.guia = [15, 0.1, 4];
+      newComponentPositions.prev = [14.9, -0.45, 4];
+      newComponentPositions.next = [15, -0.45, 4];
     }
 
     const hasPositionChanges = Object.keys(componentPositions).some(
@@ -128,11 +131,19 @@ function Guia ({showButton}) {
   return (
     <>
     <group ref={menuRef}>
-      <mesh>
+
+      {showButton&&(<mesh material={materialGuiaIcon}
+      position={componentPositions.buttonGuia}
+      scale={1.5}
+      onClick={openModal}
+      >
+        <planeGeometry  args={[0.6, 0.5]} />
+      </mesh>)}
+      {/* <mesh>
         {showButton&&(<Html position={componentPositions.buttonGuia} center>
           <button onClick={openModal}>Ver Guía</button>
         </Html>)}
-      </mesh>
+      </mesh> */}
 
       {showModal && (
         <group>
@@ -184,7 +195,7 @@ function Guia ({showButton}) {
         material={materialGuia}
         position={[6.5,-0.72,-0.26]} 
         scale={0.3} 
-        transparent={true}>
+        >
         <planeGeometry args={[1, 1.2]} />
       </mesh>  
     </group>

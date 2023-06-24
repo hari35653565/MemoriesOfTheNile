@@ -17,11 +17,11 @@ export default function Templo2() {
     const jeroglíficos = "PALACIO FARAON";
     const obj2 = ""
 
-    /* Evento al hacer click derecho palacio e ir a este */
-    const event = (e) => {
+    /* Evento al hacer click en el palacio e ir a este */
+    const event = () => {
         if(flagEnter===false){
-        cameraRef.current.position.set(-40, 0, -9);
-        cameraRef.current.rotation.y=Math.PI
+        cameraRef.current.position.set(-40, 0, -5);
+        //cameraRef.current.rotation.y=Math.PI
         setPalacioText(true);
 
         setTimeout(() => {
@@ -51,22 +51,26 @@ export default function Templo2() {
             switch (event.code) {
                 case 'ArrowRight':          
                     switch (currentPosition) {
-                        case '-40,0,-9': //posicion dentro del templo2
+                        case '-40,0,-5': //posicion dentro del templo2
+                            cameraRef.current.position.set(-39.5, -0.8, -5); //posicion escarabajo
+                            cameraRef.current.rotation.y = 3 * Math.PI / 2;
+                            break
+                        case '-39.5,-0.8,-5': //posicion escarabajo
+                            cameraRef.current.position.set(-40, 0, -9); //vista afuera
+                            cameraRef.current.rotation.y = Math.PI;
+                            break
+                        case '-40,0,-9':
                             cameraRef.current.position.set(-41, -0.8, -8); //posicion gato
                             cameraRef.current.rotation.y = Math.PI / 2;
                             break
                         case '-41,-0.8,-8': //posicion gato
                             cameraRef.current.position.set(-40.5, -0.8, -5); //posicion cocodrilo
-
                             break
                         case '-40.5,-0.8,-5': //posicion cocodrilo
-                            cameraRef.current.position.set(-39.5, -0.8, -5); //posicion escarabajo
-                            cameraRef.current.rotation.y = 3 * Math.PI / 2;
+                            cameraRef.current.position.set(-40, 0, -5); //posicion inicial dentro del templo
+                            cameraRef.current.rotation.y = Math.PI * 2;
                             break
-                        case '-39.5,-0.8,-5': //posicion escarabajo
-                            cameraRef.current.position.set(-40, 0, -9); //posicion inicial
-                            cameraRef.current.rotation.y = Math.PI;
-                            break    
+ 
 
 
                     }
@@ -74,21 +78,26 @@ export default function Templo2() {
                     break;
                 case 'ArrowLeft':
                     switch (currentPosition) {
+
+                        case '-40,0,-5':
+                            cameraRef.current.position.set(-40.5, -0.8, -5); //posicion cocodrilo
+                            cameraRef.current.rotation.y = Math.PI / 2;
+                            break
+
                         case '-40,0,-9': //posicion dentro del templo2
                             cameraRef.current.position.set(-39.5, -0.8, -5); //posicion escarabajo
                             cameraRef.current.rotation.y = 3*Math.PI / 2;
                             break
                         case '-41,-0.8,-8': //mirando el gato
-                            cameraRef.current.position.set(-40, 0, -9); //posicion inicial
+                            cameraRef.current.position.set(-40, 0, -9); //posicion vista hacia afuera
                             cameraRef.current.rotation.y = Math.PI;
                             break
                         case '-40.5,-0.8,-5': //posicion cocodrilo
                             cameraRef.current.position.set(-41, -0.8, -8); //posicion gato
-                            cameraRef.current.rotation.y = (Math.PI / 2);
                             break
                         case '-39.5,-0.8,-5': //posicion escarabajo
-                            cameraRef.current.position.set(-40.5, -0.8, -5); //posicion cocodrilo
-                            cameraRef.current.rotation.y = Math.PI / 2;
+                            cameraRef.current.position.set(-40, 0, -5); //posicion  inicial
+                            cameraRef.current.rotation.y = Math.PI*2;
                             break
         
 
