@@ -68,4 +68,4 @@ export default function Ankh() {
     );
 }
 
-useGLTF.preload("/ankh_asset.glb.glb");
+useGLTF.preload("./static/ankh_asset.glb");

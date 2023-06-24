@@ -171,7 +171,9 @@ export function Experience() {
        
         <Lobby />
         <Architecture />
-        <mesh position={[-25, -0.5, -8]} scale={1} rotation={[0, Math.PI/2, 0]}>
+        <mesh position={[-25, -0.5, -8]} scale={1} rotation={[0, Math.PI/2, 0]} onClick={(e)=>{
+     e.stopPropagation()
+   }}>
             <planeGeometry args={[50, 50]} />
             <meshBasicMaterial transparent opacity={0}/>
         </mesh>
