@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { Float, Html, useGLTF, Text } from '@react-three/drei';
+import { Float, useGLTF, Text, Image } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
 import { useRef } from 'react';
-import PopupWindow from './PopupWindow';
+import { TextureLoader } from 'three';
+
 
 export default function Templo2() {
 
     // Modelo del templo Lúxor
     const nodes = useGLTF('./static/1Palacio-egipcio.glb');
+    const anfora = useGLTF('./static/anfora.glb');
     const { camera } = useThree();
     const cameraRef = useRef(camera);
+    const [showPopup1, setShowPopup1] = useState(false);
+    const [infoPopup, setInfoPopup] = useState('')
     const [palacioText, setPalacioText] = useState(false);
     const [palacioInfo, setPalacioInfo] = useState(false);
     const [showSalir, setShowSalir] = useState(false);
@@ -19,17 +23,17 @@ export default function Templo2() {
 
     /* Evento al hacer click en el palacio e ir a este */
     const event = () => {
-        if(flagEnter===false){
-        cameraRef.current.position.set(-40, 0, -5);
-        //cameraRef.current.rotation.y=Math.PI
-        setPalacioText(true);
+        if (flagEnter === false) {
+            cameraRef.current.position.set(-40, 0, -5);
+            //cameraRef.current.rotation.y=Math.PI
+            setPalacioText(true);
 
-        setTimeout(() => {
-            setPalacioText(false);
-        }, 1500);
-        setFlagEnter(true)
-        setShowSalir(true)
-    }
+            setTimeout(() => {
+                setPalacioText(false);
+            }, 1500);
+            setFlagEnter(true)
+            setShowSalir(true)
+        }
     };
 
     /*Evento al hacer click sobre el jeroglíficos*/
@@ -49,7 +53,7 @@ export default function Templo2() {
         const handleKeyDown = (event) => {
             var currentPosition = cameraRef.current.position.toArray().join(',');
             switch (event.code) {
-                case 'ArrowRight':          
+                case 'ArrowRight':
                     switch (currentPosition) {
                         case '-40,0,-5': //posicion dentro del templo2
                             cameraRef.current.position.set(-39.5, -0.8, -5); //posicion escarabajo
@@ -58,7 +62,7 @@ export default function Templo2() {
                         case '-39.5,-0.8,-5': //posicion escarabajo
                             cameraRef.current.position.set(-39, -0.8, -7); //posicion ibis
                             break
-                       case '-39,-0.8,-7':     
+                        case '-39,-0.8,-7':
                             cameraRef.current.position.set(-40, 0, -9); //vista afuera
                             cameraRef.current.rotation.y = Math.PI;
                             break
@@ -73,7 +77,7 @@ export default function Templo2() {
                             cameraRef.current.position.set(-40, 0, -5); //posicion inicial dentro del templo
                             cameraRef.current.rotation.y = Math.PI * 2;
                             break
- 
+
 
 
                     }
@@ -89,11 +93,11 @@ export default function Templo2() {
 
                         case '-40,0,-9': //posicion dentro del templo2
                             cameraRef.current.position.set(-39, -0.8, -7); //posicion ibis
-                            cameraRef.current.rotation.y = 3*Math.PI / 2;
+                            cameraRef.current.rotation.y = 3 * Math.PI / 2;
                             break
                         case '-39,-0.8,-7': //posicion ibis
                             cameraRef.current.position.set(-39.5, -0.8, -5); //posicion escarabajo
-                            cameraRef.current.rotation.y = 3*Math.PI / 2;
+                            cameraRef.current.rotation.y = 3 * Math.PI / 2;
                             break
                         case '-41,-0.8,-8': //mirando el gato
                             cameraRef.current.position.set(-40, 0, -9); //posicion vista hacia afuera
@@ -104,9 +108,9 @@ export default function Templo2() {
                             break
                         case '-39.5,-0.8,-5': //posicion escarabajo
                             cameraRef.current.position.set(-40, 0, -5); //posicion  inicial
-                            cameraRef.current.rotation.y = Math.PI*2;
+                            cameraRef.current.rotation.y = Math.PI * 2;
                             break
-        
+
 
                     }
                     break;
@@ -122,9 +126,19 @@ export default function Templo2() {
         };
     }, []);
 
+    /* Evento para pasar a la sala 2 del templo */
+    const eventSala2 = () => {
+        cameraRef.current.position.set(-40, 0, -18);
+    }
+    /* Evento para pasar a la sala principal del templo */
+    const eventSala1 = () => {
+        cameraRef.current.position.set(-40, 0, -9);
+    }
+
+
     /* evento salir del templo2 */
-    const salirTemplo=()=>{
-        if(flagEnter===true){
+    const salirTemplo = () => {
+        if (flagEnter === true) {
             cameraRef.current.position.set(-40, 1, 5);
             cameraRef.current.rotation.y = Math.PI;
             setFlagEnter(false)
@@ -132,6 +146,28 @@ export default function Templo2() {
         }
 
     }
+
+    /*Evento al hacer click imagen */
+
+    const infoUvas = () => {
+        setInfoPopup(' FRUTAS Y VERDURAS:\n\n Las casas egipcias poseían pequeños huertos domésticos que producían hortalizas y\n en los jardines de las villas aristocráticas se plantaban árboles frutales.\n Además, en las marismas crecía en abundancia el papiro, que no se usaba sólo para la\n producción del famoso soporte para escritura, sino que también podía consumirse.');
+        setShowPopup1(true);
+    }
+
+    /*Envento al dar click en la anfora */
+
+    const infoAnfora = () => {
+        setInfoPopup('BEBIDAS:\n\n El vino estaba reservado a los ricos, era una bebida de lujo en Egipto, mientras que la\n cerveza fue la bebida nacional, era barata y abundante. Estaba elaborada con trigo o\n cebada y se usaban dátiles, cuyo azúcar aseguraba la fermentación de la bebida.\n La cerveza era vendida en ánforas cerradas con un tapón de paja y de arcilla, o con\n un plato pequeño y yeso');
+        setShowPopup1(true);
+    }
+
+    /* Evento para cerrar la ventana emergente  */
+    const closePopup = (e) => {
+        e.stopPropagation()
+        setShowPopup1(false);
+    };
+
+
 
     return (
         <group>
@@ -153,11 +189,63 @@ export default function Templo2() {
                 )}
             </group>
 
+
             {/* objeto salir del templo */}
             {showSalir && (
                 <group onClick={salirTemplo}>
-                    <Text position={[-40, -0.1, -8]} fontSize={0.06} color="black" rotation-y={Math.PI}>
+
+
+
+                    <Text position={[-40, -0.1, -4.8]} fontSize={0.06} color="black" rotation-y={Math.PI}>
                         {'Salir'}
+                    </Text>
+                </group>
+            )}
+
+            <group onClick={eventSala2}>
+                <mesh position={[-40, -0.6, -14.7]}>
+                    <planeGeometry args={[0.8, 1.6]} />
+                    <meshBasicMaterial color="black" transparent opacity={0.2} />
+                </mesh>
+            </group>
+
+            <group onClick={eventSala1}>
+                <Text position={[-39.98, -0.1, -17.3]} fontSize={0.06} color="black" rotation-y={Math.PI}>
+                    {'     Sala\n Principal'}
+                </Text>
+            </group>
+
+            <mesh position={[-40, 0, -22.5]} >
+
+                <planeGeometry args={[2, 4]} />
+                <meshBasicMaterial color="black" transparent opacity={0.99} />
+            </mesh>
+
+            <Text position={[-40, 0.8, -22.49]} fontSize={0.3} color="white">{'Gastronomia'}</Text>
+            <mesh position={[-40, 0, -22.49]}>
+                <Image url={'/static/assets/prensadoUva.jpeg'}
+                    scale={[1.5, 1, 1]}
+                    onClick={infoUvas}
+                />
+            </mesh>
+
+
+            <primitive
+                object={anfora.scene}
+                position={[-41.1, -1, -20.5]}
+                scale={0.2}
+                onClick={infoAnfora}
+            />
+
+            {/* Ventana emergente de información*/}
+            {showPopup1 && (
+                <group onClick={closePopup}>
+                    <mesh position={[-40, 0, -19.3]}>
+                        <planeGeometry args={[3, 0.6]} />
+                        <meshBasicMaterial color="black" transparent opacity={0.8} />
+                    </mesh>
+                    <Text position={[-40, 0, -19.29]} fontSize={0.06} color="white" >
+                        {infoPopup}
                     </Text>
                 </group>
             )}
