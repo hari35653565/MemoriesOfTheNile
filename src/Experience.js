@@ -22,7 +22,7 @@ import Lobby from "./Lobby";
 import Architecture from "./Architecture";
 import Templo2 from "./Templo2";
 import Tree from "./Plantas/Tree"
-import Palm from "./Plantas/Palm" 
+import Palm from "./Plantas/Palm"
 import Bush from "./Plantas/Bush";
 
 import Ankh from "./Religion/Ankh";
@@ -116,7 +116,7 @@ export function Experience() {
 
         const handleKeyDownWrapper = (event) => {
             handleKeyDown(event);
-          };
+        };
 
 
         document.addEventListener('keydown', handleKeyDownWrapper);
@@ -126,11 +126,11 @@ export function Experience() {
         };
     }, [menuVisible]);
 
-    useFrame(()=>{
+    useFrame(() => {
         var currentPosition = camera.position.toArray().join(',');
         if (currentPosition === '8,-0.7,1') {
-          setShowButton(false)
-        }else{
+            setShowButton(false)
+        } else {
             setShowButton(true)
         }
     })
@@ -150,46 +150,46 @@ export function Experience() {
     };
 
     return <>
-{
-        <PointerLockControls
-            makeDefault
-        />
-}       
-{/*
-        <OrbitControls makeDefault />*/
-}
-{/*
-       <spotLight castShadow  position={[0, 20, 15]} intensity={2} />*/}
-   
+
+        {/* <PointerLockControls makeDefault/> */}
+
+
+        <OrbitControls makeDefault />
+
+
+
+
+        {/*<spotLight castShadow  position={[0, 20, 15]} intensity={2} />*/}
+
         <directionalLight position={[1, 2, 3]} intensity={1.5} />
         <ambientLight intensity={0.5} />
 
-        <Skybox castShadow = {true}
+        <Skybox castShadow={true}
             receiveShadow={true} />
         <Intro />
-        <Guia/>
-        <Lobby/>
-       
-        <Palm scale={ 0.14} position={[-37.9, -1.3, -5.8]}/>
-        <Palm scale={ 0.14} position={[-37.9, -1.3, -7.8]}/>
-        <Tree scale={ 0.6} position={[-42, -1.3, -6.5]}/> 
-       
+        <Guia />
+        <Lobby />
+
+        <Palm scale={0.14} position={[-37.9, -1.3, -5.8]} />
+        <Palm scale={0.14} position={[-37.9, -1.3, -7.8]} />
+        <Tree scale={0.6} position={[-42, -1.3, -6.5]} />
+
         <Lobby />
         <Architecture />
-        <mesh position={[-25, -0.5, -8]} scale={1} rotation={[0, Math.PI/2, 0]} onClick={(e)=>{
-     e.stopPropagation()
-   }}>
+        <mesh position={[-25, -0.5, -8]} scale={1} rotation={[0, Math.PI / 2, 0]} onClick={(e) => {
+            e.stopPropagation()
+        }}>
             <planeGeometry args={[50, 50]} />
-            <meshBasicMaterial transparent opacity={0}/>
+            <meshBasicMaterial transparent opacity={0} />
         </mesh>
         <Ramses />
         <Templo2 />
 
-        <mesh position={ [ -15.6, -0.38, -1.2] } >
-        <VideoDioses />
+        <mesh position={[-15.6, -0.38, -1.2]} >
+            <VideoDioses />
         </mesh>
-        <mesh position={ [ -20.23, -0.38, -1.2] } >
-        <VideoEgipto />
+        <mesh position={[-20.23, -0.38, -1.2]} >
+            <VideoEgipto />
         </mesh>
 
         {/*Animales*/}
@@ -208,11 +208,11 @@ export function Experience() {
         <Isis />
         <UMC />
 
-        <Ramses/>
-        <Guia showButton={showButton}/>
+        <Ramses />
+        <Guia showButton={showButton} />
         <mesh position={[-18, -0.5, -8.8]} scale={1} rotation={[0, Math.PI, 0]}>
-            <planeGeometry attach="geometry"  />
-            <meshStandardMaterial attach="material" map={texturaSoc} side={THREE.DoubleSide}/>
+            <planeGeometry attach="geometry" />
+            <meshStandardMaterial attach="material" map={texturaSoc} side={THREE.DoubleSide} />
         </mesh>
 
         <Float speed={5} >
@@ -241,6 +241,21 @@ export function Experience() {
                 textAlign="center"
             >
                 Una puerta de acceso a los dioses
+            </Text>
+        </Float>
+
+        <Float speed={3} >
+            <Text
+                font="./bangers-v20-latin-regular.woff"
+                fontSize={0.4}
+                color="black"
+                position-x={15}
+                position-z={-0.5}
+                position-y={2}
+                maxWidth={8}
+                textAlign="center"
+            >
+                Soy Ramses
             </Text>
         </Float>
 
