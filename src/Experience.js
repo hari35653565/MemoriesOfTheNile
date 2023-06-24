@@ -1,4 +1,4 @@
-/**
+/*
  * Hooks Reactjs: https://legacy.reactjs.org/docs/hooks-intro.html
  * React Three Fiber: https://docs.pmnd.rs/react-three-fiber/getting-started/introduction
  * Hooks de R3F: https://docs.pmnd.rs/react-three-fiber/api/hooks
@@ -25,6 +25,12 @@ import Tree from "./Plantas/Tree"
 import Palm from "./Plantas/Palm" 
 import Bush from "./Plantas/Bush";
 
+import Ankh from "./Religion/Ankh";
+import Bastet from "./Religion/Bastet";
+import Ra from "./Religion/Ra";
+import Anubis from "./Religion/Anubis";
+import Osiris from "./Religion/Osiris";
+
 import Croc from "./Animales/Croc";
 import Gato from "./Animales/Gato";
 import Ibis from "./Animales/Ibis";
@@ -45,8 +51,8 @@ export function Experience() {
     const previousMouse = useRef([0, 0]);
 
 
-    // const spotLightRef = useRef()
-    // useHelper( spotLightRef, SpotLightHelper, 1, 'red')
+    /*const spotLightRef = useRef()
+    useHelper( spotLightRef, SpotLightHelper, 1, 'red')*/
     const texturaSoc = useLoader(THREE.TextureLoader, `${process.env.PUBLIC_URL}/static/assets/sociedad.jpg`);
     texturaSoc.wrapS = THREE.RepeatWrapping
     texturaSoc.wrapT = THREE.RepeatWrapping
@@ -131,7 +137,7 @@ export function Experience() {
             [-18, -0.5, -7],  // Arquitectura
             [-40, -1, -6],   // Naturaleza
             [-18, -0.5, -7],  // Cultura
-            [9, -0.5, 0.03] //Lobby
+            [8, 0, 5] //Lobby
         ];
 
         const position = positions[iconIndex];
@@ -139,11 +145,16 @@ export function Experience() {
     };
 
     return <>
-
+{
         <PointerLockControls
             makeDefault
         />
-       <spotLight castShadow  position={[0, 20, 15]} intensity={2} />
+}       
+{/*
+        <OrbitControls makeDefault />*/
+}
+{/*
+       <spotLight castShadow  position={[0, 20, 15]} intensity={2} />*/}
    
         <directionalLight position={[1, 2, 3]} intensity={1.5} />
         <ambientLight intensity={0.5} />
@@ -160,6 +171,10 @@ export function Experience() {
        
         <Lobby />
         <Architecture />
+        <mesh position={[-25, -0.5, -8]} scale={1} rotation={[0, Math.PI/2, 0]}>
+            <planeGeometry args={[50, 50]} />
+            <meshBasicMaterial transparent opacity={0}/>
+        </mesh>
         <Ramses />
         <Templo2 />
 
@@ -169,9 +184,16 @@ export function Experience() {
         <Ibis />
         <Scarab />
 
+        {/*Religion*/}
+        <Ankh />
+        <Bastet />
+        <Ra />
+        <Anubis />
+        <Osiris />
+
         <Ramses/>
         <Guia showButton={showButton}/>
-        <mesh position={[-18, -0.5, -8]} scale={1} >
+        <mesh position={[-18, -0.5, -8.8]} scale={1} rotation={[0, Math.PI, 0]}>
             <planeGeometry attach="geometry"  />
             <meshStandardMaterial attach="material" map={texturaSoc} side={THREE.DoubleSide}/>
         </mesh>
