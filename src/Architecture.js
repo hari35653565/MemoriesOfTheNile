@@ -21,8 +21,8 @@ export default function Architecture() {
     /* Evento al hacer click derecho: Lúxor y direcciona hacia su interior */
     const event = (e) => {
         if(flagEnter===false){
-        cameraRef.current.position.set(-18, -0.5, -3.5);
-        cameraRef.current.rotation.y=Math.PI
+        cameraRef.current.position.set(-18, -0.5, -2);
+        cameraRef.current.rotation.y=-1*Math.PI
         setLuxorText(true);
 
         setTimeout(() => {
@@ -63,7 +63,7 @@ export default function Architecture() {
             switch (event.code) {
                 case 'ArrowRight':          
                     switch (currentPosition) {
-                        case '-18,-0.5,-3.5': //posicion dentro del luxor
+                        case '-18,-0.5,-2': //posicion dentro del luxor
                             cameraRef.current.position.set(-21, -0.5, -4.1); //posicion Bastet
                             cameraRef.current.rotation.y = Math.PI / 2;
                             break
@@ -84,7 +84,7 @@ export default function Architecture() {
                             cameraRef.current.rotation.y = -1*Math.PI/2;
                             break
                         case '-15,-0.5,-3.65': //posicion Osiris
-                            cameraRef.current.position.set(-18, -0.5, -3.5); //posicion inicial
+                            cameraRef.current.position.set(-18, -0.5, -2); //posicion inicial
                             cameraRef.current.rotation.y = Math.PI;
                             break   
 
@@ -100,22 +100,22 @@ export default function Architecture() {
                             break
                         case '-18,-0.5,-8': //posicion Clases
                             cameraRef.current.position.set(-19.5, -0.5, -7); //posicion Ra
-                            cameraRef.current.rotation.y = Math.PI;
+                            cameraRef.current.rotation.y = -1*Math.PI;
                             break
                         case '-16.4,-0.8,-7': //posicion Anubis
                             cameraRef.current.position.set(-18, -0.5, -8); //posicion Clases
-                            cameraRef.current.rotation.y = Math.PI;
+                            cameraRef.current.rotation.y = -1*Math.PI;
                             break
                         case '-15,-0.5,-3.65': //posicion Osiris
                             cameraRef.current.position.set(-16.4, -0.8, -7); //posicion Anubis
-                            cameraRef.current.rotation.y = Math.PI ;
+                            cameraRef.current.rotation.y = -1*Math.PI ;
                             break
-                        case '-18,-0.5,-3.5': //posicion inicial
+                        case '-18,-0.5,-2': //posicion inicial
                             cameraRef.current.position.set(-15, -0.5, -3.65); //posicion Osiris
                             cameraRef.current.rotation.y = -1*Math.PI/2;
                             break
                         case '-21,-0.5,-4.1': //posicion Bastet
-                            cameraRef.current.position.set(-18, -0.5, -3.5); //posicion inicial
+                            cameraRef.current.position.set(-18, -0.5, -2); //posicion inicial
                             cameraRef.current.rotation.y = Math.PI;
                             break 
         
@@ -157,7 +157,7 @@ export default function Architecture() {
             {/* objeto salir del templo */}
             {showSalir && (
                 <group onClick={salirTemplo}>
-                    <Text position={[-18, -0.5, -2]} fontSize={0.06} color="black" rotation-y={Math.PI}>
+                    <Text position={[-18, -0.5, 0]} fontSize={0.06} color="black" rotation-y={Math.PI}>
                         {'Salir'}
                     </Text>
                 </group>
