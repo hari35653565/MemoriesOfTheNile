@@ -68,18 +68,26 @@ export default function Architecture() {
                             cameraRef.current.rotation.y = Math.PI / 2;
                             break
                         case '-21,-0.5,-4.1': //posicion Bastet
+                            cameraRef.current.position.set(-21, -0.5, -6); //posicion Horus
+                            cameraRef.current.rotation.y = Math.PI / 2;
+                            break
+                        case '-21,-0.5,-6': //posicion Horus
                             cameraRef.current.position.set(-19.5, -0.5, -7); //posicion Ra
-                            cameraRef.current.rotation.y = Math.PI;
+                            cameraRef.current.rotation.y = -1*Math.PI;
                             break
                         case '-19.5,-0.5,-7': //posicion Ra
                             cameraRef.current.position.set(-18, -0.5, -8); //posicion Clases
-                            cameraRef.current.rotation.y = Math.PI;
+                            cameraRef.current.rotation.y = -1*Math.PI;
                             break
                         case '-18,-0.5,-8': //posicion Clases
                             cameraRef.current.position.set(-16.4, -0.8, -7); //posicion Anubis
-                            cameraRef.current.rotation.y = Math.PI ;
+                            cameraRef.current.rotation.y = -1*Math.PI ;
                             break
                         case '-16.4,-0.8,-7': //posicion Anubis
+                            cameraRef.current.position.set(-15, -0.5, -6); //posicion Isis
+                            cameraRef.current.rotation.y = -1*Math.PI/2;
+                            break
+                        case '-15,-0.5,-6': //posicion Isis
                             cameraRef.current.position.set(-15, -0.5, -3.65); //posicion Osiris
                             cameraRef.current.rotation.y = -1*Math.PI/2;
                             break
@@ -94,7 +102,11 @@ export default function Architecture() {
                     break;
                 case 'ArrowLeft':
                     switch (currentPosition) {
-                        case '-19.5,-0.5,-7': //posicion dentro del Ra
+                        case '-19.5,-0.5,-7': //posicion Ra
+                            cameraRef.current.position.set(-21, -0.5, -6); //posicion Horus
+                            cameraRef.current.rotation.y = Math.PI / 2;
+                            break
+                        case '-21,-0.5,-6': //posicion dentro del Horus
                             cameraRef.current.position.set(-21, -0.5, -4.1); //posicion Bastet
                             cameraRef.current.rotation.y = Math.PI / 2;
                             break
@@ -106,9 +118,13 @@ export default function Architecture() {
                             cameraRef.current.position.set(-18, -0.5, -8); //posicion Clases
                             cameraRef.current.rotation.y = -1*Math.PI;
                             break
-                        case '-15,-0.5,-3.65': //posicion Osiris
+                        case '-15,-0.5,-6': //posicion Isis
                             cameraRef.current.position.set(-16.4, -0.8, -7); //posicion Anubis
                             cameraRef.current.rotation.y = -1*Math.PI ;
+                            break
+                        case '-15,-0.5,-3.65': //posicion Osiris
+                            cameraRef.current.position.set(-15, -0.5, -6); //posicion Isis
+                            cameraRef.current.rotation.y = -1*Math.PI/2;
                             break
                         case '-18,-0.5,-2': //posicion inicial
                             cameraRef.current.position.set(-15, -0.5, -3.65); //posicion Osiris

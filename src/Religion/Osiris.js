@@ -10,18 +10,9 @@ export default function Osiris() {
     const nodes  = useGLTF('./static/dioses/osiris.glb');
     const { camera } = useThree();
     const cameraRef = useRef(camera);
-    const [scarabText, setScarabText] = useState(false);
     const [showPopup, setShowPopup] = useState(false);
     const popupTitle = 'Osiris:'
     const popupText = 'Bastet o Bast es una diosa del antiguo Egipto, \nadorada desde la Segunda Dinastía (2890 a. C.). \nRepresenta la protección, el amor y la armonía. \nProtectora de los hogares y templos. \nFue la diosa de la guerra en el Bajo Egipto, región del Delta del Nilo, \nantes de la unificación de las culturas del antiguo Egipto.'
-
-    /* Evento al hacer click derecho al modelo y acceder a su informacion */
-    const event = (e) => {
-        setScarabText(true);
-        setTimeout(() => {
-            setScarabText(false);
-        }, 1000);
-    };
 
     /*Evento al hacer click sobre el escarabajo: Despliega informarción */
 

@@ -30,6 +30,9 @@ import Bastet from "./Religion/Bastet";
 import Ra from "./Religion/Ra";
 import Anubis from "./Religion/Anubis";
 import Osiris from "./Religion/Osiris";
+import UMC from "./Religion/UMC";
+import Horus from "./Religion/Horus";
+import Isis from "./Religion/Isis";
 
 import Croc from "./Animales/Croc";
 import Gato from "./Animales/Gato";
@@ -192,6 +195,9 @@ export function Experience() {
         <Ra />
         <Anubis />
         <Osiris />
+        <Horus />
+        <Isis />
+        <UMC />
 
         <Ramses/>
         <Guia showButton={showButton}/>
