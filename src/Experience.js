@@ -42,6 +42,8 @@ import Ramses from "./Ramses";
 import { PlaneGeometry } from "three";
 import * as THREE from 'three'
 import { useLoader } from "@react-three/fiber";
+import VideoDioses from "./VideoDioses";
+import VideoEgipto from "./VideoEgipto";
 
 
 export function Experience() {
@@ -182,6 +184,13 @@ export function Experience() {
         </mesh>
         <Ramses />
         <Templo2 />
+
+        <mesh position={ [ -15.6, -0.38, -1.2] } >
+        <VideoDioses />
+        </mesh>
+        <mesh position={ [ -20.23, -0.38, -1.2] } >
+        <VideoEgipto />
+        </mesh>
 
         {/*Animales*/}
         <Croc />
