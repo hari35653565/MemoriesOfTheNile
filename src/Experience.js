@@ -1,4 +1,4 @@
-/**
+/*
  * Hooks Reactjs: https://legacy.reactjs.org/docs/hooks-intro.html
  * React Three Fiber: https://docs.pmnd.rs/react-three-fiber/getting-started/introduction
  * Hooks de R3F: https://docs.pmnd.rs/react-three-fiber/api/hooks
@@ -8,7 +8,6 @@
  *
 */
 import React from "react";
-
 import { OrbitControls, Text, Float, PointerLockControls, useHelper } from "@react-three/drei";
 import { useThree, useFrame } from "@react-three/fiber"
 import { useRef, useState, useEffect } from "react";
@@ -26,6 +25,12 @@ import Tree from "./Plantas/Tree"
 import Palm from "./Plantas/Palm" 
 import Bush from "./Plantas/Bush";
 
+import Ankh from "./Religion/Ankh";
+import Bastet from "./Religion/Bastet";
+import Ra from "./Religion/Ra";
+import Anubis from "./Religion/Anubis";
+import Osiris from "./Religion/Osiris";
+
 import Croc from "./Animales/Croc";
 import Gato from "./Animales/Gato";
 import Ibis from "./Animales/Ibis";
@@ -34,6 +39,7 @@ import Ramses from "./Ramses";
 import { PlaneGeometry } from "three";
 import * as THREE from 'three'
 import { useLoader } from "@react-three/fiber";
+
 
 export function Experience() {
 
@@ -45,8 +51,8 @@ export function Experience() {
     const previousMouse = useRef([0, 0]);
 
 
-    const spotLightRef = useRef()
-    useHelper( spotLightRef, SpotLightHelper, 1, 'red')
+    /*const spotLightRef = useRef()
+    useHelper( spotLightRef, SpotLightHelper, 1, 'red')*/
     const texturaSoc = useLoader(THREE.TextureLoader, `${process.env.PUBLIC_URL}/static/assets/sociedad.jpg`);
     texturaSoc.wrapS = THREE.RepeatWrapping
     texturaSoc.wrapT = THREE.RepeatWrapping
@@ -70,7 +76,7 @@ export function Experience() {
                             cameraRef.current.position.set(8, 0, 5); //posicion lobby
                             break
                         case '8,0,5'://posicion lobby
-                            //rio nilo
+                            cameraRef.current.position.set(15, 0, 5); //ramses
                             break
                         case '-18,0,5': //posicon arquitectura
                             cameraRef.current.position.set(0, 0, 5); //posicion piramide y esfinge
@@ -78,10 +84,6 @@ export function Experience() {
                         case '-40,1,5': //Posicion templo2
                             cameraRef.current.position.set(-18, 0, 5); //posicion arquitectura
                             break
-                        case '-40,1,12'://posicion ramses
-                            cameraRef.current.position.set(-40, 1, 5); //posicion templo2
-                            cameraRef.current.rotation.y = Math.PI*2;
-
                     }
 
                     break;
@@ -98,11 +100,9 @@ export function Experience() {
                         case '-18,0,5': //posicion arquitectura
                             cameraRef.current.position.set(-40, 1, 5);  //Posicion templo2
                             break
-                        case '-40,1,5'://posicion templo2
-                            cameraRef.current.position.set(-40, 1, 12); //posicion Ramses
-                            cameraRef.current.rotation.y = Math.PI / 2;
+                        case '15,0,5': //posicion ramses
+                            cameraRef.current.position.set(8, 0, 5);// posicion lobby
                             break
-
                     }
                     break;
 
@@ -137,7 +137,7 @@ export function Experience() {
             [-18, -0.5, -7],  // Arquitectura
             [-40, -1, -6],   // Naturaleza
             [-18, -0.5, -7],  // Cultura
-            [9, -0.5, 0.03] //Lobby
+            [8, 0, 5] //Lobby
         ];
 
         const position = positions[iconIndex];
@@ -145,14 +145,17 @@ export function Experience() {
     };
 
     return <>
-
+{
         <PointerLockControls
             makeDefault
         />
-       <spotLight castShadow ref={ spotLightRef} position={[0, 20, 15]} intensity={2} />
+}       
+{/*
+        <OrbitControls makeDefault />*/
+}
+{/*
+       <spotLight castShadow  position={[0, 20, 15]} intensity={2} />*/}
    
-
-
         <directionalLight position={[1, 2, 3]} intensity={1.5} />
         <ambientLight intensity={0.5} />
 
@@ -168,6 +171,10 @@ export function Experience() {
        
         <Lobby />
         <Architecture />
+        <mesh position={[-25, -0.5, -8]} scale={1} rotation={[0, Math.PI/2, 0]}>
+            <planeGeometry args={[50, 50]} />
+            <meshBasicMaterial transparent opacity={0}/>
+        </mesh>
         <Ramses />
         <Templo2 />
 
@@ -177,9 +184,16 @@ export function Experience() {
         <Ibis />
         <Scarab />
 
+        {/*Religion*/}
+        <Ankh />
+        <Bastet />
+        <Ra />
+        <Anubis />
+        <Osiris />
+
         <Ramses/>
         <Guia showButton={showButton}/>
-        <mesh position={[-18, -0.5, -8]} scale={1} >
+        <mesh position={[-18, -0.5, -8.8]} scale={1} rotation={[0, Math.PI, 0]}>
             <planeGeometry attach="geometry"  />
             <meshStandardMaterial attach="material" map={texturaSoc} side={THREE.DoubleSide}/>
         </mesh>
