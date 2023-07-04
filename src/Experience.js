@@ -151,7 +151,7 @@ export function Experience() {
 
     return <>
 
-        {/<PointerLockControls makeDefault/> }
+        {<PointerLockControls makeDefault/> }
 
 
     {/*<OrbitControls makeDefault />*/}
