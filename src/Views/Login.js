@@ -1,26 +1,54 @@
 import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate, Link } from 'react-router-dom';
 
 const LoginPage = () => {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
+  const history = useNavigate();
+
+  const instance = axios.create({
+    baseURL: 'https://mem-backend.onrender.com'
+  });
+
+  const handleUserChange = (event) => {
+    setUsername(event.target.value);
   };
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
   };
 
-  const handleLogin = (event) => {
-    event.preventDefault();
-    // Perform login logic here
-    console.log('Email:', email);
-    console.log('Password:', password);
-    // Clear form fields
-    setEmail('');
-    setPassword('');
-  };
+  async function handleLogin(e){
+    e.preventDefault();
+
+    try{
+
+        await axios.post("https://mem-backend.onrender.com/api/login",{
+            username,password
+        })
+        .then(res=>{
+            if(res.data.message ==='Login successful' ){
+                history("/")
+            }
+            else {
+                alert("Usuario no Encontrado")
+                console.log(res.data)
+            }
+        })
+        .catch(e=>{
+            alert("wrong details")
+            console.log(e);
+        })
+
+    }
+    catch(e){
+        console.log(e);
+
+    }
+
+}
 
   return (
     <div>
@@ -29,9 +57,9 @@ const LoginPage = () => {
         <label>
           Email:
           <input
-            type="email"
-            value={email}
-            onChange={handleEmailChange}
+            type="username"
+            value={username}
+            onChange={handleUserChange}
           />
         </label>
         <br />
@@ -46,6 +74,7 @@ const LoginPage = () => {
         <br />
         <button type="submit">Login</button>
       </form>
+      <Link to="/">Home</Link>
     </div>
   );
 };
