@@ -1,6 +1,8 @@
 import './styles.css'
 import ReactDom from "react-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { Experience } from './Experience';
+import LoginPage from './Views/Login';
 import { Canvas } from '@react-three/fiber';
 import Micursor from './Micursor';
 import { StrictMode, Suspense } from 'react';
@@ -9,10 +11,9 @@ import { Analytics } from '@vercel/analytics/react';
 
 const root = ReactDom.createRoot(document.querySelector('#root'))
 
-
-root.render(
-    <>
-        <StrictMode>
+const Exp = () => {
+    return(
+        <>
             
             <Canvas>
                 <Suspense fallback={null}>
@@ -22,10 +23,22 @@ root.render(
             <Analytics />
             <Micursor/>
             {/* <Loader/> */}
-        </StrictMode>
 
 
     </>
+    )
+}
 
+
+root.render(
+
+    <BrowserRouter>
+    <StrictMode>
+        <Routes>
+            <Route path='/login' element={<LoginPage />} />
+            <Route path='/' element={<Exp />} />
+        </Routes>
+        </StrictMode>
+    </BrowserRouter>
 
 )
