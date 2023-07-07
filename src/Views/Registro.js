@@ -32,7 +32,7 @@ const Registro = () => {
         const res = await instance.post('/api/users', data);
         console.log(res);
         alert('Usuario Registrado Exitosamente');
-        history("/login");
+        history("/");
   
       } catch (err) {
         alert(err);
@@ -74,7 +74,7 @@ const Registro = () => {
         <br />
         <button type="submit">Registrarse</button>
       </form>
-      <Link to="/">Home</Link>
+      <Link to="/">Volver</Link>
     </div>
   );
 };
