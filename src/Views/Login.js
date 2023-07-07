@@ -30,11 +30,12 @@ const LoginPage = () => {
         })
         .then(res=>{
             if(res.data.message ==='Login successful' ){
-                history("/")
+                console.log(res.data);
+                history("/experience");
             }
             else {
-                alert("Usuario no Encontrado")
-                console.log(res.data)
+                alert("Usuario no Encontrado");
+                console.log(res.data);
             }
         })
         .catch(e=>{
@@ -59,7 +60,7 @@ const LoginPage = () => {
       <h2>Login Page</h2>
       <form onSubmit={handleLogin}>
         <label>
-          Email:
+          Usuario o Email:
           <input
             type="username"
             value={username}
@@ -80,7 +81,7 @@ const LoginPage = () => {
       </form>
       <h2>No tienes una cuenta?</h2>
       <button onClick={toSignup}>Registrate!</button>
-      <Link to="/">Home</Link>
+      <Link to="/">Continuar a experience</Link>
     </div>
   );
 };

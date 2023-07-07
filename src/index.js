@@ -36,9 +36,9 @@ root.render(
     <BrowserRouter>
     <StrictMode>
         <Routes>
-            <Route path='/login' element={<LoginPage />} />
+            <Route path='/' element={<LoginPage />} />
             <Route path='/signup' element={<Registro />} />
-            <Route path='/' element={<Exp />} />
+            <Route path='/experience' element={<Exp />} />
         </Routes>
         </StrictMode>
     </BrowserRouter>
