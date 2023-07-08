@@ -7,7 +7,7 @@ import { SpotLightHelper } from 'three';
 import * as THREE from 'three';
 import  Skybox  from "./Skybox";
 
-export function Login() {
+export function Manual() {
     const controlsRef = useRef();
 
   const { camera } = useThree();
