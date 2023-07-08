@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Float, useGLTF, Text, Image } from '@react-three/drei';
+import {useGLTF, Text, Image } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
 import { useRef } from 'react';
-import { TextureLoader } from 'three';
 
 
 export default function Templo2() {
@@ -15,14 +14,13 @@ export default function Templo2() {
     const [showPopup1, setShowPopup1] = useState(false);
     const [infoPopup, setInfoPopup] = useState('')
     const [palacioText, setPalacioText] = useState(false);
-    const [palacioInfo, setPalacioInfo] = useState(false);
     const [showSalir, setShowSalir] = useState(false);
     const [flagEnter, setFlagEnter] = useState(false);
-    const jeroglíficos = "PALACIO FARAON";
-    const obj2 = ""
+
 
     /* Evento al hacer click en el palacio e ir a este */
-    const event = () => {
+    const event = (e) => {
+        e.stopPropagation();
         if (flagEnter === false) {
             cameraRef.current.position.set(-40, 0, -5);
             //cameraRef.current.rotation.y=Math.PI
@@ -36,18 +34,7 @@ export default function Templo2() {
         }
     };
 
-    /*Evento al hacer click sobre el jeroglíficos*/
 
-    const eventStatue = (e) => {
-        e.stopPropagation = true;
-        setPalacioInfo(true);
-
-    }
-
-    /* Evento para cerrar el informativo */
-    const closePopup1 = () => {
-        setPalacioInfo(false);
-    };
     /* Evento del teclado, flechas derecha e izquierda*/
     useEffect(() => {
         const handleKeyDown = (event) => {
@@ -58,24 +45,33 @@ export default function Templo2() {
                         case '-40,0,-5': //posicion dentro del templo2
                             cameraRef.current.position.set(-39.5, -0.8, -5); //posicion escarabajo
                             cameraRef.current.rotation.y = 3 * Math.PI / 2;
+                            cameraRef.current.rotation.x = 0
+                            cameraRef.current.rotation.z = 0
+
                             break
                         case '-39.5,-0.8,-5': //posicion escarabajo
                             cameraRef.current.position.set(-39, -0.8, -7); //posicion ibis
                             break
                         case '-39,-0.8,-7':
-                            cameraRef.current.position.set(-40, 0, -9); //vista afuera
+                            cameraRef.current.position.set(-40, 0, -9); //vista hacia la salida
                             cameraRef.current.rotation.y = Math.PI;
+                            cameraRef.current.rotation.x = 0
+                            cameraRef.current.rotation.z = 0
                             break
                         case '-40,0,-9':
                             cameraRef.current.position.set(-41, -0.8, -8); //posicion gato
                             cameraRef.current.rotation.y = Math.PI / 2;
+                            cameraRef.current.rotation.x = 0
+                            cameraRef.current.rotation.z = 0
                             break
                         case '-41,-0.8,-8': //posicion gato
-                            cameraRef.current.position.set(-40.5, -0.8, -5); //posicion cocodrilo
+                            cameraRef.current.position.set(-40.5, -0.8, -5);
                             break
                         case '-40.5,-0.8,-5': //posicion cocodrilo
                             cameraRef.current.position.set(-40, 0, -5); //posicion inicial dentro del templo
                             cameraRef.current.rotation.y = Math.PI * 2;
+                            cameraRef.current.rotation.x = 0
+                            cameraRef.current.rotation.z = 0
                             break
 
 
@@ -89,19 +85,27 @@ export default function Templo2() {
                         case '-40,0,-5':
                             cameraRef.current.position.set(-40.5, -0.8, -5); //posicion cocodrilo
                             cameraRef.current.rotation.y = Math.PI / 2;
+                            cameraRef.current.rotation.x = 0
+                            cameraRef.current.rotation.z = 0
                             break
 
-                        case '-40,0,-9': //posicion dentro del templo2
+                        case '-40,0,-9': //posicion dentro del templo2 hacia la salida
                             cameraRef.current.position.set(-39, -0.8, -7); //posicion ibis
                             cameraRef.current.rotation.y = 3 * Math.PI / 2;
+                            cameraRef.current.rotation.x = 0
+                            cameraRef.current.rotation.z = 0
                             break
                         case '-39,-0.8,-7': //posicion ibis
                             cameraRef.current.position.set(-39.5, -0.8, -5); //posicion escarabajo
                             cameraRef.current.rotation.y = 3 * Math.PI / 2;
+                            cameraRef.current.rotation.x = 0
+                            cameraRef.current.rotation.z = 0
                             break
                         case '-41,-0.8,-8': //mirando el gato
                             cameraRef.current.position.set(-40, 0, -9); //posicion vista hacia afuera
                             cameraRef.current.rotation.y = Math.PI;
+                            cameraRef.current.rotation.x = 0
+                            cameraRef.current.rotation.z = 0
                             break
                         case '-40.5,-0.8,-5': //posicion cocodrilo
                             cameraRef.current.position.set(-41, -0.8, -8); //posicion gato
@@ -109,6 +113,8 @@ export default function Templo2() {
                         case '-39.5,-0.8,-5': //posicion escarabajo
                             cameraRef.current.position.set(-40, 0, -5); //posicion  inicial
                             cameraRef.current.rotation.y = Math.PI * 2;
+                            cameraRef.current.rotation.x = 0
+                            cameraRef.current.rotation.z = 0
                             break
 
 
@@ -127,11 +133,13 @@ export default function Templo2() {
     }, []);
 
     /* Evento para pasar a la sala 2 del templo */
-    const eventSala2 = () => {
+    const eventSala2 = (e) => {
+        e.stopPropagation();
         cameraRef.current.position.set(-40, 0, -18);
     }
     /* Evento para pasar a la sala principal del templo */
-    const eventSala1 = () => {
+    const eventSala1 = (e) => {
+        e.stopPropagation();
         cameraRef.current.position.set(-40, 0, -9);
     }
 
@@ -139,8 +147,11 @@ export default function Templo2() {
     /* evento salir del templo2 */
     const salirTemplo = () => {
         if (flagEnter === true) {
-            cameraRef.current.position.set(-40, 1, 5);
-            cameraRef.current.rotation.y = Math.PI;
+
+            cameraRef.current.position.set(-40, 0, 5);
+            cameraRef.current.rotation.y = Math.PI *2;
+            cameraRef.current.rotation.x = 0
+            cameraRef.current.rotation.z = 0
             setFlagEnter(false)
             setShowSalir(false)
         }
@@ -176,14 +187,14 @@ export default function Templo2() {
             <group name={"Palacio2"} onClick={event}>
                 <primitive
                     object={nodes.scene}
-                    position={[-40, -1.5, -12]}
-                    scale={0.8}
+                    position={[-40, -1.6, -12]}
+                    scale={0.9}
 
                 />
 
                 {/* Texto indica Palacio*/}
                 {palacioText && (
-                    <Text position={[-40, 1, -6]} fontSize={0.4} rotation-y={Math.PI} color="black" font="./bangers-v20-latin-regular.woff">
+                    <Text position={[-40, 0.5, -8]} fontSize={0.4} color="black" font="./bangers-v20-latin-regular.woff">
                         Palacio de Faraón
                     </Text>
                 )}
@@ -193,10 +204,11 @@ export default function Templo2() {
             {/* objeto salir del templo */}
             {showSalir && (
                 <group onClick={salirTemplo}>
-
-
-
-                    <Text position={[-40, -0.1, -4.8]} fontSize={0.06} color="black" rotation-y={Math.PI}>
+                    <mesh position={[-40, -0.5, -2.65]}>
+                        <boxGeometry args={[1, 2, 0.05]} />
+                        <meshBasicMaterial color="black" transparent opacity={0.2} />
+                    </mesh>
+                    <Text position={[-40, -0.4, -2.6]} fontSize={0.1} color="black" rotation-y={Math.PI}>
                         {'Salir'}
                     </Text>
                 </group>
@@ -204,12 +216,16 @@ export default function Templo2() {
 
             <group onClick={eventSala2}>
                 <mesh position={[-40, -0.6, -14.7]}>
-                    <planeGeometry args={[0.8, 1.6]} />
+                    <planeGeometry args={[0.65, 1.65]} />
                     <meshBasicMaterial color="black" transparent opacity={0.2} />
                 </mesh>
             </group>
 
             <group onClick={eventSala1}>
+                <mesh position={[-39.98, -0.6, -16.5]}>
+                    <boxGeometry args={[0.65, 1.65,0.5]} />
+                    <meshBasicMaterial color="black" transparent opacity={0.2} />
+                </mesh>
                 <Text position={[-39.98, -0.1, -17.3]} fontSize={0.06} color="black" rotation-y={Math.PI}>
                     {'     Sala\n Principal'}
                 </Text>

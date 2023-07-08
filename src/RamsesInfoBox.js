@@ -54,7 +54,7 @@ export default function RamsesInfoBox() {
     return (
         <group >
 
-            <mesh receiveShadow={true} position={[15, -0.5, 4]} rotation-z={-Math.PI * 0.5} rotation-x={-Math.PI * 0.5} onPointerOver={pasarMouse} name="wall2">
+            <mesh receiveShadow={true} position={[15, 0, 2]} rotation-z={-Math.PI * 0.5} rotation-x={-Math.PI * 0.5} onClick={pasarMouse} name="wall2">
                 <boxGeometry args={[0.05, 6.86, 4]} />
                 <meshStandardMaterial map={texture} shouldUpdate={true} />
             </mesh>

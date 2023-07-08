@@ -7,7 +7,7 @@ import videom from './video/videoEgipto.mp4';
 
 
 export default function VideoEgipto() {
- 
+
   const [isLoading, setIsLoading] = useState(false);
   const [video] = useState(() => document.createElement('video'));
 

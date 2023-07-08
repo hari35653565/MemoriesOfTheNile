@@ -8,26 +8,27 @@ import { Canvas } from '@react-three/fiber';
 import Micursor from './Micursor';
 import { StrictMode, Suspense } from 'react';
 import { Loader } from '@react-three/drei';
+import PreLoader from './component/PreLoader';
+import CLoader from './CLoader';
 import { Analytics } from '@vercel/analytics/react';
 
 const root = ReactDom.createRoot(document.querySelector('#root'))
 
 const Exp = () => {
-    return(
+    return (
         <>
 
             <Canvas>
-            
                 <Suspense fallback={null}>
-                <Experience /> 
+                    <Experience />
                 </Suspense>
             </Canvas>
             <Analytics />
-            <Micursor/>
-            {/* <Loader/> */}
+            <Micursor />
+            <PreLoader />
+            {/* <CLoader /> */}
 
-
-    </>
+        </>
     )
 }
 
@@ -35,12 +36,12 @@ const Exp = () => {
 root.render(
 
     <BrowserRouter>
-    <StrictMode>
-        <Routes>
-            <Route path='/' element={<LoginPage />} />
-            <Route path='/signup' element={<Registro />} />
-            <Route path='/experience' element={<Exp />} />
-        </Routes>
+        <StrictMode>
+            <Routes>
+                <Route path="/" element={<LoginPage />} />
+                <Route path="/signup" element={<Registro />} />
+                <Route path="/experience" element={<Exp />} />
+            </Routes>
         </StrictMode>
     </BrowserRouter>
 
