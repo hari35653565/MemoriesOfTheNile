@@ -16,7 +16,7 @@ const Exp = () => {
     return(
         <>
 
-            <Canvas>
+            <Canvas camera={{position: [8, -0.7, 1]}}>
             
                 <Suspense fallback={null}>
                 <Experience /> 
