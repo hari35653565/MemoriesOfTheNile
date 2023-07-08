@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Html } from '@react-three/drei';
+import { Html, Group } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
 import checkImage from './imagenes/check-icon.png'
 import Guia from './Guia';
+import { Button, Container, Row, Col, Table } from 'react-bootstrap';
+
 
 const Menu = ({ onClose, changeCameraPosition, moduleState }) => {
     const menuRef = useRef(null);
@@ -10,13 +12,6 @@ const Menu = ({ onClose, changeCameraPosition, moduleState }) => {
     const [showMapa, setShowMapa] = useState('');
     const [title, setTitle] = useState('Menú');
     const [showModul, setShowModul] = useState('none');
-
-
-    //variables para confirmar modulos
-
-
-
-
 
 
     useEffect(() => {
@@ -124,7 +119,7 @@ const Menu = ({ onClose, changeCameraPosition, moduleState }) => {
 
                     }
 
-                    {//LISTA MODULOS
+
 
                         <div className='background-image' style={{ display: showModul }}>
                             <table>
@@ -189,9 +184,9 @@ const Menu = ({ onClose, changeCameraPosition, moduleState }) => {
                                     <td>{moduleState.show14 && <img className='checkIMG' src={checkImage} />}</td></tr>
                             </table>
                         </div>
-                    }
-                    <button onClick={onClose}>Cerrar</button> {/* Added a close button */}
-                    <button onClick={showModu}>Ver modulos</button>
+
+                    <Button variant="primary" onClick={onClose}>Cerrar</Button>
+                    <Button variant="secondary" onClick={showModu}>Ver módulos</Button>
                 </div>
 
 
@@ -201,6 +196,166 @@ const Menu = ({ onClose, changeCameraPosition, moduleState }) => {
 
         </group>
     );
-};
 
+}
 export default Menu;
+
+// import React, { useEffect, useRef, useState } from 'react';
+// import { Html, Group } from '@react-three/drei';
+// import { useThree } from '@react-three/fiber';
+// import checkImage from './imagenes/check-icon.png';
+// import Guia from './Guia';
+// import { Button, Container, Row, Col, Table } from 'react-bootstrap';
+// import { makeStyles } from '@material-ui/core/styles';
+// import { TableContainer, Table as MUITable, TableBody, TableCell, TableHead, TableRow } from '@material-ui/core';
+
+// const useStyles = makeStyles({
+//   tableContainer: {
+//     margin: '0.5cm',
+//     backgroundColor: 'orange',
+//     width: '500px',
+//   },
+//   checkImg: {
+//     height: 16,
+//     width: 16,
+//   },
+// });
+
+// const Menu = ({ onClose, changeCameraPosition, moduleState }) => {
+//   const menuRef = useRef(null);
+//   const { viewport } = useThree();
+//   const [showMapa, setShowMapa] = useState('');
+//   const [title, setTitle] = useState('Menú');
+//   const [showModul, setShowModul] = useState('none');
+//   const classes = useStyles();
+
+//   useEffect(() => {
+//     const handleKeyDown = (event) => {
+//       if (event.code === 'Space') {
+//         event.preventDefault();
+//         onClose();
+//       }
+//     };
+
+//     document.addEventListener('keydown', handleKeyDown);
+
+//     return () => {
+//       document.removeEventListener('keydown', handleKeyDown);
+//     };
+//   }, [onClose]);
+
+//   const showModu = () => {
+//     setShowMapa('none');
+//     setTitle('Modulos');
+//     setShowModul('');
+//   };
+
+//   return (
+//     <group ref={menuRef}>
+//       <Html
+//         position={[viewport.width / 2, viewport.height / 2]}
+//         style={{
+//           display: 'flex',
+//           flexDirection: 'column',
+//           justifyContent: 'center',
+//           alignItems: 'center',
+//           fontFamily: 'Arial',
+//           textAlign: 'center',
+//           position: 'fixed',
+//           top: '50%',
+//           left: '50%',
+//           transform: 'translate(-50%, -50%)',
+//           zIndex: 999,
+//         }}
+//       >
+//         <div className={classes.tableContainer}>
+//           {showMapa === 'none' && (
+//             <TableContainer>
+//               <MUITable>
+//                 <TableHead>
+//                   <TableRow>
+//                     <TableCell>Religión</TableCell>
+//                     <TableCell></TableCell>
+//                     <TableCell>Fauna</TableCell>
+//                     <TableCell></TableCell>
+//                   </TableRow>
+//                 </TableHead>
+//                 <TableBody>
+//                   <TableRow>
+//                     <TableCell>Ankh</TableCell>
+//                     <TableCell>{moduleState.show1 && <img className={classes.checkImg} src={checkImage} />}</TableCell>
+//                     <TableCell>Cocodrilo</TableCell>
+//                     <TableCell>{moduleState.show10 && <img className={classes.checkImg} src={checkImage} />}</TableCell>
+//                   </TableRow>
+//                   <TableRow>
+//                     <TableCell>Bastet</TableCell>
+//                     <TableCell>{moduleState.show2 && <img className={classes.checkImg} src={checkImage} />}</TableCell>
+//                     <TableCell>Gato</TableCell>
+//                     <TableCell>{moduleState.show11 && <img className={classes.checkImg} src={checkImage} />}</TableCell>
+//                   </TableRow>
+//                   <TableRow>
+//                     <TableCell>Ra</TableCell>
+//                     <TableCell>{moduleState.show3 && <img className={classes.checkImg} src={checkImage} />}</TableCell>
+//                     <TableCell>Ibis</TableCell>
+//                     <TableCell>{moduleState.show12 && <img className={classes.checkImg} src={checkImage} />}</TableCell>
+//                   </TableRow>
+//                   <TableRow>
+//                     <TableCell>Anubis</TableCell>
+//                     <TableCell>{moduleState.how4 && <img className={classes.checkImg} src={checkImage} />}</TableCell>
+//                     <TableCell>Escarabajo</TableCell>
+//                     <TableCell>{moduleState.show13 && <img className={classes.checkImg} src={checkImage} />}</TableCell>
+//                   </TableRow>
+//                   <TableRow>
+//                     <TableCell>Osiris</TableCell>
+//                     <TableCell>{moduleState.show5 && <img className={classes.checkImg} src={checkImage} />}</TableCell>
+//                     <TableCell></TableCell>
+//                     <TableCell></TableCell>
+//                   </TableRow>
+//                   <TableRow>
+//                     <TableCell>Horus</TableCell>
+//                     <TableCell>{moduleState.show6 && <img className={classes.checkImg} src={checkImage} />}</TableCell>
+//                     <TableCell></TableCell>
+//                     <TableCell></TableCell>
+//                   </TableRow>
+//                   <TableRow>
+//                     <TableCell>Isis</TableCell>
+//                     <TableCell>{moduleState.show7 && <img className={classes.checkImg} src={checkImage} />}</TableCell>
+//                     <TableCell></TableCell>
+//                     <TableCell></TableCell>
+//                   </TableRow>
+//                   <TableRow>
+//                     <TableCell>Historia</TableCell>
+//                     <TableCell></TableCell>
+//                     <TableCell>Gastronomía</TableCell>
+//                     <TableCell></TableCell>
+//                   </TableRow>
+//                   <TableRow>
+//                     <TableCell>Ramses</TableCell>
+//                     <TableCell>{moduleState.show8 && <img className={classes.checkImg} src={checkImage} />}</TableCell>
+//                     <TableCell>Frutas y verduras</TableCell>
+//                     <TableCell>{moduleState.show14 && <img className={classes.checkImg} src={checkImage} />}</TableCell>
+//                   </TableRow>
+//                   <TableRow>
+//                     <TableCell>Kefrén</TableCell>
+//                     <TableCell>{moduleState.show9 && <img className={classes.checkImg} src={checkImage} />}</TableCell>
+//                     <TableCell>Bebidas</TableCell>
+//                     <TableCell>{moduleState.show14 && <img className={classes.checkImg} src={checkImage} />}</TableCell>
+//                   </TableRow>
+//                 </TableBody>
+//               </MUITable>
+//             </TableContainer>
+//           )}
+
+//           <Button variant="primary" onClick={onClose}>
+//             Cerrar
+//           </Button>
+//           <Button variant="secondary" onClick={showModu}>
+//             Ver módulos
+//           </Button>
+//         </div>
+//       </Html>
+//     </group>
+//   );
+// };
+
+// export default Menu;
