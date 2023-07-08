@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
+import './Estilos.css'
+import imagenEgipto from './ImagenEgipto.png';
 
 const Registro = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [buttonColor, setButtonColor] = useState('');
 
   const history = useNavigate();
 
@@ -17,12 +20,21 @@ const Registro = () => {
     setUsername(event.target.value);
   };
 
+  
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
+  };
+
+  const handleMouseEnter = () => {
+    setButtonColor('#ff502d'); // Cambia el color de fondo al pasar el mouse por encima
+  };
+
+  const handleMouseLeave = () => {
+    setButtonColor(''); // Restaura el color de fondo al dejar de pasar el mouse por encima
   };
 
   async function handleLogin(e){
@@ -42,9 +54,12 @@ const Registro = () => {
 }
 
   return (
-    <div>
-      <h2>Registro</h2>
+    <div className="login-page">
+      <div className="informacion">
+      <h1> Welcome to memories of the Nile</h1>
       <form onSubmit={handleLogin}>
+       <h2>Registro</h2>
+       <img className='imagen-login' src={imagenEgipto} alt="Imagen de Egipto" />
         <label>
           Nombre de Usuario:
           <input
@@ -72,9 +87,16 @@ const Registro = () => {
           />
         </label>
         <br />
-        <button type="submit">Registrarse</button>
+        <button   onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} style={{ backgroundColor: buttonColor }} type="submit">Registrarse</button>
+        <h4> ¿ya tienes una cuenta?</h4>
+        <Link className='link' to="/">Ingresar</Link>
       </form>
-      <Link to="/">Volver</Link>
+    
+
+      </div>
+
+     
+     
     </div>
   );
 };

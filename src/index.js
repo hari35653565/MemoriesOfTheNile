@@ -15,10 +15,11 @@ const root = ReactDom.createRoot(document.querySelector('#root'))
 const Exp = () => {
     return(
         <>
-            
+
             <Canvas>
+            
                 <Suspense fallback={null}>
-                   <Experience />
+                <Experience /> 
                 </Suspense>
             </Canvas>
             <Analytics />

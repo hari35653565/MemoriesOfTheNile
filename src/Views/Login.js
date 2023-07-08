@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
+import './Estilos.css'
+import imagenEgipto from './ImagenEgipto.png';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [buttonColor, setButtonColor] = useState('');
 
   const history = useNavigate();
 
@@ -18,6 +21,13 @@ const LoginPage = () => {
 
   const handlePasswordChange = (event) => {
     setPassword(event.target.value);
+  };
+  const handleMouseEnter = () => {
+    setButtonColor('#ff502d'); // Cambia el color de fondo al pasar el mouse por encima
+  };
+
+  const handleMouseLeave = () => {
+    setButtonColor(''); // Restaura el color de fondo al dejar de pasar el mouse por encima
   };
 
   async function handleLogin(e){
@@ -56,33 +66,44 @@ const LoginPage = () => {
   }
 
   return (
-    <div>
-      <h2>Login Page</h2>
-      <form onSubmit={handleLogin}>
-        <label>
-          Usuario o Email:
-          <input
-            type="username"
-            value={username}
-            onChange={handleUserChange}
-          />
-        </label>
-        <br />
-        <label>
-          Password:
-          <input
-            type="password"
-            value={password}
-            onChange={handlePasswordChange}
-          />
-        </label>
-        <br />
-        <button type="submit">Login</button>
-      </form>
-      <h2>No tienes una cuenta?</h2>
-      <button onClick={toSignup}>Registrate!</button>
-      <Link to="/">Continuar a experience</Link>
-    </div>
+    <>
+      <div className="login-page">
+        <div className="informacion">
+          
+          <h1>Memories of the Nile</h1>
+          
+          <form onSubmit={handleLogin}>
+            <h2>Login</h2>
+            <img className='imagen-login' src={imagenEgipto} alt="Imagen de Egipto" />
+        
+            <label>
+              Usuario o Email:
+              <input
+                type="username"
+                value={username}
+                onChange={handleUserChange}
+              />
+            </label>
+            <br />
+            <label>
+              Password:
+              <input
+                type="password"
+                value={password}
+                onChange={handlePasswordChange}
+              />
+            </label>
+            <br />
+
+            <button  onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} style={{ backgroundColor: buttonColor }} >Ingresar</button>
+            <h4> ¿aun no tienes una cuenta?</h4>
+            <Link className="link" to="/signup">Crear una aquí</Link>
+          </form>
+
+          <h3>Aprende todo sobre la cultura del antiguo egipto</h3>
+        </div>
+      </div>
+    </>
   );
 };
 
