@@ -50,7 +50,7 @@
     cursor: pointer;
     font-family: "Open Sans", sans-serif;
     font-size: 14px;
- 
+
 }
 
 
@@ -68,7 +68,7 @@
 }
 
 .informacion {
-    justify-content: start;
+    justify-content: flex-start;
     flex-direction: column;
     display: flex;
     width: 100%;
@@ -83,7 +83,7 @@ form h2 {
     color: rgb(23, 23, 23);
     margin-block-end: 0px;
     margin-block-start: 0px;
-    
+
 }
 
 .informacion h3 {
@@ -102,17 +102,17 @@ form h2 {
     max-width: 100%;
     text-align: center;
     color: #fe964c;
-    
+
 }
 
 .imagen-login {
-    width: 80%; 
-    height: auto; 
+    width: 80%;
+    height: auto;
     margin-block-start: 2px;
     margin-block-end: 17px;
 
   }
-  
+
   .login-page form h4 {
     margin-bottom: 6px;
     font-family: "Open Sans", sans-serif;
@@ -127,4 +127,4 @@ form h2 {
     font-size: 13px;
 
     }
-  
+

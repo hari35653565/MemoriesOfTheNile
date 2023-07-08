@@ -42,7 +42,6 @@ export default function Ramses() {
     };
 
     const handleVerInfo = () => {
-        check = 8;
         setVerInfo(true);
         setbotonInfo(false);
         setbotonNoInfo(true);

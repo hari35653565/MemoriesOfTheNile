@@ -100,7 +100,7 @@ const LoginPage = () => {
             <Link className="link" to="/signup">Crear una aquí</Link>
           </form>
 
-          <h3>Aprende todo sobre la cultura del antiguo egipto</h3>
+          <h3>Aprende todo sobre la cultura del antiguo Egipto</h3>
         </div>
       </div>
     </>

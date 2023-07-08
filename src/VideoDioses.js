@@ -7,7 +7,7 @@ import videom from './video/videoDioses.mp4';
 
 
 export default function VideoDioses() {
- 
+
   const [isLoading, setIsLoading] = useState(false);
   const [video] = useState(() => document.createElement('video'));
 
