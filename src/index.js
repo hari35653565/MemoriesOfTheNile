@@ -1,5 +1,5 @@
 import './styles.css'
-import ReactDom from "react-dom";
+import ReactDom from "react-dom/client";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { Experience } from './Experience';
 import LoginPage from './Views/Login';
