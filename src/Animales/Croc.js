@@ -3,7 +3,6 @@ import { Float, Html, useGLTF, Text } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
 import { useRef } from 'react';
 import * as THREE from 'three'
-import PopupWindow from '../PopupWindow';
 
 export default function Croc() {
 

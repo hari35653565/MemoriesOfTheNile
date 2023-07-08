@@ -101,13 +101,13 @@ function Guia ({showButton}) {
       newComponentPositions.guia = [-18, 0.1, 4];
       newComponentPositions.prev = [-18.1, -0.45, 4];
       newComponentPositions.next = [-18, -0.45, 4];
-    } else if (currentPosition === '-40,1,5') {
+    } else if (currentPosition === '-40,0,5') {
       //cuando esta frente al templo 2
-      newComponentPositions.buttonGuia = [-33, 4, 0.03];
-      newComponentPositions.close = [-40.2, 0.525, 4];
-      newComponentPositions.guia = [-40, 1.08, 4];
-      newComponentPositions.prev = [-40.1, 0.525, 4];
-      newComponentPositions.next = [-40, 0.525, 4];
+      newComponentPositions.buttonGuia = [-33, 3, 0.03];
+      newComponentPositions.close = [-40.2, -0.45, 4];
+      newComponentPositions.guia = [-40, 0.1, 4];
+      newComponentPositions.prev = [-40.1, -0.45, 4];
+      newComponentPositions.next = [-40, -0.45, 4];
     } else if (currentPosition ==='15,0,5'){
       //cuando esta frente a Ramses
       newComponentPositions.buttonGuia = [22, 3, 0.03];
@@ -137,7 +137,7 @@ function Guia ({showButton}) {
       scale={1.5}
       onClick={openModal}
       >
-        <planeGeometry  args={[0.6, 0.5]} />
+        <boxGeometry  args={[0.6, 0.5,0.4]} />
       </mesh>)}
       {/* <mesh>
         {showButton&&(<Html position={componentPositions.buttonGuia} center>

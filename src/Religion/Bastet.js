@@ -17,6 +17,7 @@ export default function Bastet() {
 
     /* Evento al hacer click derecho al modelo y acceder a su informacion */
     const event = (e) => {
+
         setScarabText(true);
         setTimeout(() => {
             setScarabText(false);
@@ -26,14 +27,14 @@ export default function Bastet() {
     /*Evento al hacer click sobre el escarabajo: Despliega informarción */
 
     const eventPopup = (e) => {
-        e.stopPropagation()
+        e.stopPropagation();
         setShowPopup(true);
 
     };
 
     /* Evento para cerrar la ventana emergente  */
     const closePopup = (e) => {
-        e.stopPropagation()
+        e.stopPropagation();
         setShowPopup(false);
     };
 
@@ -53,11 +54,11 @@ export default function Bastet() {
                 {/* Texto indica Bastet*/}
                 {showPopup && (
                     <group onClick={closePopup}>
-                    <mesh position={[-22.001, 0, -4]} rotation={[0, Math.PI/2, 0]}>
+                    <mesh position={[-22.001, -0.2, -4]} rotation={[0, Math.PI/2, 0]}>
                         <planeGeometry args={[2.4, 0.5]} />
                         <meshBasicMaterial color="black" transparent opacity={0.8}  side={THREE.DoubleSide}/>
                     </mesh>
-                    <Text position={[-22, 0, -4]} fontSize={0.05} color="white" rotation={[0, Math.PI/2, 0]}>
+                    <Text position={[-22, -0.2, -4]} fontSize={0.05} color="white" rotation={[0, Math.PI/2, 0]}>
                         { `${popupTitle}\n${popupText}`}
                     </Text>
                     </group>

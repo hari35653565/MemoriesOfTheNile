@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Float, Html, useGLTF, Text } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
 import { useRef } from 'react';
-import PopupWindow from './PopupWindow';
+
 import RamsesVideoBox from './RamsesVideoBox';
 import RamsesInfoBox from './RamsesInfoBox';
 import Button from 'react-bootstrap/Button';
@@ -17,8 +17,10 @@ export default function Ramses() {
     const cameraRef = useRef(camera);
     const [verVideo, setVerVideo] = useState(false);
     const [verInfo, setVerInfo] = useState(false);
-    const [ramsesInfo, setRamsesInfo] = useState(false);
-    const [showVideo, setShowVideo] = useState(false);
+    const [botonInfo, setbotonInfo] = useState(true);
+    const [botonVideo, setbotonVideo] = useState(true);
+    const [botonNoInfo, setbotonNoInfo] = useState(false);
+    const [botonNoVideo, setbotonNoVideo] = useState(false);
 
 
     const textureLoader = new TextureLoader();
@@ -28,25 +30,33 @@ export default function Ramses() {
 
     const handleVerVideo = () => {
         setVerVideo(true);
+        setbotonVideo(false);
+        setbotonNoVideo(true);
     };
 
     const handleNOVerVideo = () => {
         setVerVideo(false);
+        setbotonVideo(true);
+        setbotonNoVideo(false);
     };
 
     const handleVerInfo = () => {
         setVerInfo(true);
+        setbotonInfo(false);
+        setbotonNoInfo(true);
     };
 
     const handleNOVerInfo = () => {
         setVerInfo(false);
+        setbotonInfo(true);
+        setbotonNoInfo(false);
     };
 
     return (
         <group>
 
             {/* Estructura de Ramses sus coordenadas */}
-            <group name={"Ramses"} onContextMenu={event}>
+            <group name={"Ramses"}>
 
                 {/* Coordenadas de  Ramses */}
                 <primitive
@@ -58,48 +68,48 @@ export default function Ramses() {
                 />
 
 
-                    <mesh position={[16, 5.4, -3]} material={materialVideoGuiaIcon}>
-                        <Html>
-                            <Button name="verV" variant="primary" onClick={handleVerVideo}>
-                                Video
-                            </Button>
-                        </Html>
-
+                {botonInfo && (<group onClick={handleVerInfo}>
+                    <mesh position={[18, 0, -3]}>
+                        <boxGeometry args={[1.5, 0.8, 0.05]} />
+                        <meshBasicMaterial color="violet" transparent opacity={0.5} />
                     </mesh>
+                    <Text position={[18, 0, -2.9]} fontSize={0.3} color="black" >
+                        {'Ver Info'}
+                    </Text>
+                </group>)}
 
-
-                <group>
-                    <mesh position={[18, 5.4, -3]}>
-                        <Html>
-                            <Button name="quitarV" variant="primary" onClick={handleNOVerVideo}>
-                                Quitar Video
-                            </Button>
-                        </Html>
+                {botonVideo && (<group onClick={handleVerVideo}>
+                    <mesh position={[18, -1, -3]}>
+                        <boxGeometry args={[1.5, 0.8, 0.05]} />
+                        <meshBasicMaterial color="violet" transparent opacity={0.5} />
                     </mesh>
-                </group>
+                    <Text position={[18, -1, -2.9]} fontSize={0.3} color="black" >
+                        {'Ver video'}
+                    </Text>
+                </group>)}
 
-                <group>
-                    <mesh position={[10, 5.4, -3]}>
-                        <Html>
-                            <Button name="verI" variant="primary" onClick={handleVerInfo}>
-                                Ver info
-                            </Button>
-                        </Html>
+                {botonNoInfo && (<group onClick={handleNOVerInfo}>
+                    <mesh position={[19.2, 0, 2]}>
+                        <boxGeometry args={[1.2, 0.5, 0.05]} />
+                        <meshBasicMaterial color="violet" transparent opacity={0.5} />
                     </mesh>
-                </group>
+                    <Text position={[19.2, 0, 2.05]} fontSize={0.15} color="black" >
+                        {'Ocultar Info'}
+                    </Text>
+                </group>)}
 
-                <group>
-                    <mesh position={[12, 5.4, -3]}>
-                        <Html>
-                            <Button name="quitarI"  variant="primary" onClick={handleNOVerInfo}>
-                                NO Ver info
-                            </Button>
-                        </Html>
+                {botonNoVideo && (<group onClick={handleNOVerVideo}>
+                    <mesh position={[19.5, 0, 2]}>
+                        <boxGeometry args={[0.8, 0.5, 0.05]} />
+                        <meshBasicMaterial color="violet" transparent opacity={0.5} />
                     </mesh>
-                </group>
+                    <Text position={[19.5, 0, 2.05]} fontSize={0.15} color="black" >
+                        {'Ocultar\n video'}
+                    </Text>
+                </group>)}
 
 
-                {verVideo &&  <RamsesVideoBox />}
+                {verVideo && <RamsesVideoBox />}
 
                 {verInfo && (
                     <RamsesInfoBox></RamsesInfoBox>

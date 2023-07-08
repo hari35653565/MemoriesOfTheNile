@@ -86,7 +86,7 @@ export function Experience() {
                         case '-18,0,5': //posicon arquitectura
                             cameraRef.current.position.set(0, 0, 5); //posicion piramide y esfinge
                             break
-                        case '-40,1,5': //Posicion templo2
+                        case '-40,0,5': //Posicion templo2
                             cameraRef.current.position.set(-18, 0, 5); //posicion arquitectura
                             break
                     }
@@ -103,7 +103,7 @@ export function Experience() {
                             cameraRef.current.position.set(-18, 0, 5); //posicion arquitectura
                             break
                         case '-18,0,5': //posicion arquitectura
-                            cameraRef.current.position.set(-40, 1, 5);  //Posicion templo2
+                            cameraRef.current.position.set(-40, 0, 5);  //Posicion templo2
                             break
                         case '15,0,5': //posicion ramses
                             cameraRef.current.position.set(8, 0, 5);// posicion lobby
@@ -151,7 +151,7 @@ export function Experience() {
 
     return <>
 
-        {/<PointerLockControls makeDefault/> }
+        <PointerLockControls makeDefault/>
 
 
     {/*<OrbitControls makeDefault />*/}
@@ -176,19 +176,13 @@ export function Experience() {
 
         <Lobby />
         <Architecture />
-        <mesh position={[-25, -0.5, -8]} scale={1} rotation={[0, Math.PI / 2, 0]} onClick={(e) => {
-            e.stopPropagation()
-        }}>
-            <planeGeometry args={[50, 50]} />
-            <meshBasicMaterial transparent opacity={0} />
-        </mesh>
         <Ramses />
         <Templo2 />
 
-        <mesh position={[-15.6, -0.38, -1.2]} >
+        <mesh position={[-15.35, -0.38, -1.2]} >
             <VideoDioses />
         </mesh>
-        <mesh position={[-20.23, -0.38, -1.2]} >
+        <mesh position={[-21, -0.38, -1.2]} >
             <VideoEgipto />
         </mesh>
 

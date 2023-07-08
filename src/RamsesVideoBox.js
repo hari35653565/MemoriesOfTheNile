@@ -29,7 +29,7 @@ export default function RamsesVideoBox() {
   return (
     <group >
 
-      <mesh receiveShadow={true} position={[15, -0.5, 3]} rotation-y={-Math.PI * 0.5} onClick={handleClick} name="wall-video">
+      <mesh receiveShadow={true} position={[15, 0, 2]} rotation-y={-Math.PI * 0.5} onClick={handleClick} name="wall-video">
         <boxGeometry args={[0.05, 4, 7.86]} />
         <meshStandardMaterial map={videoTexture} />
       </mesh>
