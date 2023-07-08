@@ -4,6 +4,7 @@ import { useThree } from '@react-three/fiber';
 import checkImage from './imagenes/check-icon.png'
 import Guia from './Guia';
 import { Button, Container, Row, Col, Table } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 
 const Menu = ({ onClose, changeCameraPosition, moduleState }) => {
@@ -12,7 +13,7 @@ const Menu = ({ onClose, changeCameraPosition, moduleState }) => {
     const [showMapa, setShowMapa] = useState('');
     const [title, setTitle] = useState('Menú');
     const [showModul, setShowModul] = useState('none');
-
+    const history = useNavigate();
 
     useEffect(() => {
         const handleKeyDown = (event) => {
@@ -36,7 +37,9 @@ const Menu = ({ onClose, changeCameraPosition, moduleState }) => {
         setShowModul('');
     }
 
-
+    const logout = () => {
+        history("/");
+    }
 
     return (
         <group ref={menuRef}>
@@ -187,6 +190,7 @@ const Menu = ({ onClose, changeCameraPosition, moduleState }) => {
 
                     <Button variant="primary" onClick={onClose}>Cerrar</Button>
                     <Button variant="secondary" onClick={showModu}>Ver módulos</Button>
+                    <Button variant="secondary" onClick={logout}>Cerrar Sesión</Button>
                 </div>
 
 
