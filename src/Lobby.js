@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useGLTF, Text } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
 import { MeshBasicMaterial, TextureLoader } from 'three';
-import PopupWindow from './PopupWindow';
 
 
 export default function Lobby() {
@@ -141,6 +140,10 @@ export default function Lobby() {
           scale={0.5}
           transparent={true}>
           <planeGeometry args={[1, 1.6]} />
+        </mesh>
+        <mesh position={[8, -0.7, 2]}>
+          <boxGeometry args={[1.5, 1.7, 0.05]} />
+          <meshBasicMaterial color="black" transparent opacity={0.01} />
         </mesh>
 
       </group>

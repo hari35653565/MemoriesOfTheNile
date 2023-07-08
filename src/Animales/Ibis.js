@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Float, Html, useGLTF, Text } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
 import { useRef } from 'react';
-import PopupWindow from '../PopupWindow';
+
 import * as THREE from 'three';
 
 export default function Ibis() {
