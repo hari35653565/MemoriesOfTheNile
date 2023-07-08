@@ -9,6 +9,7 @@ import Button from 'react-bootstrap/Button';
 import { MeshBasicMaterial, TextureLoader } from 'three';
 
 
+
 export default function Ramses() {
 
     // Modelo de Ramsés
@@ -41,6 +42,7 @@ export default function Ramses() {
     };
 
     const handleVerInfo = () => {
+        check = 8;
         setVerInfo(true);
         setbotonInfo(false);
         setbotonNoInfo(true);
@@ -76,6 +78,7 @@ export default function Ramses() {
                     <Text position={[18, 0, -2.9]} fontSize={0.3} color="black" >
                         {'Ver Info'}
                     </Text>
+
                 </group>)}
 
                 {botonVideo && (<group onClick={handleVerVideo}>
@@ -117,7 +120,6 @@ export default function Ramses() {
                 )}
 
             </group>
-
         </group>
     );
 }

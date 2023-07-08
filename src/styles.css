@@ -56,31 +56,42 @@ width: 100%;
 display: flex;
 justify-content: center;
 align-items: center;
-background-size: 600px 600px;;
 background-repeat: no-repeat;
 background-position: center;
+background-color: blue;
+
 }
 
 .background-image {
     flex: 1;
-    display: flex;
-    justify-content: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    width: 450px;
+    height: 300px;
 }
 
 .icons-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
+    grid-gap: 20px;
 }
+
+.icon-row {
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
 
 .icon {
     cursor: pointer;
     color: #fff;
-    font-size: 24px;
+    font-size: 5px;
 }
 
 .icon-image {
@@ -88,8 +99,13 @@ align-items: center;
 justify-content: center;
 max-width: 100%;
 max-height: 100%;
-opacity:10
+opacity:0
 
+}
+
+.checkIMG{
+    width: 20px;
+    height: 20px;
 }
 
 
