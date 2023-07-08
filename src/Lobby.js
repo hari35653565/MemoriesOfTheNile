@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useGLTF, Text } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
 import { MeshBasicMaterial, TextureLoader } from 'three';
-import PopupWindow from './PopupWindow';
 
 
 export default function Lobby() {
@@ -122,12 +121,12 @@ export default function Lobby() {
       {/* Ventana emergente de información estatua kefrén*/}
       {showPopup1 && (
         <group onClick={closeStatuePopup}>
-          <mesh position={[8, -0.6, -0.6]}>
-            <planeGeometry args={[2.2, 0.5]} />
+          <mesh position={[8, -0.6, 0.34]}>
+            <planeGeometry args={[2, 0.5]} />
             <meshBasicMaterial color="black" transparent opacity={0.8} />
           </mesh>
-          <Text position={[8, -0.6, -0.5]} fontSize={0.06} color="white" >
-            {' KEFRÉN:\n\n Faraón de la dinastía IV. Construyó la segunda pirámide más grande\n de Egipto(Altura 143,5m). También se le adjudica la Gran Esfinge,\n el templo funerario, entre otras grandes obras.'}
+          <Text position={[8, -0.6, 0.35]} fontSize={0.06} color="white" >
+            {' KEFRÉN:\n\n Faraón de la dinastía IV. Construyó la segunda pirámide más grande\n de Egipto (Altura 143,5m). También se le adjudica la Gran Esfinge,\n el templo funerario, entre otras grandes obras.'}
           </Text>
         </group>
       )}
@@ -141,6 +140,10 @@ export default function Lobby() {
           scale={0.5}
           transparent={true}>
           <planeGeometry args={[1, 1.6]} />
+        </mesh>
+        <mesh position={[8, -0.7, 2]}>
+          <boxGeometry args={[1.5, 1.7, 0.05]} />
+          <meshBasicMaterial color="black" transparent opacity={0.01} />
         </mesh>
 
       </group>

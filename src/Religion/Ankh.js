@@ -53,11 +53,11 @@ export default function Ankh() {
                 {/* Texto indica Ankh*/}
                 {showPopup && (
                     <group onClick={closePopup}>
-                    <mesh position={[-18, 0.5, -4.4]} rotation={[0, 0, 0]}>
+                    <mesh position={[-18, -0.5, -3.1]} rotation={[0, 0, 0]}>
                         <planeGeometry args={[2.4, 0.5]} />
                         <meshBasicMaterial color="black" transparent opacity={0.8}  side={THREE.DoubleSide}/>
                     </mesh>
-                    <Text position={[-18, 0.5, -4.399]} fontSize={0.05} color="white" rotation={[0, 0, 0]}>
+                    <Text position={[-18, -0.5, -3]} fontSize={0.05} color="white" rotation={[0, 0, 0]}>
                         { `${popupTitle}\n${popupText}`}
                     </Text>
                     </group>
@@ -68,4 +68,4 @@ export default function Ankh() {
     );
 }
 
-useGLTF.preload("/ankh_asset.glb.glb");
+useGLTF.preload("./static/ankh_asset.glb");
